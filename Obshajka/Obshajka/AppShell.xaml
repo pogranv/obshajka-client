@@ -22,8 +22,18 @@
                   Shell.FlyoutBehavior="Disabled"
                   ContentTemplate="{DataTemplate local:MainPage}"/>
 
-    <ShellContent Route="Goto"
+    <!--<ShellContent Route="Goto"
                   Shell.FlyoutBehavior="Disabled"
-                  ContentTemplate="{DataTemplate kek:Goto}" />
+                  ContentTemplate="{DataTemplate kek:Goto}" />-->
+
+    <TabBar Route="Bar">
+        <ShellContent 
+            Title="advert"
+            ContentTemplate="{DataTemplate kek:Advertisements}"/>
+
+        <ShellContent
+            Title="create"
+            ContentTemplate="{DataTemplate kek:CreateAdvertisement}"/>
+    </TabBar>
 
 </Shell>
