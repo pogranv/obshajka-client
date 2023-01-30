@@ -4,36 +4,25 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Obshajka"
-    xmlns:kek="clr-namespace:Obshajka.Pages"
+    xmlns:pages="clr-namespace:Obshajka.Pages"
     Shell.FlyoutBehavior="Disabled">
-
-    <!--<ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
-    <ShellContent
-        x:Name="lol2"
-        Title="Home"
-        ContentTemplate="{DataTemplate kek:Goto}"
-        Route="Goto" />-->
 
     <ShellContent Route="MainPage"
                   Shell.FlyoutBehavior="Disabled"
                   ContentTemplate="{DataTemplate local:MainPage}"/>
 
-    <!--<ShellContent Route="Goto"
-                  Shell.FlyoutBehavior="Disabled"
-                  ContentTemplate="{DataTemplate kek:Goto}" />-->
-
     <TabBar Route="Bar">
         <ShellContent 
             Title="advert"
-            ContentTemplate="{DataTemplate kek:Advertisements}"/>
+            ContentTemplate="{DataTemplate pages:Advertisements}"/>
 
         <ShellContent
             Title="create"
-            ContentTemplate="{DataTemplate kek:CreateAdvertisement}"/>
+            ContentTemplate="{DataTemplate pages:CreateAdvertisement}"/>
+
+        <ShellContent
+            Title="pfofile"
+            ContentTemplate="{DataTemplate pages:ProfilePage}"/>
     </TabBar>
 
 </Shell>
