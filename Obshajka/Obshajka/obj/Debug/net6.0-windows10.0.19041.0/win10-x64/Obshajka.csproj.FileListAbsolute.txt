@@ -358,3 +358,4 @@ C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.1
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\lamp.scale-100.png
