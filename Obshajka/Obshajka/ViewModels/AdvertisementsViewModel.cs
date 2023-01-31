@@ -30,7 +30,7 @@ namespace Obshajka.ViewModels
                 Name = "Name",
                 Description = "Description",
                 Price = "1000",
-                Image = "resources/lamp.png"
+                Image = "lamp.png"
             });
         }
     }

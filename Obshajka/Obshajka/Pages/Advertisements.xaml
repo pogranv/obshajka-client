@@ -2,8 +2,61 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.Advertisements"
+             xmlns:local="clr-namespace:Obshajka.Data"
              Title="Advertisements">
-    <StackLayout>
+
+    <CollectionView>
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="2" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemsSource>
+            <x:Array Type="{x:Type local:AdvertisementsListViewElement}">
+                <local:AdvertisementsListViewElement Name="Tom" Description="Description" Image="lamp.png"/>
+                <local:AdvertisementsListViewElement Name="Sam" Description="Description" Image="lamp.png"/>
+                <local:AdvertisementsListViewElement Name="Bob" Description="Description" Image="lamp.png"/>
+                <local:AdvertisementsListViewElement Name="Alice" Description="Description" Image="lamp.png"/>
+                <local:AdvertisementsListViewElement Name="Kate" Description="Description" Image="lamp.png"/>
+            </x:Array>
+        </CollectionView.ItemsSource>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <!--<Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="80" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.RowSpan="2" 
+                               Source="{Binding Image}" 
+                               Aspect="AspectFill"
+                               HeightRequest="60" 
+                               WidthRequest="60" />
+                    <Label Grid.Column="1" 
+                               Text="{Binding Name}" 
+                               FontAttributes="Bold"
+                               LineBreakMode="TailTruncation" />
+                    <Label Grid.Row="1"
+                               Grid.Column="1" 
+                               Text="{Binding Description}"
+                               LineBreakMode="TailTruncation"
+                               FontAttributes="Italic" 
+                               VerticalOptions="End"
+                               FontSize = "20"
+                               TextColor = "#006064"/>
+                </Grid>-->
+                <StackLayout Margin="8">
+                    <Image Source="{Binding Image}" />
+                    <Label Text="{Binding Name}" FontSize = "20"  TextColor = "#006064" Margin="10" />
+                    <Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+
+    <!--<StackLayout>
         <ListView ItemsSource="{Binding AdvertisementsListViewElements}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -35,5 +88,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
+    </StackLayout>-->
 </ContentPage>
