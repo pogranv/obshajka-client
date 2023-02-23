@@ -12,6 +12,7 @@ public partial class MainPage : ContentPage
 		InitializeComponent();
         //LoginCommand = new Command(LoginButton_Clicked);
         btnGoto.Clicked += async (s, e) => await Shell.Current.GoToAsync("//Bar");
+        btnRegistration.Clicked += async (s, e) => await Shell.Current.GoToAsync("RegistrationPage");
     }
 
     public async void LoginButton_Clicked(object sender, EventArgs e)

@@ -12,6 +12,7 @@
         <Label Text="Password" TextColor="White" />
         <Entry IsPassword="True" />
         <Button x:Name="btnGoto"  Text="Log in" BackgroundColor="#0094FF" Clicked="LoginButton_Clicked" />
+        <Button x:Name="btnRegistration"   BackgroundColor="#0094FF" Margin="0,10,0,0" Text="Регистрация"/>
     </VerticalStackLayout>
 </ContentPage>
 

@@ -7,9 +7,8 @@ public partial class App : Application
 	public App()
 	{
 		InitializeComponent();
-
-        // Routing.RegisterRoute("goto", typeof(Goto));
-
+        Routing.RegisterRoute("RegistrationPage", typeof(RegistrationPage));
+        Routing.RegisterRoute("ConfirmVerificationCodePage", typeof(ConfirmVerificationCodePage));
         MainPage = new AppShell();
 	}
 }

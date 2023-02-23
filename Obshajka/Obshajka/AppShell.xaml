@@ -11,6 +11,10 @@
                   Shell.FlyoutBehavior="Disabled"
                   ContentTemplate="{DataTemplate local:MainPage}"/>
 
+    <ShellContent Route="RegistrationPage"
+                  Shell.FlyoutBehavior="Disabled"
+                  ContentTemplate="{DataTemplate pages:RegistrationPage}"/>
+
     <TabBar Route="Bar">
         <ShellContent 
             Title="advert"
