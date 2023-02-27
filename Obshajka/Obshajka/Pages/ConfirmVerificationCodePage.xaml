@@ -8,6 +8,9 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Button x:Name="btnSendVerificationCode"  Text="Войти в приложение" BackgroundColor="#0094FF" Clicked="EnterApplication_Clicked"/>
+        <Button x:Name="btnSendVerificationCode"
+                Text="Войти в приложение"
+                BackgroundColor="#0094FF"
+                Clicked="EnterApplication_Clicked"/>
     </VerticalStackLayout>
 </ContentPage>

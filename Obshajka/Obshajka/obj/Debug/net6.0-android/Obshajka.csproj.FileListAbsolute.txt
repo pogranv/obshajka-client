@@ -956,3 +956,8 @@ C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\stamp
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\stamp\_ResolveLibraryProjectImports.stamp
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\lamp.png
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\lamp.jpg
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\plus_icon.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\lock.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\user.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\hide_eye.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\view_eye.png

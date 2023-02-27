@@ -18,7 +18,8 @@
     <TabBar Route="Bar">
         <ShellContent 
             Title="advert"
-            ContentTemplate="{DataTemplate pages:Advertisements}"/>
+            ContentTemplate="{DataTemplate pages:Advertisements}">
+        </ShellContent>
 
         <ShellContent
             Title="create"

@@ -5,7 +5,11 @@
              xmlns:local="clr-namespace:Obshajka.Data"
              Title="Advertisements">
 
-    <CollectionView>
+    <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="SpaceEvenly">
+        
+    </FlexLayout>
+
+    <!--<CollectionView>
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical" Span="2" />
         </CollectionView.ItemsLayout>
@@ -20,33 +24,6 @@
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <!--<Grid Padding="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="35" />
-                        <RowDefinition Height="35" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70" />
-                        <ColumnDefinition Width="80" />
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.RowSpan="2" 
-                               Source="{Binding Image}" 
-                               Aspect="AspectFill"
-                               HeightRequest="60" 
-                               WidthRequest="60" />
-                    <Label Grid.Column="1" 
-                               Text="{Binding Name}" 
-                               FontAttributes="Bold"
-                               LineBreakMode="TailTruncation" />
-                    <Label Grid.Row="1"
-                               Grid.Column="1" 
-                               Text="{Binding Description}"
-                               LineBreakMode="TailTruncation"
-                               FontAttributes="Italic" 
-                               VerticalOptions="End"
-                               FontSize = "20"
-                               TextColor = "#006064"/>
-                </Grid>-->
                 <StackLayout Margin="8">
                     <Image Source="{Binding Image}" />
                     <Label Text="{Binding Name}" FontSize = "20"  TextColor = "#006064" Margin="10" />
@@ -54,39 +31,5 @@
                 </StackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
-    </CollectionView>
-
-    <!--<StackLayout>
-        <ListView ItemsSource="{Binding AdvertisementsListViewElements}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="10">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.RowSpan="2"
-                           Source="{Binding Image}"
-                           Aspect="AspectFill"
-                           HeightRequest="60"
-                           WidthRequest="60" />
-                            <Label Grid.Column="1"
-                           Text="{Binding Name}"
-                           FontAttributes="Bold" />
-                            <Label Grid.Row="1"
-                           Grid.Column="1"
-                           Text="{Binding Description}"
-                           FontAttributes="Italic"
-                           VerticalOptions="End" />
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>-->
+    </CollectionView>-->
 </ContentPage>

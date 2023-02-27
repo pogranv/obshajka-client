@@ -985,11 +985,26 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\hide_eye.scale-100.png">
+      <PackagePath>hide_eye.scale-100.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\lamp.scale-100.jpg">
       <PackagePath>lamp.scale-100.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\lamp.scale-100.png">
       <PackagePath>lamp.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\lock.scale-100.png">
+      <PackagePath>lock.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\plus_icon.scale-100.png">
+      <PackagePath>plus_icon.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\user.scale-100.png">
+      <PackagePath>user.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\view_eye.scale-100.png">
+      <PackagePath>view_eye.scale-100.png</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
