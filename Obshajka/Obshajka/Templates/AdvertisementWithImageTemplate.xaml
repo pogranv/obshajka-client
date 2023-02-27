@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Obshajka.Templates.AdvertisementWithImageTemplate">
+
+    <StackLayout>
+        <Frame Margin="0" CornerRadius="30">
+            <StackLayout Margin="0">
+                <Frame>
+                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="150"/>
+                </Frame>
+                <Label Text="{Binding Name}" FontSize = "20"  TextColor = "#006064" Margin="5" />
+                <Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+</ContentView>

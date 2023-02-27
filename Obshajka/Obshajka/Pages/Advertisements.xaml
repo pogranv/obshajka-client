@@ -3,13 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.Advertisements"
              xmlns:local="clr-namespace:Obshajka.Data"
+             xmlns:templates="clr-namespace:Obshajka.Templates"
              Title="Advertisements">
 
-    <!--<FlexLayout Direction="Column" AlignItems="Center" JustifyContent="SpaceEvenly">
-        
-    </FlexLayout>-->
+    <ContentPage.Resources>
 
-    <CollectionView ItemSizingStrategy="MeasureAllItems" Margin="0">
+        <DataTemplate x:Key="AdvertisementWithImage">
+            <templates:AdvertisementWithImageTemplate />
+        </DataTemplate>
+
+        <DataTemplate x:Key="AdvertisementWithoutImage">
+            <templates:AdvertisementWithoutImageTemplate />
+        </DataTemplate>
+
+        <templates:TemplateSelector x:Key="TemplateSelector" 
+                              AdvertisementWithImageTemplate="{StaticResource AdvertisementWithImage}"
+                              AdvertisementWithoutImageTemplate="{StaticResource AdvertisementWithoutImage}"
+                              />
+    </ContentPage.Resources>
+
+    <CollectionView ItemSizingStrategy="MeasureAllItems" Margin="0" ItemTemplate="{StaticResource TemplateSelector}">
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical" Span="2" />
         </CollectionView.ItemsLayout>
@@ -17,12 +30,12 @@
             <x:Array Type="{x:Type local:AdvertisementsListViewElement}">
                 <local:AdvertisementsListViewElement Name="Tom" Description="Description" Image="dotnet_bot.png"/>
                 <local:AdvertisementsListViewElement Name="Sam" Description="Description" Image="dotnet_bot.png"/>
-                <local:AdvertisementsListViewElement Name="Bob" Description="Description"  Image="1dotnet_bot.png"/>
+                <local:AdvertisementsListViewElement Name="Bob" Description="Description"/>
                 <local:AdvertisementsListViewElement Name="Alice" Description="Description" Image="dotnet_bot.png"/>
                 <local:AdvertisementsListViewElement Name="Kate" Description="Description" Image="dotnet_bot.png"/>
             </x:Array>
         </CollectionView.ItemsSource>
-        <CollectionView.ItemTemplate>
+        <!--<CollectionView.ItemTemplate>
             <DataTemplate>
                 <StackLayout>
                     <Frame Margin="0" CornerRadius="30">
@@ -36,6 +49,6 @@
                     </Frame>
                 </StackLayout>
             </DataTemplate>
-        </CollectionView.ItemTemplate>
+        </CollectionView.ItemTemplate>-->
     </CollectionView>
 </ContentPage>

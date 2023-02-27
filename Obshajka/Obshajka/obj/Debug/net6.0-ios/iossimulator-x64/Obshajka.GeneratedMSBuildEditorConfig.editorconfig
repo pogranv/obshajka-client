@@ -81,3 +81,15 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Templates/AdvertisementWithImageTemplate.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Templates.AdvertisementWithImageTemplate.xaml
+build_metadata.AdditionalFiles.TargetPath = Templates\AdvertisementWithImageTemplate.xaml
+build_metadata.AdditionalFiles.RelativePath = Templates\AdvertisementWithImageTemplate.xaml
+
+[C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Templates/AdvertisementWithoutImageTemplate.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Templates.AdvertisementWithoutImageTemplate.xaml
+build_metadata.AdditionalFiles.TargetPath = Templates\AdvertisementWithoutImageTemplate.xaml
+build_metadata.AdditionalFiles.RelativePath = Templates\AdvertisementWithoutImageTemplate.xaml
