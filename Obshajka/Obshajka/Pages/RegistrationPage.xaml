@@ -49,8 +49,5 @@
                 </Label>
             </StackLayout>
         </VerticalStackLayout>
-        <!--<VerticalStackLayout>
-            <Label Text="Kek"/>
-        </VerticalStackLayout>-->
     </ScrollView>
 </ContentPage>

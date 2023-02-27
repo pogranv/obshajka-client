@@ -5,31 +5,37 @@
              xmlns:local="clr-namespace:Obshajka.Data"
              Title="Advertisements">
 
-    <FlexLayout Direction="Column" AlignItems="Center" JustifyContent="SpaceEvenly">
+    <!--<FlexLayout Direction="Column" AlignItems="Center" JustifyContent="SpaceEvenly">
         
-    </FlexLayout>
+    </FlexLayout>-->
 
-    <!--<CollectionView>
+    <CollectionView ItemSizingStrategy="MeasureAllItems" Margin="0">
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical" Span="2" />
         </CollectionView.ItemsLayout>
         <CollectionView.ItemsSource>
             <x:Array Type="{x:Type local:AdvertisementsListViewElement}">
-                <local:AdvertisementsListViewElement Name="Tom" Description="Description" Image="lamp.png"/>
-                <local:AdvertisementsListViewElement Name="Sam" Description="Description" Image="lamp.png"/>
-                <local:AdvertisementsListViewElement Name="Bob" Description="Description" Image="lamp.png"/>
-                <local:AdvertisementsListViewElement Name="Alice" Description="Description" Image="lamp.png"/>
-                <local:AdvertisementsListViewElement Name="Kate" Description="Description" Image="lamp.png"/>
+                <local:AdvertisementsListViewElement Name="Tom" Description="Description" Image="dotnet_bot.png"/>
+                <local:AdvertisementsListViewElement Name="Sam" Description="Description" Image="dotnet_bot.png"/>
+                <local:AdvertisementsListViewElement Name="Bob" Description="Description"  Image="1dotnet_bot.png"/>
+                <local:AdvertisementsListViewElement Name="Alice" Description="Description" Image="dotnet_bot.png"/>
+                <local:AdvertisementsListViewElement Name="Kate" Description="Description" Image="dotnet_bot.png"/>
             </x:Array>
         </CollectionView.ItemsSource>
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <StackLayout Margin="8">
-                    <Image Source="{Binding Image}" />
-                    <Label Text="{Binding Name}" FontSize = "20"  TextColor = "#006064" Margin="10" />
-                    <Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />
+                <StackLayout>
+                    <Frame Margin="0" CornerRadius="30">
+                        <StackLayout Margin="0">
+                            <Frame>
+                                <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="150"/>
+                            </Frame>
+                            <Label Text="{Binding Name}" FontSize = "20"  TextColor = "#006064" Margin="5" />
+                            <Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />
+                        </StackLayout>
+                    </Frame>
                 </StackLayout>
             </DataTemplate>
         </CollectionView.ItemTemplate>
-    </CollectionView>-->
+    </CollectionView>
 </ContentPage>
