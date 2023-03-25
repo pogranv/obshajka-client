@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.Advertisements"
-             xmlns:local="clr-namespace:Obshajka.Data"
+             xmlns:local="clr-namespace:Obshajka.Models"
              xmlns:templates="clr-namespace:Obshajka.Templates"
              Title="Advertisements">
 
@@ -22,7 +22,28 @@
                               />
     </ContentPage.Resources>
 
-    <CollectionView ItemSizingStrategy="MeasureAllItems" Margin="0" ItemTemplate="{StaticResource TemplateSelector}">
+    <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
+    <CollectionView ItemSizingStrategy="MeasureAllItems"
+                    Margin="10"
+                    ItemsSource="{Binding AdvertisementsListViewElements}"
+                    ItemTemplate="{StaticResource TemplateSelector}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+        <!--<CollectionView.ItemsSource>
+            <x:Array Type="{x:Type local:Advertisement}">
+                <local:Advertisement Title="Tom" Description="Description" Image="dotnet_bot.png"/>
+                <local:Advertisement Title="Sam" Description="Description" Image="dotnet_bot.png"/>
+                <local:Advertisement Title="Bob" Description="Description"/>
+                <local:Advertisement Title="Alice" Description="Description" Image="dotnet_bot.png"/>
+                <local:Advertisement Title="Kate" Description="Description" Image="dotnet_bot.png"/>
+            </x:Array>
+        </CollectionView.ItemsSource>-->
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="2" />
+        </CollectionView.ItemsLayout>
+    </CollectionView>
+
+    <!--<CollectionView ItemSizingStrategy="MeasureAllItems" Margin="0" ItemTemplate="{StaticResource TemplateSelector}">
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical" Span="2" />
         </CollectionView.ItemsLayout>
@@ -35,20 +56,5 @@
                 <local:AdvertisementsListViewElement Name="Kate" Description="Description" Image="dotnet_bot.png"/>
             </x:Array>
         </CollectionView.ItemsSource>
-        <!--<CollectionView.ItemTemplate>
-            <DataTemplate>
-                <StackLayout>
-                    <Frame Margin="0" CornerRadius="30">
-                        <StackLayout Margin="0">
-                            <Frame>
-                                <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="150"/>
-                            </Frame>
-                            <Label Text="{Binding Name}" FontSize = "20"  TextColor = "#006064" Margin="5" />
-                            <Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />
-                        </StackLayout>
-                    </Frame>
-                </StackLayout>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>-->
-    </CollectionView>
+    </CollectionView>-->
 </ContentPage>

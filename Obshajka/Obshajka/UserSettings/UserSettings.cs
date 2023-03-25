@@ -9,5 +9,6 @@ namespace Obshajka.UserSettings
     public static class UserSettings
     {
         public static long UserId { get; set; }
+        public static long SelectedDormitoryIdFilter { get; set; } = 1;
     }
 }

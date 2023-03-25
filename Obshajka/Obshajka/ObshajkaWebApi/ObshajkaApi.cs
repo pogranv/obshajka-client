@@ -16,9 +16,14 @@ namespace Obshajka.ObshajkaWebApi
             return 1;
         }
 
-        public static List<Advertisement> GetAdvertisements()
+        public static List<Advertisement> GetAdvertisementsFromOtherUsers(long dormitoryId, long currentUserId)
         {
-            return MocksClass.GetAdvertisements_Mock();
+            return MocksClass.GetAdvertisementsFromOtherUsers_Mock(dormitoryId, currentUserId);
+        }
+
+        public static List<Advertisement> GetAdvertisementsFromCurrentUser(long userId)
+        {
+            return MocksClass.GetAdvertisementsFromCurrentUser_Mock(userId);
         }
     }
 }

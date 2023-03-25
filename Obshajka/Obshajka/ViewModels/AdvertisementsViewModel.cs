@@ -1,37 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Obshajka.Data;
+using Obshajka.Helpers;
+using Obshajka.Models;
 
 namespace Obshajka.ViewModels
 {
+    // TODO: чекнуть изменение на странице при изменении списка и если что реализовать интерфейс INotifyPropertyChanged https://metanit.com/sharp/maui/6.7.php
     internal class AdvertisementsViewModel
     {
-        public ObservableCollection<AdvertisementsListViewElement> AdvertisementsListViewElements { get; private set; } = 
-            new ObservableCollection<AdvertisementsListViewElement>();
+        // тут вместо AdvertisementsListViewElement заменить
+        public ObservableCollection<Advertisement> AdvertisementsListViewElements { get; private set; } = 
+            new ObservableCollection<Advertisement>();
+
+        private List<Advertisement> source;
 
         public AdvertisementsViewModel()
         {
-            source = new List<AdvertisementsListViewElement>();
-            CreateMonkeyCollection();
+            source = new List<Advertisement>();
+            CreateAdvertisementCollection();
             AdvertisementsListViewElements = 
-                new ObservableCollection<AdvertisementsListViewElement>(source);
+                new ObservableCollection<Advertisement>(source);
         }
 
-        private List<AdvertisementsListViewElement> source;
-
-        private void CreateMonkeyCollection()
+        private void CreateAdvertisementCollection()
         {
-            source.Add(new AdvertisementsListViewElement
-            {
-                Name = "Name",
-                Description = "Description",
-                Price = "1000",
-                Image = "lamp.png"
-            });
+            source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
         }
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Obshajka.Pages.AdvertisementPage"
+             Title="AdvertisementPage">
+    <ScrollView Margin="10" >
+        <StackLayout>
+            <Frame Margin="5">
+                <Image Source="dotnet_bot.png"/>
+            </Frame>
+            <Label Text="Дата создания: 12.12.2003"/>
+            <Frame>
+                <Label Text="Заголовок" />
+            </Frame>
+            <Label Text="Описание"/>
+            <Label Text="Цена"/>
+            <Label Text="Автор"/>
+            <Label Text="Общежитие"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

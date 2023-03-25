@@ -2,95 +2,35 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.CreateAdvertisement"
-             Title="CreateAdvertisement">
-    <!--<ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="plus_icon.png" Clicked="MakeAdvertisementBtn_Clicked"/>
-    </ContentPage.ToolbarItems>-->
+             xmlns:templates="clr-namespace:Obshajka.Templates"
+             Title="Мои объявления">
 
-    <TableView Intent="Form" HasUnevenRows="False">
-        <TableRoot>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-            <TableSection>
-                <EntryCell Label="Login"
-                       Placeholder="username" />
-                <EntryCell Label="Password"
-                       Placeholder="password" />
-            </TableSection>
-        </TableRoot>
-    </TableView>
+    <ContentPage.Resources>
 
-    <!--<VerticalStackLayout Margin="15" Padding="30, 60, 30, 30">
-        <Label Text="Please log in" FontSize="30" TextColor="AntiqueWhite"/>
-        <Label Text="Username" TextColor="White" />
-        <Entry />
-        <Label Text="Password" TextColor="White" />
-        <Entry IsPassword="True" />
-        <Button x:Name="btnGoto"  Text="Log in" BackgroundColor="#0094FF" Clicked="LoginButton_Clicked" />
-        <Button x:Name="btnRegistration"   BackgroundColor="#0094FF" Margin="0,10,0,0" Text="Регистрация"/>
-    </VerticalStackLayout>-->
+        <DataTemplate x:Key="AdvertisementWithImage">
+            <templates:AdvertisementWithImageTemplate />
+        </DataTemplate>
+
+        <DataTemplate x:Key="AdvertisementWithoutImage">
+            <templates:AdvertisementWithoutImageTemplate />
+        </DataTemplate>
+
+        <templates:TemplateSelector x:Key="TemplateSelector" 
+                              AdvertisementWithImageTemplate="{StaticResource AdvertisementWithImage}"
+                              AdvertisementWithoutImageTemplate="{StaticResource AdvertisementWithoutImage}"
+                              />
+    </ContentPage.Resources>
+
+    <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
+    <CollectionView ItemSizingStrategy="MeasureAllItems"
+                    Margin="10"
+                    ItemsSource="{Binding AdvertisementsListViewElements}"
+                    ItemTemplate="{StaticResource TemplateSelector}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout Orientation="Vertical" Span="2" />
+        </CollectionView.ItemsLayout>
+    </CollectionView>
+
 </ContentPage>

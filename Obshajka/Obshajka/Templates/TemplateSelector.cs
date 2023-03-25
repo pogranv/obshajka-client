@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Obshajka.Templates;
-using Obshajka.Data;
+using Obshajka.Models;
 
 namespace Obshajka.Templates
 {
@@ -15,13 +15,14 @@ namespace Obshajka.Templates
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            if (item is Data.AdvertisementsListViewElement chat)
+            if (item is Advertisement chat)
             {
                 if (chat.Image == null)
                 {
-                    return AdvertisementWithoutImageTemplate;
+                    return AdvertisementWithImageTemplate;
                 }
                 return AdvertisementWithImageTemplate;
+                // return AdvertisementWithoutImageTemplate;
             }
             throw new NotImplementedException();
         }

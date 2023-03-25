@@ -2,14 +2,14 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Templates.AdvertisementWithoutImageTemplate">
-    <StackLayout>
-        <Frame Margin="0" CornerRadius="30">
+    <StackLayout VerticalOptions="End">
+        <Frame Margin="0" CornerRadius="30" >
             <StackLayout Margin="0">
-                <!--<Frame>
+                <Frame>
                     <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="150"/>
-                </Frame>-->
-                <Label Text="{Binding Name}" FontSize = "20"  TextColor = "#006064" Margin="5" />
-                <Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />
+                </Frame>
+                <Label Text="{Binding Title}" FontSize = "15"  TextColor = "#006064" Margin="5" />
+                <Label Text="{Binding Description}" />
             </StackLayout>
         </Frame>
     </StackLayout>

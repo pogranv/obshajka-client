@@ -9,8 +9,10 @@
                 <Frame>
                     <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="150"/>
                 </Frame>
-                <Label Text="{Binding Name}" FontSize = "20"  TextColor = "#006064" Margin="5" />
-                <Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />
+                <Label Text="{Binding Title}" FontSize = "17"  TextColor = "Black" Margin="5" />
+                <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontSize="20"/>
+                <!--<Label Text="{Binding DateOfAddition, StringFormat='Дата создания: {0}'}" FontSize="10"/>-->
+                <!--<Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />-->
             </StackLayout>
         </Frame>
     </StackLayout>
