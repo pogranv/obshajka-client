@@ -16,11 +16,11 @@ public partial class Advertisements : ContentPage
     {
         var selectedAdvert = e.CurrentSelection.FirstOrDefault() as Advertisement;
         // kek();
-        //await Navigation.PushAsync(new AdvertisementPage
-        //{
-        //    BindingContext = selectedAdvert
-        //});
-        await Shell.Current.GoToAsync("AdvertisementPage");
+        await Navigation.PushAsync(new AdvertisementPage
+        {
+            BindingContext = selectedAdvert
+        });
+        // await Shell.Current.GoToAsync("AdvertisementPage");
     }
 
     private async void kek()

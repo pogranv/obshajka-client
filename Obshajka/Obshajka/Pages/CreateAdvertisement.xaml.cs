@@ -14,9 +14,12 @@ public partial class CreateAdvertisement : ContentPage
 
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-        var current = e.CurrentSelection.FirstOrDefault() as Advertisement;
-        kek();
-        await Shell.Current.GoToAsync("AdvertisementPage");
+        // kek();
+        var selectedAdvert = e.CurrentSelection.FirstOrDefault() as Advertisement;
+        await Navigation.PushAsync(new AdvertisementPage
+        {
+            BindingContext = selectedAdvert
+        });
     }
 
     private async void kek()

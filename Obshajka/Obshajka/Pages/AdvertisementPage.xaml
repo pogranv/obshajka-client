@@ -6,16 +6,16 @@
     <ScrollView Margin="10" >
         <StackLayout>
             <Frame Margin="5">
-                <Image Source="dotnet_bot.png"/>
+                <Image Source="{Binding Image}"/>
             </Frame>
             <Label Text="Дата создания: 12.12.2003"/>
             <Frame>
-                <Label Text="Заголовок" />
+                <Label Text="{Binding Title}" />
             </Frame>
-            <Label Text="Описание"/>
-            <Label Text="Цена"/>
-            <Label Text="Автор"/>
-            <Label Text="Общежитие"/>
+            <Label Text="{Binding Description}"/>
+            <Label Text="{Binding Price}"/>
+            <Label Text="{Binding CreatorName}"/>
+            <Label Text="{Binding DormitoryId}"/>
         </StackLayout>
     </ScrollView>
 </ContentPage>
