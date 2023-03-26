@@ -23,21 +23,14 @@
     </ContentPage.Resources>
 
     <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
-    <CollectionView ItemSizingStrategy="MeasureAllItems"
+    <CollectionView x:Name="collectionView"
+                    ItemSizingStrategy="MeasureAllItems"
                     Margin="10"
                     ItemsSource="{Binding AdvertisementsListViewElements}"
                     ItemTemplate="{StaticResource TemplateSelector}"
                     SelectionMode="Single"
-                    SelectionChanged="CollectionView_SelectionChanged">
-        <!--<CollectionView.ItemsSource>
-            <x:Array Type="{x:Type local:Advertisement}">
-                <local:Advertisement Title="Tom" Description="Description" Image="dotnet_bot.png"/>
-                <local:Advertisement Title="Sam" Description="Description" Image="dotnet_bot.png"/>
-                <local:Advertisement Title="Bob" Description="Description"/>
-                <local:Advertisement Title="Alice" Description="Description" Image="dotnet_bot.png"/>
-                <local:Advertisement Title="Kate" Description="Description" Image="dotnet_bot.png"/>
-            </x:Array>
-        </CollectionView.ItemsSource>-->
+                    SelectionChanged="CollectionView_SelectionChanged"
+                    >
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical" Span="2" />
         </CollectionView.ItemsLayout>

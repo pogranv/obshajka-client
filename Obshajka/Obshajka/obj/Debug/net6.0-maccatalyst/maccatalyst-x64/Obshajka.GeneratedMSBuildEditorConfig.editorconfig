@@ -46,17 +46,17 @@ build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.ConfirmVeri
 build_metadata.AdditionalFiles.TargetPath = Pages\ConfirmVerificationCodePage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\ConfirmVerificationCodePage.xaml
 
-[C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/CreateAdvertisement.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.CreateAdvertisement.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\CreateAdvertisement.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\CreateAdvertisement.xaml
-
 [C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/MakeAdvertisementPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.MakeAdvertisementPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\MakeAdvertisementPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MakeAdvertisementPage.xaml
+
+[C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/MyAdvertisements.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.MyAdvertisements.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MyAdvertisements.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MyAdvertisements.xaml
 
 [C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

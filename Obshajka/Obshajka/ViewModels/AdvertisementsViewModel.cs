@@ -25,6 +25,7 @@ namespace Obshajka.ViewModels
             CreateAdvertisementCollection();
             AdvertisementsListViewElements = 
                 new ObservableCollection<Advertisement>(source);
+            
         }
 
         private void CreateAdvertisementCollection()

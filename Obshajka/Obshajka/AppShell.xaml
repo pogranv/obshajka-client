@@ -23,7 +23,7 @@
 
         <ShellContent
             Title="create"
-            ContentTemplate="{DataTemplate pages:CreateAdvertisement}"/>
+            ContentTemplate="{DataTemplate pages:MyAdvertisements}"/>
 
         <ShellContent
             Title="pfofile"

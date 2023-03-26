@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Obshajka.Pages.CreateAdvertisement"
+             x:Class="Obshajka.Pages.MyAdvertisements"
              xmlns:templates="clr-namespace:Obshajka.Templates"
              Title="Мои объявления">
+    <!--<Shell.TitleView>
+        <StackLayout>
+            <Button Text="ADD" HeightRequest="50" WidthRequest="100" HorizontalOptions="End"></Button>
+        </StackLayout>
+    </Shell.TitleView>-->
 
     <ContentPage.Resources>
 
@@ -27,7 +32,8 @@
                     ItemsSource="{Binding AdvertisementsListViewElements}"
                     ItemTemplate="{StaticResource TemplateSelector}"
                     SelectionMode="Single"
-                    SelectionChanged="CollectionView_SelectionChanged">
+                    SelectionChanged="CollectionView_SelectionChanged"
+                    x:Name="collectionView">
         <CollectionView.ItemsLayout>
             <GridItemsLayout Orientation="Vertical" Span="2" />
         </CollectionView.ItemsLayout>
