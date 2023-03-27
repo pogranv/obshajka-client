@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.MyAdvertisements"
              xmlns:templates="clr-namespace:Obshajka.Templates"
-             Title="Мои объявления">
+             Title="Мои объявления"
+             >
     <!--<Shell.TitleView>
         <StackLayout>
-            <Button Text="ADD" HeightRequest="50" WidthRequest="100" HorizontalOptions="End"></Button>
+            <Button Text="ADD" HeightRequest="50" WidthRequest="100" HorizontalOptions="End"
+                    x:Name="addAdvertButton" Clicked="addAdvertButton_Clicked"/>
         </StackLayout>
     </Shell.TitleView>-->
 
@@ -27,16 +29,23 @@
     </ContentPage.Resources>
 
     <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
-    <CollectionView ItemSizingStrategy="MeasureAllItems"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <CollectionView ItemSizingStrategy="MeasureAllItems"  Grid.Column="0" Grid.Row="0"
                     Margin="10"
                     ItemsSource="{Binding AdvertisementsListViewElements}"
                     ItemTemplate="{StaticResource TemplateSelector}"
                     SelectionMode="Single"
                     SelectionChanged="CollectionView_SelectionChanged"
                     x:Name="collectionView">
-        <CollectionView.ItemsLayout>
-            <GridItemsLayout Orientation="Vertical" Span="2" />
-        </CollectionView.ItemsLayout>
-    </CollectionView>
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+        <Button Text="Создать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" BackgroundColor="Green"/>
+    </Grid>
 
 </ContentPage>

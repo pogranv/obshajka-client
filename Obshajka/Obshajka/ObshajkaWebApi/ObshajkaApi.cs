@@ -25,5 +25,10 @@ namespace Obshajka.ObshajkaWebApi
         {
             return MocksClass.GetAdvertisementsFromCurrentUser_Mock(userId);
         }
+
+        public static void RemoveAdvertisement(long advertisementId)
+        {
+            MocksClass.RemoveAdvert(advertisementId);
+        }
     }
 }

@@ -17,6 +17,9 @@
     <MauiXaml Update="Pages\MakeAdvertisementPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\OwnAdvertView.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\ProfilePage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

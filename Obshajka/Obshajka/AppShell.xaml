@@ -17,17 +17,25 @@
 
     <TabBar Route="Bar">
         <ShellContent 
-            Title="advert"
+            Title="Все объявления"
             ContentTemplate="{DataTemplate pages:Advertisements}">
         </ShellContent>
 
         <ShellContent
-            Title="create"
+            Title="Мои объявления"
             ContentTemplate="{DataTemplate pages:MyAdvertisements}"/>
+        
 
         <ShellContent
-            Title="pfofile"
+            Title="Создать"
             ContentTemplate="{DataTemplate pages:ProfilePage}"/>
     </TabBar>
+
+    <!--<Shell.TitleView>
+        <StackLayout>
+            <Button Text="ADD" HeightRequest="50" WidthRequest="100" HorizontalOptions="End"
+                    x:Name="addAdvertButton"/>
+        </StackLayout>
+    </Shell.TitleView>-->
 
 </Shell>

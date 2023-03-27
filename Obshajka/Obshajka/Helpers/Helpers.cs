@@ -26,5 +26,10 @@ namespace Obshajka.Helpers
         {
             return ObshajkaApi.GetAdvertisementsFromCurrentUser(UserSettings.UserSettings.UserId);
         }
+
+        public static void RemoveOwnAdvert(long advertId)
+        {
+            ObshajkaApi.RemoveAdvertisement(advertId);
+        }
     }
 }

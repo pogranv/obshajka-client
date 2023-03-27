@@ -9,7 +9,8 @@ public partial class MyAdvertisements : ContentPage
 	public MyAdvertisements()
     {
         InitializeComponent();
-        Routing.RegisterRoute("AdvertisementPage", typeof(AdvertisementPage));
+        Routing.RegisterRoute("OwnAdvertView", typeof(OwnAdvertView));
+        Routing.RegisterRoute("MakeAdvertisementPage", typeof(MakeAdvertisementPage));
         BindingContext = new AdvertisementsViewModel();
     }
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -19,16 +20,15 @@ public partial class MyAdvertisements : ContentPage
             return;
         }
         var selectedAdvert = e.CurrentSelection.FirstOrDefault() as Advertisement;
-        // kek();
-        await Navigation.PushAsync(new AdvertisementPage
+        await Navigation.PushAsync(new OwnAdvertView
         {
             BindingContext = selectedAdvert
         });
         collectionView.SelectedItem = null;
     }
 
-    private async void kek()
+    private async void addAdvertButton_Clicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Уведомление", "Пришло новое сообщение", "ОK");
+        await Shell.Current.GoToAsync("MakeAdvertisementPage");
     }
 }

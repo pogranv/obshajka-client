@@ -12,6 +12,8 @@ public partial class Advertisements : ContentPage
         Routing.RegisterRoute("AdvertisementPage", typeof(AdvertisementPage));
         BindingContext = new AdvertisementsViewModel();
     }
+
+    // TODO: сделать чуствительность к длинным title об€ъвлений
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (collectionView.SelectedItem == null)

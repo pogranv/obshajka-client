@@ -144,5 +144,10 @@ namespace Obshajka.Mocks
         {
             return advertisements.Where(i => i.CreatorId != currentUserId).ToList();
         }
+
+        public static void RemoveAdvert(long advertId)
+        {
+            advertisements.RemoveAll(i => i.Id == advertId);
+        }
     }
 }

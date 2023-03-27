@@ -58,6 +58,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.MyAdvertise
 build_metadata.AdditionalFiles.TargetPath = Pages\MyAdvertisements.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MyAdvertisements.xaml
 
+[C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/OwnAdvertView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.OwnAdvertView.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\OwnAdvertView.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\OwnAdvertView.xaml
+
 [C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/ProfilePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.ProfilePage.xaml
@@ -93,3 +99,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Templates.AdvertisementWithoutImageTemplate.xaml
 build_metadata.AdditionalFiles.TargetPath = Templates\AdvertisementWithoutImageTemplate.xaml
 build_metadata.AdditionalFiles.RelativePath = Templates\AdvertisementWithoutImageTemplate.xaml
+
+[C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Templates/TitleViewWithButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Templates.TitleViewWithButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Templates\TitleViewWithButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Templates\TitleViewWithButton.xaml
