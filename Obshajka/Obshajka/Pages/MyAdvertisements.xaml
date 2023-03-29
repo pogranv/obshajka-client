@@ -34,17 +34,20 @@
             <RowDefinition/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <CollectionView ItemSizingStrategy="MeasureAllItems"  Grid.Column="0" Grid.Row="0"
-                    Margin="10"
-                    ItemsSource="{Binding AdvertisementsListViewElements}"
-                    ItemTemplate="{StaticResource TemplateSelector}"
-                    SelectionMode="Single"
-                    SelectionChanged="CollectionView_SelectionChanged"
-                    x:Name="collectionView">
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical" Span="2" />
-            </CollectionView.ItemsLayout>
-        </CollectionView>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}" Grid.Column="0" Grid.Row="0" RefreshColor="Purple" 
+                     Command="{Binding RefreshAdvertisementsCommand}" x:Name="refreshView">
+            <CollectionView ItemSizingStrategy="MeasureAllItems"  Grid.Column="0" Grid.Row="0" 
+                        Margin="10"
+                        ItemsSource="{Binding AdvertisementsListViewElements}"
+                        ItemTemplate="{StaticResource TemplateSelector}"
+                        SelectionMode="Single"
+                        SelectionChanged="CollectionView_SelectionChanged"
+                        x:Name="collectionView">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </RefreshView>
         <Button Text="Создать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" BackgroundColor="Green"/>
     </Grid>
 
