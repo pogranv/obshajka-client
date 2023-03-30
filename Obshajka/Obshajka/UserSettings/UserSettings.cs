@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Obshajka.UserSettings
 {
+    // хранение кэширование фото по сети https://metanit.com/sharp/maui/4.9.php
+    // чекнуть сколько номеров общаг и добавить в создание объявы
     public static class UserSettings
     {
         public static long UserId { get; set; }

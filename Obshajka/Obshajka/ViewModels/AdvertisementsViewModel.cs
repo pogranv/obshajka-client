@@ -9,7 +9,6 @@ using Obshajka.Helpers;
 using Obshajka.Models;
 using System.Windows.Input;
 using System.Runtime.CompilerServices;
-using static Android.Graphics.ImageDecoder;
 
 namespace Obshajka.ViewModels
 {

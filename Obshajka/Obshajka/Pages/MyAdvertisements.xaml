@@ -48,7 +48,7 @@
                 </CollectionView.ItemsLayout>
             </CollectionView>
         <!--</RefreshView>-->
-        <Button Text="Создать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" BackgroundColor="Green"/>
+        <Button Text="Создать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" BackgroundColor="Green" Clicked="addAdvertButton_Clicked"/>
     </Grid>
 
 </ContentPage>
