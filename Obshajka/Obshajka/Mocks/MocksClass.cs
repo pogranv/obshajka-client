@@ -142,7 +142,7 @@ namespace Obshajka.Mocks
 
         public static List<Advertisement> GetAdvertisementsFromCurrentUser_Mock(long currentUserId)
         {
-            return advertisements.Where(i => i.CreatorId != currentUserId).ToList();
+            return advertisements.Where(i => i.CreatorId == currentUserId).ToList();
         }
 
         public static void RemoveAdvert(long advertId)

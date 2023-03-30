@@ -26,9 +26,9 @@
             ContentTemplate="{DataTemplate pages:MyAdvertisements}"/>
         
 
-        <ShellContent
+        <!--<ShellContent
             Title="Создать"
-            ContentTemplate="{DataTemplate pages:ProfilePage}"/>
+            ContentTemplate="{DataTemplate pages:ProfilePage}"/>-->
     </TabBar>
 
     <!--<Shell.TitleView>

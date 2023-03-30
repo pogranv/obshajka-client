@@ -10,7 +10,7 @@ public partial class Advertisements : ContentPage
 	{
 		InitializeComponent();
         Routing.RegisterRoute("AdvertisementPage", typeof(AdvertisementPage));
-        BindingContext = new AdvertisementsViewModel();
+        BindingContext = new OutsideAdvertsViewModel();
     }
 
     // TODO: сделать чуствительность к длинным title об€ъвлений

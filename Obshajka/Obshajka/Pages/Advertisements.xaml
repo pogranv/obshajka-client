@@ -23,7 +23,9 @@
     </ContentPage.Resources>
 
     <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
-    <CollectionView x:Name="collectionView"
+    <RefreshView IsRefreshing="{Binding IsRefreshing}" Grid.Column="0" Grid.Row="0" RefreshColor="Purple" 
+                     Command="{Binding RefreshAdvertisementsCommand}">
+        <CollectionView x:Name="collectionView"
                     ItemSizingStrategy="MeasureAllItems"
                     Margin="10"
                     ItemsSource="{Binding AdvertisementsListViewElements}"
@@ -31,10 +33,11 @@
                     SelectionMode="Single"
                     SelectionChanged="CollectionView_SelectionChanged"
                     >
-        <CollectionView.ItemsLayout>
-            <GridItemsLayout Orientation="Vertical" Span="2" />
-        </CollectionView.ItemsLayout>
-    </CollectionView>
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+        </CollectionView>
+    </RefreshView>
 
     <!--<CollectionView ItemSizingStrategy="MeasureAllItems" Margin="0" ItemTemplate="{StaticResource TemplateSelector}">
         <CollectionView.ItemsLayout>

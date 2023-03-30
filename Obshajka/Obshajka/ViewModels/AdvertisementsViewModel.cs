@@ -9,63 +9,60 @@ using Obshajka.Helpers;
 using Obshajka.Models;
 using System.Windows.Input;
 using System.Runtime.CompilerServices;
+using static Android.Graphics.ImageDecoder;
 
 namespace Obshajka.ViewModels
 {
     // TODO: чекнуть изменение на странице при изменении списка и если что реализовать интерфейс INotifyPropertyChanged https://metanit.com/sharp/maui/6.7.php
-    public class AdvertisementsViewModel : INotifyPropertyChanged
+    public class AdvertisementsViewModel : AdvertViewModelAbstract  // , INotifyPropertyChanged
     {
-        public ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
+        // public override ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
 
-        // TODO: тут вместо AdvertisementsListViewElement заменить
-        public ObservableCollection<Advertisement> AdvertisementsListViewElements { get; private set; } = 
-            new ObservableCollection<Advertisement>();
-
-        private List<Advertisement> source;
-
-        public AdvertisementsViewModel()
+        public AdvertisementsViewModel() : base()
         {
-            source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
+            source = Helpers.Helpers.GetUserAdvertisements().ToList();
             AdvertisementsListViewElements =
                new ObservableCollection<Advertisement>(source);
-            // UpdateAdvertisementCollection();
-            
-        }
-
-        // TODO: удаление без уведомления https://stackoverflow.com/questions/5118513/removeall-for-observablecollections
-        public void UpdateAdvertisementCollection()
-        {
-            // AdvertisementsListViewElements.Clear();
-            // AdvertisementsListViewElements = new ObservableCollection<Advertisement>(source);
-            // AdvertisementsListViewElements
             //source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
             //AdvertisementsListViewElements =
             //   new ObservableCollection<Advertisement>(source);
-            IsRefreshing = false;
+            // UpdateAdvertisementCollection();
         }
 
-        bool isRefreshing = false;
+        // TODO: удаление без уведомления https://stackoverflow.com/questions/5118513/removeall-for-observablecollections
+        //public void UpdateAdvertisementCollection()
+        //{
+        //    // AdvertisementsListViewElements.Clear();
+        //    // AdvertisementsListViewElements = new ObservableCollection<Advertisement>(source);
+        //    // AdvertisementsListViewElements
+        //    //source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
+        //    //AdvertisementsListViewElements =
+        //    //   new ObservableCollection<Advertisement>(source);
+        //    //IsRefreshing = false;
+        //}
 
-        public bool IsRefreshing
-        {
-            get => isRefreshing;
-            set
-            {
-                isRefreshing = value;
+        //bool isRefreshing = false;
 
-                OnPropertyChanged();
-            }
-        }
+        //public bool IsRefreshing
+        //{
+        //    get => isRefreshing;
+        //    set
+        //    {
+        //        isRefreshing = value;
 
-        #region INotifyPropertyChanged
+        //        OnPropertyChanged();
+        //    }
+        //}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //#region INotifyPropertyChanged
 
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+        //void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
+
+        //#endregion
     }
 }
