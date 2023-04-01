@@ -29,9 +29,9 @@ namespace Obshajka.Helpers
             UserSettings.UserSettings.UserId = ObshajkaApi.ConfirmVerificationCode(code);
         }
 
-        public static IList<Advertisement> GetAdvertisementsFromOthers()
+        public static IList<Advertisement> GetAdvertisementsFromOthers(int dormitoryId)
         {
-            return ObshajkaApi.GetAdvertisementsFromOtherUsers(UserSettings.UserSettings.SelectedDormitoryIdFilter, UserSettings.UserSettings.UserId);
+            return ObshajkaApi.GetAdvertisementsFromOtherUsers(dormitoryId, UserSettings.UserSettings.UserId);
         }
 
         public static IList<Advertisement> GetUserAdvertisements()

@@ -31,7 +31,7 @@
     <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
+            <RowDefinition />
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <!--<RefreshView IsRefreshing="{Binding IsRefreshing}" Grid.Column="0" Grid.Row="0" RefreshColor="Purple" 

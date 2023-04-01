@@ -1,6 +1,7 @@
-using Obshajka.ViewModels;
+п»їusing Obshajka.ViewModels;
 using Obshajka.Models;
 using System.Windows.Input;
+using Obshajka.UserSettings;
 
 namespace Obshajka.Pages;
 
@@ -11,9 +12,11 @@ public partial class Advertisements : ContentPage
 		InitializeComponent();
         Routing.RegisterRoute("AdvertisementPage", typeof(AdvertisementPage));
         BindingContext = new OutsideAdvertsViewModel();
+        //dormitoryPicker.Title = $"РћР±С‰РµР¶РёС‚РёРµ в„–{UserSettings.UserSettings.SelectedDormitoryIdFilter}в–ј";
+        //dormitoryPicker.SelectedItem = "KEk";
     }
 
-    // TODO: сделать чуствительность к длинным title обяъвлений
+    // TODO: СЃРґРµР»Р°С‚СЊ С‡СѓСЃС‚РІРёС‚РµР»СЊРЅРѕСЃС‚СЊ Рє РґР»РёРЅРЅС‹Рј title РѕР±СЏСЉРІР»РµРЅРёР№
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (collectionView.SelectedItem == null)
@@ -33,6 +36,11 @@ public partial class Advertisements : ContentPage
 
     private async void kek()
     {
-        await DisplayAlert("Уведомление", "Пришло новое сообщение", "ОK");
+        await DisplayAlert("РЈРІРµРґРѕРјР»РµРЅРёРµ", "РџСЂРёС€Р»Рѕ РЅРѕРІРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ", "РћK");
+    }
+
+    private void dormitoryPicker_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        (BindingContext as OutsideAdvertsViewModel).DormitoryId= dormitoryPicker.SelectedIndex + 1;
     }
 }

@@ -23,8 +23,34 @@
     </ContentPage.Resources>
 
     <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
-    <VerticalStackLayout>
-        <RefreshView IsRefreshing="{Binding IsRefreshing}" Grid.Column="0" Grid.Row="0" RefreshColor="Purple" 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--<Label Text="Объявления общежития №" VerticalOptions="Start" FontSize="20"/>
+        <Border/>-->
+        <Border WidthRequest="220" HorizontalOptions="Center" Background="#E4E4E4" Grid.Column="0" Grid.Row="0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20,20,20,20" />
+            </Border.StrokeShape>
+            <Picker Title="Выбрать номер общежития" x:Name="dormitoryPicker" Margin="8,0,10,0" HorizontalTextAlignment="Center" Background="#E4E4E4" WidthRequest="220" HorizontalOptions="Center" SelectedIndexChanged="dormitoryPicker_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Общежитие №1</x:String>
+                    <x:String>Общежитие №2</x:String>
+                    <x:String>Общежитие №3</x:String>
+                    <x:String>Общежитие №4</x:String>
+                    <x:String>Общежитие №5</x:String>
+                    <x:String>Общежитие №6</x:String>
+                    <x:String>Общежитие №7</x:String>
+                    <x:String>Общежитие №8</x:String>
+                    <x:String>Общежитие №9</x:String>
+                    <x:String>Общежитие №10</x:String>
+                    <x:String>Общежитие №11</x:String>
+                </Picker.Items>
+            </Picker>
+        </Border>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}"  RefreshColor="Purple"  Grid.Column="0" Grid.Row="1"
                          Command="{Binding RefreshAdvertisementsCommand}">
             <CollectionView x:Name="collectionView"
                         ItemSizingStrategy="MeasureAllItems"
@@ -39,7 +65,7 @@
                 </CollectionView.ItemsLayout>
             </CollectionView>
         </RefreshView>
-    </VerticalStackLayout>
+    </Grid>
 
     <!--<CollectionView ItemSizingStrategy="MeasureAllItems" Margin="0" ItemTemplate="{StaticResource TemplateSelector}">
         <CollectionView.ItemsLayout>

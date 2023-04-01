@@ -16,24 +16,39 @@ namespace Obshajka.ViewModels
 
         public ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
 
+        private int? dormitoryId;
+        public int? DormitoryId {
+            get => dormitoryId;
+            set
+            {
+                dormitoryId = value;
+                IsRefreshing = true;
+            }
+        }
+
         public OutsideAdvertsViewModel() : base()
         {
-            source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
+            //source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
             AdvertisementsListViewElements =
-               new ObservableCollection<Advertisement>(source);
+               new ObservableCollection<Advertisement>();
             //source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
             //AdvertisementsListViewElements =
             //   new ObservableCollection<Advertisement>(source);
             // UpdateAdvertisementCollection();
-            AdvertisementsListViewElements.Clear();
+            //AdvertisementsListViewElements.Clear();
         }
 
         // TODO: удаление без уведомления https://stackoverflow.com/questions/5118513/removeall-for-observablecollections
         // TODO: подумать как без Add сделать, потому что каждый раз событие вызывается
         public void UpdateAdvertisementCollection()
         {
+            if (DormitoryId == null) 
+            {
+                IsRefreshing = false;
+                return;
+            }
             AdvertisementsListViewElements.Clear();
-            List<Advertisement> actualAdverts = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
+            List<Advertisement> actualAdverts = Helpers.Helpers.GetAdvertisementsFromOthers((int)DormitoryId).ToList();
             foreach (var advert in actualAdverts)
             {
                 AdvertisementsListViewElements.Add(advert);
