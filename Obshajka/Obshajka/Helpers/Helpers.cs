@@ -14,7 +14,19 @@ namespace Obshajka.Helpers
         public static void LogInUser(string email, string password)
         {
             UserSettings.UserSettings.UserId = ObshajkaApi.AuthorizeUser(email, password);
+            // TODO: что это?
             UserSettings.UserSettings.SelectedDormitoryIdFilter = 1;
+        }
+
+        public static void RegisterUser(string name, string email, string password)
+        { 
+            UserSettings.UserSettings.UserId = ObshajkaApi.RegisterUser(name,email, password);
+            UserSettings.UserSettings.SelectedDormitoryIdFilter = 1;
+        }
+
+        public static void ConfirmVerificationCode(string code)
+        {
+            UserSettings.UserSettings.UserId = ObshajkaApi.ConfirmVerificationCode(code);
         }
 
         public static IList<Advertisement> GetAdvertisementsFromOthers()

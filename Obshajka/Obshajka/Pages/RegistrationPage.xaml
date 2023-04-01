@@ -2,52 +2,47 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.RegistrationPage"
-             Title="Registration">
-    <ScrollView>
-        <VerticalStackLayout 
-                Spacing="50" 
-                Padding="30,0" 
-                VerticalOptions="CenterAndExpand" Margin="10,50,10,10">
+             Title="Регистрация">
+    <VerticalStackLayout Grid.Column="0" Grid.Row="0" Padding="30" Margin="10,50,10,10" Spacing="30">
 
-            <Image Source="dotnet_bot.png" HeightRequest="80" WidthRequest="80" />
+        <Image Source="dotnet_bot.png" HeightRequest="80" WidthRequest="80" />
 
-            <VerticalStackLayout Spacing="15">
-                <Label Text="Добро пожаловать в Obshajka!" FontSize="25" TextColor="Gray" HorizontalTextAlignment="Center" />
-                <Label Text="Войдите в свой аккаунт, чтобы продолжить" FontSize="15" TextColor="Gray" HorizontalTextAlignment="Center"/>
-            </VerticalStackLayout>
-
-            <StackLayout Spacing="10" VerticalOptions="Start">
-                <Frame x:Name="LogInEmailFrame" BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                    <StackLayout Orientation="Horizontal">
-                        <Frame BackgroundColor="Transparent" BorderColor="LightBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                            <Image Source="user.png" Aspect="Fill" Margin="5"/>
-                        </Frame>
-                        <Entry x:Name="EntryLogInEmail" Placeholder="Почта @edu.hse.ru" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,20,0" TextChanged="EntryLogInEmail_TextChanged"/>
-                    </StackLayout>
-                </Frame>
-                <Label x:Name="IncorrectEmailLabel" Text="Неверный формат почты" TextColor="LightPink" Margin="5,-10,0,0" FontSize="12" IsVisible="False"/>
-                <Frame x:Name="LogInPasswordFrame"  BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
-                    <StackLayout Orientation="Horizontal">
-                        <Frame BackgroundColor="Transparent" BorderColor="LightBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
-                            <Image Source="lock.png" Aspect="AspectFill" Margin="5"/>
-                        </Frame>
-                        <Entry x:Name="EntryLogInPassword" Placeholder="Пароль" TextColor="Black" FontAttributes="Bold" IsPassword="True" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,5,0" TextChanged="EntryLogInPassword_TextChanged"/>
-                        <ImageButton x:Name="LogInPasswordEye" Source="view_eye.png" HeightRequest="25" WidthRequest="25" Aspect="Fill" Margin="5,0,8,0" Clicked="LogInPasswordEye_Clicked"/>
-                    </StackLayout>
-                </Frame>
-                <Label x:Name="IncorrectPasswordLabel"  Text="Минимальная длина пароля - 4 символа" TextColor="LightPink" Margin="5,-10,0,0" FontSize="12" IsVisible="False"/>
-            </StackLayout>
-
-            <Button x:Name="LoginBtn" Text="Войти" WidthRequest="200" HeightRequest="45" CornerRadius="40" HorizontalOptions="Center" Margin="0,0,0,0" Clicked="LoginButton_Clicked"/>
-
-            <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0">
-                <Label Text="Еще нет аккаунта?" TextColor="Gray" />
-                <Label x:Name="SignUpCLickedLabel" Text="Зарегистрируйтесь!" TextColor="#50b3f2">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="SignUpCLickedLabel_Clicked"/>
-                    </Label.GestureRecognizers>
-                </Label>
-            </StackLayout>
+        <VerticalStackLayout Spacing="15">
+            <Label Text="Добро пожаловать в Общажку!" FontSize="25" TextColor="Gray" HorizontalTextAlignment="Center" />
+            <Label Text="Зарегистируйтесь, чтобы продолжить" FontSize="15" TextColor="Gray" HorizontalTextAlignment="Center"/>
         </VerticalStackLayout>
-    </ScrollView>
+
+        <StackLayout Spacing="10" VerticalOptions="Start">
+            <Frame x:Name="regNameFrame" BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout Orientation="Horizontal">
+                    <Frame BackgroundColor="Transparent" BorderColor="LightBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                        <Image Source="user.png" Aspect="Fill" Margin="5"/>
+                    </Frame>
+                    <Entry x:Name="regNameEntry" Text="name" Placeholder="Ваше имя" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,20,0" TextChanged="RegEmailEntry_TextChanged"/>
+                </StackLayout>
+            </Frame>
+            <Label x:Name="incorrectNameLabel" Text="Неверный формат имени" TextColor="LightPink" Margin="5,-10,0,0" FontSize="12" IsVisible="False"/>
+            <Frame x:Name="regEmailFrame" BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout Orientation="Horizontal">
+                    <Frame BackgroundColor="Transparent" BorderColor="LightBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                        <Image Source="user.png" Aspect="Fill" Margin="5"/>
+                    </Frame>
+                    <Entry x:Name="regEmailEntry" Text="aishar@edu.hse.ru" Placeholder="Почта @edu.hse.ru" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,20,0" TextChanged="RegEmailEntry_TextChanged"/>
+                </StackLayout>
+            </Frame>
+            <Label x:Name="incorrectEmailLabel" Text="Неверный формат почты" TextColor="LightPink" Margin="5,-10,0,0" FontSize="12" IsVisible="False"/>
+            <Frame x:Name="regPasswordFrame"  BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                <StackLayout Orientation="Horizontal">
+                    <Frame BackgroundColor="Transparent" BorderColor="LightBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                        <Image Source="lock.png" Aspect="AspectFill" Margin="5"/>
+                    </Frame>
+                    <Entry x:Name="regPasswordEntry" Text="password" Placeholder="Пароль" TextColor="Black" FontAttributes="Bold" IsPassword="True" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,5,0" TextChanged="RegPasswordEntry_TextChanged"/>
+                    <ImageButton x:Name="regPasswordEye" Source="view_eye.png" HeightRequest="25" WidthRequest="25" Aspect="Fill" Margin="5,0,8,0" Clicked="LogInPasswordEye_Clicked"/>
+                </StackLayout>
+            </Frame>
+            <Label x:Name="incorrectPasswordLabel"  Text="Минимальная длина пароля - 4 символа" TextColor="LightPink" Margin="5,-10,0,0" FontSize="12" IsVisible="False"/>
+        </StackLayout>
+
+        <Button x:Name="regBtn" Text="Отправить код" WidthRequest="200" HeightRequest="45" CornerRadius="40" HorizontalOptions="Center" Margin="0,0,0,0" Clicked="SendVerificationCode_Clicked"/>
+    </VerticalStackLayout>
 </ContentPage>

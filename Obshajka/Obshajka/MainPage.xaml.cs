@@ -10,6 +10,7 @@ public partial class MainPage : ContentPage
     public MainPage()
 	{
 		InitializeComponent();
+
         //btnGoto.Clicked += async (s, e) => await Shell.Current.GoToAsync("//Bar");
         //btnRegistration.Clicked += async (s, e) => await Shell.Current.GoToAsync("RegistrationPage");
     }

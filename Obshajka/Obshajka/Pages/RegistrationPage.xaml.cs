@@ -7,41 +7,44 @@ public partial class RegistrationPage : ContentPage
     public RegistrationPage()
 	{
 		InitializeComponent();
-	}
-
-    public async void SendVerificationCode_Clicked(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("ConfirmVerificationCodePage");
+        Routing.RegisterRoute("ConfirmVerificationCodePage", typeof(ConfirmVerificationCodePage));
     }
 
-    private async void LoginButton_Clicked(object sender, EventArgs e)
+    private async void SendVerificationCode_Clicked(object sender, EventArgs e)
     {
-        if (!IsCorrectEmailAndPassword(EntryLogInEmail.Text, EntryLogInPassword.Text))
+        if (!IsCorrectEntryData(regNameEntry.Text, regEmailEntry.Text, regPasswordEntry.Text))
         {
             return;
         }
-        var enteredEmail = EntryLogInEmail.Text.Trim();
-        var enteredPassword = EntryLogInPassword.Text.Trim();
+        var enteredName = regNameEntry.Text.Trim();
+        var enteredEmail = regEmailEntry.Text.Trim();
+        var enteredPassword = regPasswordEntry.Text.Trim();
 
         // TODO: обработать эксепшн, если не удалось авторизовться
-        Helpers.Helpers.LogInUser(enteredEmail, enteredPassword);
-        await Shell.Current.GoToAsync("//Bar");
+        Helpers.Helpers.RegisterUser(enteredName, enteredEmail, enteredPassword);
+        await Shell.Current.GoToAsync("ConfirmVerificationCodePage");
     }
 
-    private bool IsCorrectEmailAndPassword(string email, string password)
+    private bool IsCorrectEntryData(string name, string email, string password)
     {
         bool isCorrectFlag = true;
         if (string.IsNullOrEmpty(password) || password.Length <= 4)
         {
             isCorrectFlag = false;
-            IncorrectPasswordLabel.IsVisible = true;
-            LogInPasswordFrame.BorderColor = Colors.LightPink;
+            incorrectPasswordLabel.IsVisible = true;
+            regPasswordFrame.BorderColor = Colors.LightPink;
         }
         if (!IsCorrectEmail(email))
         {
             isCorrectFlag = false;
-            IncorrectEmailLabel.IsVisible = true;
-            LogInEmailFrame.BorderColor = Colors.LightPink;
+            incorrectEmailLabel.IsVisible = true;
+            regEmailFrame.BorderColor = Colors.LightPink;
+        }
+        if (string.IsNullOrEmpty(name) || name.Length <= 1)
+        {
+            isCorrectFlag = false;
+            incorrectNameLabel.IsVisible = true;
+            regNameFrame.BorderColor = Colors.LightPink;
         }
         return isCorrectFlag;
     }
@@ -55,34 +58,29 @@ public partial class RegistrationPage : ContentPage
         return loginAndDomain.Length == 2 && loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20 && loginAndDomain[1].Equals(_domainHse);
     }
 
-    private void EntryLogInEmail_TextChanged(object sender, TextChangedEventArgs e)
+    private void RegEmailEntry_TextChanged(object sender, TextChangedEventArgs e)
     {
-        IncorrectEmailLabel.IsVisible = false;
-        LogInEmailFrame.BorderColor = Colors.LightGreen;
+        incorrectEmailLabel.IsVisible = false;
+        regEmailFrame.BorderColor = Colors.LightGreen;
     }
 
-    private void EntryLogInPassword_TextChanged(object sender, TextChangedEventArgs e)
+    private void RegPasswordEntry_TextChanged(object sender, TextChangedEventArgs e)
     {
-        IncorrectPasswordLabel.IsVisible = false;
-        LogInPasswordFrame.BorderColor = Colors.LightGreen;
+        incorrectPasswordLabel.IsVisible = false;
+        regPasswordFrame.BorderColor = Colors.LightGreen;
     }
 
     private void LogInPasswordEye_Clicked(object sender, EventArgs e)
     {
-        if (EntryLogInPassword.IsPassword)
+        if (regPasswordEntry.IsPassword)
         {
-            EntryLogInPassword.IsPassword = false;
-            LogInPasswordEye.Source = "hide_eye.png";
+            regPasswordEntry.IsPassword = false;
+            regPasswordEye.Source = "hide_eye.png";
         }
         else
         {
-            EntryLogInPassword.IsPassword = true;
-            LogInPasswordEye.Source = "view_eye.png";
+            regPasswordEntry.IsPassword = true;
+            regPasswordEye.Source = "view_eye.png";
         }
-    }
-
-    private async void SignUpCLickedLabel_Clicked(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("RegistrationPage");
     }
 }

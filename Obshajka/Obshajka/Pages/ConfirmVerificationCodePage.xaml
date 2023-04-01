@@ -2,15 +2,49 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.ConfirmVerificationCodePage"
-             Title="ConfirmVerificationCodePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Button x:Name="btnSendVerificationCode"
-                Text="Войти в приложение"
-                BackgroundColor="#0094FF"
-                Clicked="EnterApplication_Clicked"/>
-    </VerticalStackLayout>
+             Title="Подтверждение почты">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        
+        <VerticalStackLayout Padding="30" Margin="10,50,10,10" Spacing="30" Grid.Column="0" Grid.Row="0">
+
+            <Image Source="dotnet_bot.png" HeightRequest="80" WidthRequest="80" />
+
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Введите 4-х значный код, отправленный на введенную Вами почту" FontSize="15" TextColor="Gray" HorizontalTextAlignment="Center" />
+            </VerticalStackLayout>
+
+            <StackLayout Spacing="10" VerticalOptions="Start">
+                <Frame x:Name="regCodeFrame" BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30" WidthRequest="200">
+                    <!--<StackLayout Orientation="Horizontal">-->
+                    <!--<Frame BackgroundColor="Transparent" BorderColor="LightBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="user.png" Aspect="Fill" Margin="5"/>
+                        </Frame>-->
+                    <Entry x:Name="regCodeEntry" HeightRequest="60" Placeholder="Код" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,20,0" HorizontalTextAlignment="Center" FontSize="25" Keyboard="Numeric" MaxLength="4" TextChanged="RegCodeEntry_TextChanged"/>
+                    <!--</StackLayout>-->
+                </Frame>
+            </StackLayout>
+
+            <VerticalStackLayout Spacing="15">
+                <Label x:Name="incorrectCodeLabel" Text="Код неверный." TextColor="LightPink" Margin="5,-10,0,0" FontSize="18" IsVisible="False" HorizontalOptions="Center"/>
+                <Label x:Name="incorrectCodeInfoLabel" Text="Проверьте корректность введенной почты" TextColor="LightPink" Margin="5,-10,5,0" FontSize="14" IsVisible="False" HorizontalOptions="Center"/>
+                <Label x:Name="incorrectCodeInfoLabel2" Text="и повторите попытку" TextColor="LightPink" Margin="5,-10,5,0" FontSize="14" IsVisible="False" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <Button x:Name="regBtn" Text="Подтвердить почту" WidthRequest="200" HeightRequest="45" CornerRadius="40" HorizontalOptions="Center" Margin="0,0,0,0" Clicked="EnterApplication_Clicked"/>
+        </VerticalStackLayout>
+
+        <!--<StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,0,0,0"  Grid.Column="0" Grid.Row="1">
+            <Label Text="Отправить" TextColor="#50b3f2">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SendCodeAgain_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="код подтверждения еще раз" TextColor="Gray" />
+        </StackLayout>-->
+    </Grid>
 </ContentPage>

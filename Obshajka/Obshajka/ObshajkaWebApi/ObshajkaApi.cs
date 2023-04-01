@@ -10,9 +10,22 @@ namespace Obshajka.ObshajkaWebApi
 {
     public static class ObshajkaApi
     {
+        // TODO: чекнуть моки
         public static long AuthorizeUser(string email, string password)
         {
             // Mock
+            return 1;
+        }
+
+        public static long RegisterUser(string name, string email, string password)
+        {
+            // Mock
+            return 1;
+        }
+
+        public static long ConfirmVerificationCode(string code)
+        {
+            // Mock - userID
             return 1;
         }
 
