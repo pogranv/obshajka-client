@@ -18,7 +18,7 @@
             <Image Source="dotnet_bot.png" HeightRequest="80" WidthRequest="80" />
 
             <VerticalStackLayout Spacing="15">
-                <Label Text="Добро пожаловать в Obshajka!" FontSize="25" TextColor="Gray" HorizontalTextAlignment="Center" />
+                <Label Text="Добро пожаловать в Общажку!" FontSize="25" TextColor="Gray" HorizontalTextAlignment="Center" />
                 <Label Text="Войдите в свой аккаунт, чтобы продолжить" FontSize="15" TextColor="Gray" HorizontalTextAlignment="Center"/>
             </VerticalStackLayout>
 
@@ -28,7 +28,7 @@
                         <Frame BackgroundColor="Transparent" BorderColor="LightBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                             <Image Source="user.png" Aspect="Fill" Margin="5"/>
                         </Frame>
-                        <Entry x:Name="EntryLogInEmail" Placeholder="Почта @edu.hse.ru" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,20,0" TextChanged="EntryLogInEmail_TextChanged"/>
+                        <Entry x:Name="EntryLogInEmail" Text="aishar@edu.hse.ru" Placeholder="Почта @edu.hse.ru" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,20,0" TextChanged="EntryLogInEmail_TextChanged"/>
                     </StackLayout>
                 </Frame>
                 <Label x:Name="IncorrectEmailLabel" Text="Неверный формат почты" TextColor="LightPink" Margin="5,-10,0,0" FontSize="12" IsVisible="False"/>
@@ -37,7 +37,7 @@
                         <Frame BackgroundColor="Transparent" BorderColor="LightBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
                             <Image Source="lock.png" Aspect="AspectFill" Margin="5"/>
                         </Frame>
-                        <Entry x:Name="EntryLogInPassword" Placeholder="Пароль" TextColor="Black" FontAttributes="Bold" IsPassword="True" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,5,0" TextChanged="EntryLogInPassword_TextChanged"/>
+                        <Entry x:Name="EntryLogInPassword" Text="password" Placeholder="Пароль" TextColor="Black" FontAttributes="Bold" IsPassword="True" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,5,0" TextChanged="EntryLogInPassword_TextChanged"/>
                         <ImageButton x:Name="LogInPasswordEye" Source="view_eye.png" HeightRequest="25" WidthRequest="25" Aspect="Fill" Margin="5,0,8,0" Clicked="LogInPasswordEye_Clicked"/>
                     </StackLayout>
                 </Frame>

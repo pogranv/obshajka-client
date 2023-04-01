@@ -42,7 +42,7 @@ public partial class ConfirmVerificationCodePage : ContentPage
     {
         incorrectCodeLabel.IsVisible = false;
         incorrectCodeInfoLabel.IsVisible = false;
-        incorrectCodeInfoLabel2.IsVisible=false;
+        incorrectCodeInfoLabel2.IsVisible = false;
     }
 
     //private void SendCodeAgain_Tapped(object sender, EventArgs e)

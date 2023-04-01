@@ -55,7 +55,7 @@
                             <RoundRectangle CornerRadius="15,15,15,15" />
                         </Border.StrokeShape>
                         <ScrollView>
-                            <Editor x:Name="descriptionEditor" Placeholder="Введите описание (опционально)" PlaceholderColor="LightGray" Margin="0" MaxLength="250" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AutoSize="TextChanges"/>
+                            <Editor x:Name="descriptionEditor" Placeholder="Введите описание (опционально). Расскажите, например, как с вами связаться." PlaceholderColor="LightGray" Margin="0" MaxLength="250" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AutoSize="TextChanges"/>
                         </ScrollView>
                     </Border>
                     <!--<Border StrokeThickness="0.7" Margin="0,-5,0,0"/>   -->
