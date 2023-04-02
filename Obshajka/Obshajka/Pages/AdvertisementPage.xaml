@@ -11,7 +11,14 @@
                 Padding="0,0"
                 VerticalOptions="StartAndExpand">
             <VerticalStackLayout VerticalOptions="StartAndExpand">
-                <Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
+                <!--<Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>-->
+                <Image Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Image.Source>
+                        <UriImageSource Uri="{Binding Image}"
+                                CacheValidity="1:00:00.0"
+                                CachingEnabled="True"/>
+                    </Image.Source>
+                </Image>
                 <Border StrokeThickness="3" Background="Black" BackgroundColor="Black"/>
             </VerticalStackLayout>
             <!--<Frame Margin="5">

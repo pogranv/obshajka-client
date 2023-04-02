@@ -11,7 +11,14 @@
             </Border.StrokeShape>
             <StackLayout Margin="0" Spacing="0">
                 <Border Stroke="Transparent">
-                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="200" Aspect="AspectFit"/>
+                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="200" Aspect="Center"/>
+                    <!--<Image Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"> AspectFit был, Fill растягивается, AspectFill норм
+                        <Image.Source>
+                            <UriImageSource Uri="{Binding Image}"
+                                CacheValidity="1:00:00.0"
+                                CachingEnabled="True"/>
+                        </Image.Source>
+                    </Image>-->
                     <!-- не Fill, AspectFit вмещает всю картинку-->
                 </Border>
                 <VerticalStackLayout VerticalOptions="CenterAndExpand" Margin="8">
