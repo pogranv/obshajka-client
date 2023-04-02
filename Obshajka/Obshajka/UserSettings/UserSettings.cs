@@ -9,6 +9,7 @@ namespace Obshajka.UserSettings
     // хранение кэширование фото по сети https://metanit.com/sharp/maui/4.9.php
     // чекнуть сколько номеров общаг и добавить в создание объявы
     // ограничение на воодимые данные при рестистрации и входе
+    // сделать запрос списка только фотку и описание и цену, а потом запрашивать еще и описание при открытии
     public static class UserSettings
     {
         public static long UserId { get; set; }

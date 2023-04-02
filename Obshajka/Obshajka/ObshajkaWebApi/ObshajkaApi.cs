@@ -44,9 +44,9 @@ namespace Obshajka.ObshajkaWebApi
             MocksClass.RemoveAdvert(advertisementId);
         }
 
-        public static void PublishAdvertisement(Advertisement advertisement)
+        public static Advertisement PublishAndGetNewAdvert(Advertisement advertisement)
         {
-            MocksClass.PublishAdvert(advertisement);
+            return MocksClass.BuplishAndGetNewAdvertisement(advertisement);
         }
     }
 }

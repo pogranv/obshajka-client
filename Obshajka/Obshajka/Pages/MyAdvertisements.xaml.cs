@@ -34,7 +34,8 @@ public partial class MyAdvertisements : ContentPage
 
     private async void addAdvertButton_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("MakeAdvertisementPage");
+        await Navigation.PushAsync(new MakeAdvertisementPage((BindingContext as AdvertisementsViewModel)));
+        // await Shell.Current.GoToAsync("MakeAdvertisementPage");
     }
 
     public void RemoveAdvertisementFromListView(Advertisement advertisement)

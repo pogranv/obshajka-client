@@ -1,5 +1,6 @@
 using Microsoft.Maui.Platform;
 using Obshajka.Models;
+using Obshajka.ViewModels;
 
 namespace Obshajka.Pages;
 
@@ -9,6 +10,14 @@ public partial class MakeAdvertisementPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private AdvertisementsViewModel adverts;
+
+    public MakeAdvertisementPage(AdvertisementsViewModel advertisements)
+    {
+        adverts = advertisements;
+        InitializeComponent();
+    }
 
     private async void DownloadImageBtn_Clicked(object sender, EventArgs e)
     {
@@ -95,9 +104,10 @@ public partial class MakeAdvertisementPage : ContentPage
             Image = advertImage.Source.ToString(),
             DateOfAddition = DateOnly.FromDateTime(DateTime.Now)
         };
-        Helpers.Helpers.PublishAdvert(newAdvertisement);
-        await DisplayAlert("Создание объявления", "Объявление успешно создано!", "Oк");
+        var createdAdvertisement = Helpers.Helpers.PublishAndGetNewAdvert(newAdvertisement);
+        adverts.AdvertisementsListViewElements.Add(createdAdvertisement);
         await Navigation.PopAsync();
+        await DisplayAlert("Создание объявления", "Объявление успешно создано!", "Oк");
     }
 
     private void TitleEntry_TextChanged(object sender, TextChangedEventArgs e)
