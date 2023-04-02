@@ -4,6 +4,7 @@
              x:Class="Obshajka.Pages.MyAdvertisements"
              xmlns:templates="clr-namespace:Obshajka.Templates"
              Title="Мои объявления"
+             BackgroundColor="#7300e9"
              >
     <!--<Shell.TitleView>
         <StackLayout>
@@ -13,7 +14,6 @@
     </Shell.TitleView>-->
 
     <ContentPage.Resources>
-
         <DataTemplate x:Key="AdvertisementWithImage">
             <templates:AdvertisementWithImageTemplate />
         </DataTemplate>
@@ -48,7 +48,7 @@
                 </CollectionView.ItemsLayout>
             </CollectionView>
         <!--</RefreshView>-->
-        <Button Text="Создать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" BackgroundColor="Green" Clicked="addAdvertButton_Clicked"/>
+        <Button Text="Создать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" BackgroundColor="#00ff8b" Clicked="addAdvertButton_Clicked" TextColor="Black"/>
     </Grid>
 
 </ContentPage>

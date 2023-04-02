@@ -43,5 +43,10 @@ namespace Obshajka.Helpers
         {
             ObshajkaApi.RemoveAdvertisement(advertId);
         }
+
+        public static void PublishAdvert(Advertisement advert)
+        {
+            ObshajkaApi.PublishAdvertisement(advert);
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace Obshajka.Mocks
                     Description = "Description1",
                     DormitoryId = 1,
                     Price = 1000,
-                    Image = "dotnet_bot.png",
+                    Image = "https://downloader.disk.yandex.ru/disk/f5c99cf86cf6edcb2cc459c92c0bc46bc367184aa67b02957b9e3fa09c9e0289/6429a456/fKqInKw3d7bLFOeFnMGnhBgW7RfbIJ_xhaDmR7XLEzmZ_jBuAuTFn1LEDavyEavi3mRzQSqbnf_HLfnAvkSQjJfvLZPdJyz4_HyRUQc0y1qr8npumZHI4midPdWhecNq?uid=1130000059567809&filename=d9703f1c-d95f-445d-ac65-7ef70713aa3f.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1130000059567809&fsize=99226&hid=96418ab85f0075ba036106ca400f9a29&media_type=image&tknv=v2&etag=dc39a462f7b80a23dd47e9f84bb7fe40",
                     DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
@@ -38,7 +38,7 @@ namespace Obshajka.Mocks
                     Description = "Description2",
                     DormitoryId = 1,
                     Price = 100,
-                    Image = "dotnet_bot.png",
+                    Image = "https://downloader.disk.yandex.ru/disk/f5c99cf86cf6edcb2cc459c92c0bc46bc367184aa67b02957b9e3fa09c9e0289/6429a456/fKqInKw3d7bLFOeFnMGnhBgW7RfbIJ_xhaDmR7XLEzmZ_jBuAuTFn1LEDavyEavi3mRzQSqbnf_HLfnAvkSQjJfvLZPdJyz4_HyRUQc0y1qr8npumZHI4midPdWhecNq?uid=1130000059567809&filename=d9703f1c-d95f-445d-ac65-7ef70713aa3f.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1130000059567809&fsize=99226&hid=96418ab85f0075ba036106ca400f9a29&media_type=image&tknv=v2&etag=dc39a462f7b80a23dd47e9f84bb7fe40",
                     DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
@@ -148,6 +148,11 @@ namespace Obshajka.Mocks
         public static void RemoveAdvert(long advertId)
         {
             advertisements.RemoveAll(i => i.Id == advertId);
+        }
+
+        public static void PublishAdvert(Advertisement advertisement)
+        {
+            advertisements.Add(advertisement);
         }
     }
 }

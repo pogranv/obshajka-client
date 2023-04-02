@@ -8,13 +8,17 @@
         <ScrollView Orientation="Vertical">
             <VerticalStackLayout
                 Spacing="10"
-                Padding="25,0"
+                Padding="0,0"
                 VerticalOptions="StartAndExpand">
-                <Frame Margin="5">
+            <VerticalStackLayout VerticalOptions="StartAndExpand">
+                <Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
+                <Border StrokeThickness="3" Background="Black" BackgroundColor="Black"/>
+            </VerticalStackLayout>
+            <!--<Frame Margin="5">
                     <Image Source="{Binding Image}"/>
-                </Frame>
+                </Frame>-->
             <VerticalStackLayout Margin="5">
-                <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="30"/>
+                <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="30" LineBreakMode="WordWrap"/>
                 <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontAttributes="Bold" FontSize="25"/>
                 <Label Text="{Binding DormitoryId, StringFormat='Размещено в общежитии №{0}'}" FontAttributes="Bold" FontSize="15" Margin="0,8,0,0"/>
             </VerticalStackLayout>

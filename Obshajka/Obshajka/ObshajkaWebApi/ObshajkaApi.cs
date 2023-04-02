@@ -43,5 +43,10 @@ namespace Obshajka.ObshajkaWebApi
         {
             MocksClass.RemoveAdvert(advertisementId);
         }
+
+        public static void PublishAdvertisement(Advertisement advertisement)
+        {
+            MocksClass.PublishAdvert(advertisement);
+        }
     }
 }

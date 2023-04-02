@@ -16,6 +16,7 @@ public partial class OwnAdvertView : ContentPage
         Advertisement = selectedAdvertisement;
         BindingContext = Advertisement;
         adverts = advertisements;
+        // image.Source = Advertisement.Image;
     }
 
     //public OwnAdvertView(AdvertisementsViewModel advertisements)
