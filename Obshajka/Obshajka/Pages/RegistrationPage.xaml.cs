@@ -1,5 +1,7 @@
 namespace Obshajka.Pages;
 
+using Obshajka.Exceptions;
+
 public partial class RegistrationPage : ContentPage
 {
 
@@ -21,8 +23,19 @@ public partial class RegistrationPage : ContentPage
         var enteredPassword = regPasswordEntry.Text.Trim();
 
         // TODO: обработать эксепшн, если не удалось авторизовться
-        Helpers.Helpers.RegisterUser(enteredName, enteredEmail, enteredPassword);
-        await Shell.Current.GoToAsync("ConfirmVerificationCodePage");
+
+        try
+        {
+            Helpers.Helpers.TryRegisterUser(enteredName, enteredEmail, enteredPassword);
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("Ошибка регистрации", ex.Message, "Ок");
+            await Navigation.PopAsync();
+            return;
+        }
+        await Navigation.PushAsync(new ConfirmVerificationCodePage(enteredEmail));
+        // await Shell.Current.GoToAsync("ConfirmVerificationCodePage");
     }
 
     private bool IsCorrectEntryData(string name, string email, string password)

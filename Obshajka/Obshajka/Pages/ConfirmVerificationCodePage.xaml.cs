@@ -4,10 +4,18 @@ namespace Obshajka.Pages;
 
 public partial class ConfirmVerificationCodePage : ContentPage
 {
-	public ConfirmVerificationCodePage()
-	{
-		InitializeComponent();
-	}
+
+    private string _enteredEmail;
+	//public ConfirmVerificationCodePage()
+	//{
+	//	InitializeComponent();
+	//}
+
+    public ConfirmVerificationCodePage(string enteredEmail)
+    {
+        InitializeComponent();
+        _enteredEmail = enteredEmail;
+    }
 
 
     public async void EnterApplication_Clicked(object sender, EventArgs e)
@@ -18,8 +26,16 @@ public partial class ConfirmVerificationCodePage : ContentPage
             incorrectCodeInfoLabel2.IsVisible = true;
             return;
         }
-        Helpers.Helpers.ConfirmVerificationCode(regCodeEntry.Text);
-        await Shell.Current.GoToAsync("//Bar");
+        try
+        {
+            Helpers.Helpers.TryConfirmVerificationCode(_enteredEmail, regCodeEntry.Text);
+            await Shell.Current.GoToAsync("//Bar");
+        } catch (Exception ex)
+        {
+            await DisplayAlert("Ошибка регистрации", ex.Message, "Ок");
+            return;
+        }
+        
     }
 
     //private bool IsCorrentEnteredCode(string? code)

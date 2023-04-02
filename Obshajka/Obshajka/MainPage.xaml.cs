@@ -24,7 +24,15 @@ public partial class MainPage : ContentPage
         var enteredPassword = EntryLogInPassword.Text.Trim();
 
         // TODO: обработать эксепшн, если не удалось авторизовться
-        Helpers.Helpers.LogInUser(enteredEmail, enteredPassword);
+        try
+        {
+            Helpers.Helpers.TryAutorizeUser(enteredEmail, enteredPassword);
+        } catch (Exception ex)
+        {
+            await DisplayAlert("Не удалось войти", ex.Message, "Ок");
+            return;
+        }
+        
         await Shell.Current.GoToAsync("//Bar");
     }
 

@@ -6,27 +6,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq;
+using Obshajka.Exceptions;
 
 namespace Obshajka.Helpers
 {
     public static class Helpers
     {
-        public static void LogInUser(string email, string password)
+        public static async void TryAutorizeUser(string email, string password)
         {
-            UserSettings.UserSettings.UserId = ObshajkaApi.AuthorizeUser(email, password);
-            // TODO: что это?
-            UserSettings.UserSettings.SelectedDormitoryIdFilter = 1;
+            try
+            {
+                UserSettings.UserSettings.UserId = await ObshajkaApi.AuthorizeUser(email, password);
+            } catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
-        public static void RegisterUser(string name, string email, string password)
-        { 
-            UserSettings.UserSettings.UserId = ObshajkaApi.RegisterUser(name,email, password);
-            UserSettings.UserSettings.SelectedDormitoryIdFilter = 1;
+        public static void TryRegisterUser(string name, string email, string password)
+        {
+            try
+            {
+                ObshajkaApi.RegisterUser(name, email, password);
+            } catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public static void ConfirmVerificationCode(string code)
+        public static async void TryConfirmVerificationCode(string email, string code)
         {
-            UserSettings.UserSettings.UserId = ObshajkaApi.ConfirmVerificationCode(code);
+            try
+            {
+                UserSettings.UserSettings.UserId = await ObshajkaApi.ConfirmVerificationCode(email, code);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public static IList<Advertisement> GetAdvertisementsFromOthers(int dormitoryId)
