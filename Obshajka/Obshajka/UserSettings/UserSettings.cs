@@ -11,6 +11,7 @@ namespace Obshajka.UserSettings
     // чекнуть сколько номеров общаг и добавить в создание объявы
     // ограничение на воодимые данные при рестистрации и входе
     // сделать запрос списка только фотку и описание и цену, а потом запрашивать еще и описание при открытии
+    // TODO чекнуть срок действия ссылки на скачивание, а то чет была проблема, что ссылка недействительна
     public static class UserSettings
     {
         public static long UserId { get; set; }
@@ -24,5 +25,6 @@ namespace Obshajka.UserSettings
         public static string SendVerificationCode { get; set; } = "https://localhost:7060/api/Registration/SendVerificationCode";
         public static string ConfirmVerificationCode { get; set; } = "https://localhost:7060/api/Registration/ConfirmVerificationCode";
         public static string Authorization { get; set; } = "https://localhost:7060/api/Authorization/Authorization";
+        public static string GetOutsideAdvertisements { get; set; } = "https://localhost:7060/api/GetAdvertisements/GetOutsideAdvertisements";
     }
 }

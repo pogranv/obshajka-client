@@ -47,9 +47,16 @@ namespace Obshajka.Helpers
             }
         }
 
-        public static IList<Advertisement> GetAdvertisementsFromOthers(int dormitoryId)
+        public static async Task<IList<Advertisement>> TryGetOutsideAdvertisements(int dormitoryId)
         {
-            return ObshajkaApi.GetAdvertisementsFromOtherUsers(dormitoryId, UserSettings.UserSettings.UserId);
+            try
+            {
+                IList<Advertisement> adverts = await ObshajkaApi.GetAdvertisementsFromOtherUsers(dormitoryId, UserSettings.UserSettings.UserId);
+                return adverts;
+            } catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public static IList<Advertisement> GetUserAdvertisements()

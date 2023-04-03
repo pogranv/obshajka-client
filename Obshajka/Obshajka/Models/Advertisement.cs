@@ -24,6 +24,7 @@ namespace Obshajka.Models
 
         public string? Image { get; set; }
 
-        public DateOnly DateOfAddition { get; set; }
+        // нельзя сериализовать dateOnly, поэтому строка
+        public string DateOfAddition { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace Obshajka.ViewModels
 
         // TODO: удаление без уведомления https://stackoverflow.com/questions/5118513/removeall-for-observablecollections
         // TODO: подумать как без Add сделать, потому что каждый раз событие вызывается
-        public void UpdateAdvertisementCollection()
+        public async void UpdateAdvertisementCollection()
         {
             if (DormitoryId == null) 
             {
@@ -48,7 +48,7 @@ namespace Obshajka.ViewModels
                 return;
             }
             AdvertisementsListViewElements.Clear();
-            List<Advertisement> actualAdverts = Helpers.Helpers.GetAdvertisementsFromOthers((int)DormitoryId).ToList();
+            List<Advertisement> actualAdverts = (await Helpers.Helpers.TryGetOutsideAdvertisements((int)DormitoryId)).ToList();
             foreach (var advert in actualAdverts)
             {
                 AdvertisementsListViewElements.Add(advert);

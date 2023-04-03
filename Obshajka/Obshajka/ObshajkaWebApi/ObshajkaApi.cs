@@ -8,6 +8,8 @@ using Obshajka.Mocks;
 using Obshajka.UserSettings;
 using System.Net.Http.Json;
 using Obshajka.Exceptions;
+using Microsoft.Maui.ApplicationModel.Communication;
+using System.Xml.Linq;
 
 namespace Obshajka.ObshajkaWebApi
 {
@@ -86,9 +88,24 @@ namespace Obshajka.ObshajkaWebApi
             }
         }
 
-        public static List<Advertisement> GetAdvertisementsFromOtherUsers(long dormitoryId, long currentUserId)
+        public static async Task<List<Advertisement>> GetAdvertisementsFromOtherUsers(long dormitoryId, long currentUserId)
         {
-            return MocksClass.GetAdvertisementsFromOtherUsers_Mock(dormitoryId, currentUserId);
+            if (UserSettings.UserSettings.UseMocks)
+            {
+                return MocksClass.GetAdvertisementsFromOtherUsers_Mock(dormitoryId, currentUserId);
+            }
+            var connectionString = $"{ConnectionSettings.GetOutsideAdvertisements}/{dormitoryId}/{currentUserId}";
+            using var response = await httpClient.GetAsync(connectionString);
+            // using var response = await httpClient.PostAsJsonAsync(ConnectionSettings.SendVerificationCode, newUser);
+            switch (response.StatusCode)
+            {
+                case System.Net.HttpStatusCode.OK:
+                    return await response.Content.ReadFromJsonAsync<List<Advertisement>>();
+                case System.Net.HttpStatusCode.NotFound:
+                    throw new AlreadyRegisteredException("Неверный запрос, оюъявлений не найдено.");
+                default:
+                    throw new Exception("Неизвестная ошибка.Попробуйте позже.");
+            }
         }
 
         public static List<Advertisement> GetAdvertisementsFromCurrentUser(long userId)

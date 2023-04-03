@@ -102,7 +102,7 @@ public partial class MakeAdvertisementPage : ContentPage
             DormitoryId = dormitoryPicker.SelectedIndex + 1,
             Price = GetPriceOrNul(priceEntry.Text),
             Image = advertImage.Source.ToString(),
-            DateOfAddition = DateOnly.FromDateTime(DateTime.Now)
+            DateOfAddition = DateOnly.FromDateTime(DateTime.Now).ToString(),
         };
         var createdAdvertisement = Helpers.Helpers.PublishAndGetNewAdvert(newAdvertisement);
         adverts.AdvertisementsListViewElements.Add(createdAdvertisement);

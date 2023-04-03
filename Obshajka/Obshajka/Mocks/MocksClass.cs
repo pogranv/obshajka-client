@@ -29,7 +29,6 @@ namespace Obshajka.Mocks
                     DormitoryId = 1,
                     Price = 1000,
                     Image = defaultImage,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
                 {
@@ -40,8 +39,7 @@ namespace Obshajka.Mocks
                     Description = "Description2",
                     DormitoryId = 1,
                     Price = 100,
-                    Image = defaultImage,                    
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
+                    Image = defaultImage,
                 },
                 new Advertisement
                 {
@@ -52,7 +50,6 @@ namespace Obshajka.Mocks
                     Description = "Description3",
                     DormitoryId = 1,
                     Price = 10,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
                 {
@@ -61,7 +58,6 @@ namespace Obshajka.Mocks
                     CreatorName = "Name4",
                     Title = "Title4",
                     DormitoryId = 1,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
                 {
@@ -73,7 +69,6 @@ namespace Obshajka.Mocks
                     DormitoryId = 2,
                     Price = 100,
                     Image = defaultImage,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
                 {
@@ -85,7 +80,6 @@ namespace Obshajka.Mocks
                     DormitoryId = 2,
                     Price = 100,
                     Image = defaultImage,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
                 {
@@ -97,7 +91,6 @@ namespace Obshajka.Mocks
                     DormitoryId = 2,
                     Price = 100,
                     Image = defaultImage,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
                 {
@@ -109,7 +102,6 @@ namespace Obshajka.Mocks
                     DormitoryId = 2,
                     Price = 100,
                     Image = defaultImage,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
                 {
@@ -121,7 +113,6 @@ namespace Obshajka.Mocks
                     DormitoryId = 1,
                     Price = 100,
                     Image = defaultImage,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 },
                 new Advertisement
                 {
@@ -133,9 +124,12 @@ namespace Obshajka.Mocks
                     DormitoryId = 2,
                     Price = 100,
                     Image = defaultImage,
-                    DateOfAddition = DateOnly.FromDateTime(DateTime.Now),
                 }
             };
+            for (int i = 0; i < advertisements.Count; ++i)
+            {
+                advertisements[i].DateOfAddition = DateOnly.FromDateTime(DateTime.Now).ToString();
+            }
         }
         public static List<Advertisement> GetAdvertisementsFromOtherUsers_Mock(long dormitoryId, long currentUserId)
         {
