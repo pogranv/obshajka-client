@@ -35,7 +35,7 @@ public partial class OwnAdvertView : ContentPage
         long id = (BindingContext as Models.Advertisement).Id;
         // TODO: я хз как передать данные на предыдущую страницу, поэтому только обновлением пока
         // TODO: обработать исключение если не удалось удалить
-        Helpers.Helpers.RemoveOwnAdvert(id);
+        Helpers.Helpers.TryRemoveOwnAdvert(id);
 
         for (int i = 0; i < adverts.AdvertisementsListViewElements.Count; i++)
         {

@@ -10,12 +10,13 @@ using System.Net.Http.Json;
 using Obshajka.Exceptions;
 using Microsoft.Maui.ApplicationModel.Communication;
 using System.Xml.Linq;
+using Windows.System;
 
 namespace Obshajka.ObshajkaWebApi
 {
     public static class ObshajkaApi
     {
-
+        // TODO: исправить типы экспешинов
         static HttpClient httpClient = new HttpClient();
 
         // TODO: чекнуть моки
@@ -133,9 +134,24 @@ namespace Obshajka.ObshajkaWebApi
         //    return MocksClass.GetAdvertisementsFromCurrentUser_Mock(userId);
         //}
 
-        public static void RemoveAdvertisement(long advertisementId)
+        public static async void RemoveAdvertisement(long advertisementId)
         {
+            if (UserSettings.UserSettings.UseMocks)
+            {
+                MocksClass.GetAdvertisementsFromCurrentUser_Mock(advertisementId);
+                return;
+            }
             MocksClass.RemoveAdvert(advertisementId);
+            var connectionString = $"{ConnectionSettings.DeleteAdvertisement}/{advertisementId}";
+            using var response = await httpClient.DeleteAsync(connectionString);
+            // using var response = await httpClient.PostAsJsonAsync(ConnectionSettings.SendVerificationCode, newUser);
+            switch (response.StatusCode)
+            {
+                case System.Net.HttpStatusCode.OK:
+                    return;
+                default:
+                    throw new Exception("Не удалось удалить объявление :(");
+            }
         }
 
         public static Advertisement PublishAndGetNewAdvert(Advertisement advertisement)

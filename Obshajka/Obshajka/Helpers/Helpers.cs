@@ -71,9 +71,16 @@ namespace Obshajka.Helpers
             
         }
 
-        public static void RemoveOwnAdvert(long advertId)
+        public static void TryRemoveOwnAdvert(long advertId)
         {
-            ObshajkaApi.RemoveAdvertisement(advertId);
+            try
+            {
+                ObshajkaApi.RemoveAdvertisement(advertId);
+            } catch (Exception ex)
+            {
+                // TODO: тут подумать над alert
+            }
+            
         }
 
         public static Advertisement PublishAndGetNewAdvert(Advertisement advert)

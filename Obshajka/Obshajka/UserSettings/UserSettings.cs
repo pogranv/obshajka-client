@@ -28,5 +28,6 @@ namespace Obshajka.UserSettings
         public static string GetOutsideAdvertisements { get; set; } = "https://localhost:7060/api/GetAdvertisements/GetOutsideAdvertisements";
 
         public static string GetUserAdvertisements { get; set; } = "https://localhost:7060/api/GetAdvertisements/GetUserAdvertisements";
+        public static string DeleteAdvertisement { get;} = "https://localhost:7060/api/GetAdvertisements/DeleteAdvertisement";
     }
 }
