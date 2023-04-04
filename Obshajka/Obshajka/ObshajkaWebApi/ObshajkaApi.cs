@@ -102,16 +102,36 @@ namespace Obshajka.ObshajkaWebApi
                 case System.Net.HttpStatusCode.OK:
                     return await response.Content.ReadFromJsonAsync<List<Advertisement>>();
                 case System.Net.HttpStatusCode.NotFound:
-                    throw new AlreadyRegisteredException("Неверный запрос, оюъявлений не найдено.");
+                    throw new AlreadyRegisteredException("Объявлений не найдено :(");
                 default:
-                    throw new Exception("Неизвестная ошибка.Попробуйте позже.");
+                    throw new Exception("Неизвестная ошибка. Попробуйте позже.");
             }
         }
 
-        public static List<Advertisement> GetAdvertisementsFromCurrentUser(long userId)
+        public static async Task<List<Advertisement>> GetUserAdvertisements(long userId)
         {
-            return MocksClass.GetAdvertisementsFromCurrentUser_Mock(userId);
+            if (UserSettings.UserSettings.UseMocks)
+            {
+                return MocksClass.GetAdvertisementsFromCurrentUser_Mock(userId);
+            }
+            var connectionString = $"{ConnectionSettings.GetUserAdvertisements}/{userId}";
+            using var response = await httpClient.GetAsync(connectionString);
+            // using var response = await httpClient.PostAsJsonAsync(ConnectionSettings.SendVerificationCode, newUser);
+            switch (response.StatusCode)
+            {
+                case System.Net.HttpStatusCode.OK:
+                    return await response.Content.ReadFromJsonAsync<List<Advertisement>>();
+                case System.Net.HttpStatusCode.NotFound:
+                    throw new AlreadyRegisteredException("Объявлений не найдено :(");
+                default:
+                    throw new Exception("Неизвестная ошибка. Попробуйте позже.");
+            }
         }
+
+        //public static List<Advertisement> GetAdvertisementsFromCurrentUser(long userId)
+        //{
+        //    return MocksClass.GetAdvertisementsFromCurrentUser_Mock(userId);
+        //}
 
         public static void RemoveAdvertisement(long advertisementId)
         {

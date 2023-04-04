@@ -59,9 +59,16 @@ namespace Obshajka.Helpers
             }
         }
 
-        public static IList<Advertisement> GetUserAdvertisements()
+        public static async Task<IList<Advertisement>> TryGetUserAdvertisements()
         {
-            return ObshajkaApi.GetAdvertisementsFromCurrentUser(UserSettings.UserSettings.UserId);
+            try
+            {
+                return await ObshajkaApi.GetUserAdvertisements(UserSettings.UserSettings.UserId);
+            } catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
         public static void RemoveOwnAdvert(long advertId)

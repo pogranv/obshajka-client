@@ -9,6 +9,7 @@
             <RowDefinition/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
+
         <ScrollView Orientation="Vertical" Grid.Column="0" Grid.Row="0">
             <!--padding не менять сука-->
             <VerticalStackLayout
@@ -16,7 +17,7 @@
                 Padding="0,0"
                 VerticalOptions="StartAndExpand">
                 <!--<Border Margin="5" >-->
-                    <!--Source="{Binding Image}"-->
+                <!--Source="{Binding Image}"-->
                 <!--<Border>-->
                 <VerticalStackLayout VerticalOptions="StartAndExpand">
                     <Image Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
@@ -27,9 +28,9 @@
                         </Image.Source>
                     </Image>
                     <!--<Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>-->
-                    
+
                     <!--<Image.Source></Image.>-->
-                        <Border StrokeThickness="3" Background="Black" BackgroundColor="Black"/>
+                    <Border StrokeThickness="3" Background="Black" BackgroundColor="Black"/>
                 </VerticalStackLayout>
                 <!--</Border>-->
                 <!--</Border>-->

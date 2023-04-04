@@ -36,6 +36,8 @@
         </Grid.RowDefinitions>
         <!--<RefreshView IsRefreshing="{Binding IsRefreshing}" Grid.Column="0" Grid.Row="0" RefreshColor="Purple" 
                      Command="{Binding RefreshAdvertisementsCommand}" x:Name="refreshView">-->
+        <RefreshView IsRefreshing="{Binding IsRefreshing}"  RefreshColor="Purple"  Grid.Column="0" Grid.Row="0"
+                         Command="{Binding RefreshAdvertisementsCommand}">
             <CollectionView ItemSizingStrategy="MeasureAllItems"  Grid.Column="0" Grid.Row="0" 
                         Margin="10"
                         ItemsSource="{Binding AdvertisementsListViewElements}"
@@ -48,6 +50,7 @@
                 </CollectionView.ItemsLayout>
             </CollectionView>
         <!--</RefreshView>-->
+        </RefreshView>
         <Button Text="Создать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" BackgroundColor="#00ff8b" Clicked="addAdvertButton_Clicked" TextColor="Black"/>
     </Grid>
 
