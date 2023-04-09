@@ -961,3 +961,5 @@ C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\andro
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\System.Private.CoreLib.dll
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\System.Private.Uri.dll
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\System.Xml.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\System.IO.Pipelines.dll

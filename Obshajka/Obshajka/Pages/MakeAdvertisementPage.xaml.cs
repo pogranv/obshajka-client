@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.Maui.Platform;
 using Obshajka.Models;
 using Obshajka.ViewModels;
@@ -12,6 +13,7 @@ public partial class MakeAdvertisementPage : ContentPage
 	}
 
     private AdvertisementsViewModel adverts;
+    private string imagePath;
 
     public MakeAdvertisementPage(AdvertisementsViewModel advertisements)
     {
@@ -19,6 +21,7 @@ public partial class MakeAdvertisementPage : ContentPage
         InitializeComponent();
     }
 
+    private Stream _imageStream = null;
     private async void DownloadImageBtn_Clicked(object sender, EventArgs e)
     {
         var result = await FilePicker.PickAsync(new PickOptions
@@ -27,12 +30,18 @@ public partial class MakeAdvertisementPage : ContentPage
             FileTypes = FilePickerFileType.Images
         });
 
+        
+
         if (result == null)
             return;
 
-        var stream = await result.OpenReadAsync();
+        imagePath = result.FullPath;
 
-        advertImage.Source = ImageSource.FromStream(() => stream);
+        _imageStream = await result.OpenReadAsync();
+        // _imageStream = stream;
+
+        advertImage.Source = ImageSource.FromStream(() => _imageStream);
+        // IFormFile file = advertImage.Source as IFormFile;
     }
 
     private bool IsCorrectPrice(string? price)
@@ -93,21 +102,22 @@ public partial class MakeAdvertisementPage : ContentPage
             await DisplayAlert("Ќе все пол€ заполнены", "«аполните об€зательные пол€ и проверьте на корректность выставленную цену, чтобы опубликовать объ€вление.", "ќк");
             return;
         }
-        var newAdvertisement = new Advertisement
+        // var publishingAdvertisement = new PublishingAdvertisement();
+        var publishingAdvertisement= new PublishingAdvertisement()
         {
             CreatorId = UserSettings.UserSettings.UserId,
-            CreatorName = UserSettings.UserSettings.UserName,
             Title = titleEntry.Text,
             Description = titleEntry.Text,
             DormitoryId = dormitoryPicker.SelectedIndex + 1,
             Price = GetPriceOrNul(priceEntry.Text),
-            Image = advertImage.Source.ToString(),
-            DateOfAddition = DateOnly.FromDateTime(DateTime.Now).ToString(),
+            // ImagePath = imagePath,
         };
-        var createdAdvertisement = Helpers.Helpers.PublishAndGetNewAdvert(newAdvertisement);
-        adverts.AdvertisementsListViewElements.Add(createdAdvertisement);
+        //newAdvertisement.Image = advertImage as IFormFile;
+        //var kek = new StreamContent(advertImage.Source);
+        Helpers.Helpers.PublishAdvert(publishingAdvertisement, imagePath);
+        // adverts.AdvertisementsListViewElements.Add(createdAdvertisement);
         await Navigation.PopAsync();
-        await DisplayAlert("—оздание объ€влени€", "ќбъ€вление успешно создано!", "Oк");
+        await DisplayAlert("—оздание объ€влени€", $"ќбъ€вление успешно создано! \n {imagePath}", "Oк");
     }
 
     private void TitleEntry_TextChanged(object sender, TextChangedEventArgs e)

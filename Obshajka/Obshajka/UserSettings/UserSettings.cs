@@ -26,8 +26,8 @@ namespace Obshajka.UserSettings
         public static string ConfirmVerificationCode { get; set; } = "https://localhost:7060/api/Registration/ConfirmVerificationCode";
         public static string Authorization { get; set; } = "https://localhost:7060/api/Authorization/Authorization";
         public static string GetOutsideAdvertisements { get; set; } = "https://localhost:7060/api/GetAdvertisements/GetOutsideAdvertisements";
-
         public static string GetUserAdvertisements { get; set; } = "https://localhost:7060/api/GetAdvertisements/GetUserAdvertisements";
         public static string DeleteAdvertisement { get;} = "https://localhost:7060/api/GetAdvertisements/DeleteAdvertisement";
+        public static string PublishAdvertisement { get; } = "https://localhost:7060/api";
     }
 }

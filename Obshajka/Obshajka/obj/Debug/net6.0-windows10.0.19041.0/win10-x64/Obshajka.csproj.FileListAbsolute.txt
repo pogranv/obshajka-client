@@ -365,3 +365,6 @@ C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.1
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\lock.scale-100.png
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\user.scale-100.png
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\view_eye.scale-100.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\System.IO.Pipelines.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\default_advert_image.scale-100.png

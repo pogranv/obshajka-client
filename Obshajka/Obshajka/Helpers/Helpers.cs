@@ -83,9 +83,20 @@ namespace Obshajka.Helpers
             
         }
 
+        // только для мока
+
         public static Advertisement PublishAndGetNewAdvert(Advertisement advert)
         {
             return ObshajkaApi.PublishAndGetNewAdvert(advert);
+        }
+
+        public static void PublishAdvert(PublishingAdvertisement advert, string imagePath)
+        {
+            if (UserSettings.UserSettings.UseMocks)
+            {
+                return;
+            }
+            ObshajkaApi.PubslishNewAdvert(advert, imagePath);
         }
     }
 }

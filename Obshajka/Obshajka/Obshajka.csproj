@@ -49,12 +49,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\default_advert_image.png" />
 	  <None Remove="Resources\Images\hide_eye.png" />
 	  <None Remove="Resources\Images\lamp.png" />
 	  <None Remove="Resources\Images\lock.png" />
 	  <None Remove="Resources\Images\plus_icon.png" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Resources\Images\view_eye.png" />
+	  <None Remove="Resources\Raw\default_advert_image.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
 	</ItemGroup>
 
 	<ItemGroup>

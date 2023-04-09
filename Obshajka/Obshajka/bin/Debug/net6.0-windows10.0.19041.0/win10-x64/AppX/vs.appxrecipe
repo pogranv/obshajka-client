@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-04T18:51:04.228</Modified>
+      <Modified>2023-04-09T21:54:40.100</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-04-04T18:51:02.423</Modified>
+      <Modified>2023-04-09T21:54:39.338</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Obshajka.runtimeconfig.json">
       <PackagePath>Obshajka.runtimeconfig.json</PackagePath>
-      <Modified>2023-02-19T14:14:19.739</Modified>
+      <Modified>2023-04-05T16:27:47.325</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Obshajka.dll">
       <PackagePath>Obshajka.dll</PackagePath>
-      <Modified>2023-04-04T18:51:00.029</Modified>
+      <Modified>2023-04-09T21:54:37.659</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Obshajka.exe</PackagePath>
-      <Modified>2023-04-04T18:51:00.041</Modified>
+      <Modified>2023-04-09T21:54:37.672</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.13\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -965,6 +965,10 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2022-11-16T01:34:42.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\microsoft.aspnetcore.http.features\5.0.17\lib\net5.0\Microsoft.AspNetCore.Http.Features.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.Features.dll</PackagePath>
+      <Modified>2022-04-15T22:18:12.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\microsoft.extensions.configuration\6.0.1\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
       <Modified>2022-02-24T00:12:18.000</Modified>
@@ -1053,6 +1057,10 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
       <Modified>2022-07-19T16:53:02.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\system.io.pipelines\5.0.2\lib\netcoreapp3.0\System.IO.Pipelines.dll">
+      <PackagePath>System.IO.Pipelines.dll</PackagePath>
+      <Modified>2022-02-15T17:11:52.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\microsoft.graphics.win2d\1.0.3.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2022-04-28T15:57:10.000</Modified>
@@ -1063,7 +1071,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Obshajka.deps.json">
       <PackagePath>Obshajka.deps.json</PackagePath>
-      <Modified>2023-04-04T18:51:03.968</Modified>
+      <Modified>2023-04-09T21:54:39.935</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\microsoft.maui.controls.ref.win\6.0.548\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1080,6 +1088,10 @@
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
       <Modified>2023-01-29T17:39:19.450</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\Resources\Raw\default_advert_image.png">
+      <PackagePath>default_advert_image.png</PackagePath>
+      <Modified>2023-04-09T21:17:11.923</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
@@ -1111,207 +1123,211 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2023-02-27T00:26:33.278</Modified>
+      <Modified>2023-04-09T21:51:20.983</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.587</Modified>
+      <Modified>2023-04-09T21:51:21.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.612</Modified>
+      <Modified>2023-04-09T21:51:21.275</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.624</Modified>
+      <Modified>2023-04-09T21:51:21.285</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.643</Modified>
+      <Modified>2023-04-09T21:51:21.308</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.713</Modified>
+      <Modified>2023-04-09T21:51:21.391</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.373</Modified>
+      <Modified>2023-04-09T21:51:21.068</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.377</Modified>
+      <Modified>2023-04-09T21:51:21.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.395</Modified>
+      <Modified>2023-04-09T21:51:21.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.381</Modified>
+      <Modified>2023-04-09T21:51:21.074</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.385</Modified>
+      <Modified>2023-04-09T21:51:21.077</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.349</Modified>
+      <Modified>2023-04-09T21:51:21.048</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.354</Modified>
+      <Modified>2023-04-09T21:51:21.051</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.370</Modified>
+      <Modified>2023-04-09T21:51:21.065</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.358</Modified>
+      <Modified>2023-04-09T21:51:21.055</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.362</Modified>
+      <Modified>2023-04-09T21:51:21.058</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.294</Modified>
+      <Modified>2023-04-09T21:51:20.999</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.299</Modified>
+      <Modified>2023-04-09T21:51:21.003</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.303</Modified>
+      <Modified>2023-04-09T21:51:21.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.309</Modified>
+      <Modified>2023-04-09T21:51:21.011</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.314</Modified>
+      <Modified>2023-04-09T21:51:21.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.318</Modified>
+      <Modified>2023-04-09T21:51:21.023</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.321</Modified>
+      <Modified>2023-04-09T21:51:21.027</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.340</Modified>
+      <Modified>2023-04-09T21:51:21.044</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.326</Modified>
+      <Modified>2023-04-09T21:51:21.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.330</Modified>
+      <Modified>2023-04-09T21:51:21.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.452</Modified>
+      <Modified>2023-04-09T21:51:21.135</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.457</Modified>
+      <Modified>2023-04-09T21:51:21.141</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.466</Modified>
+      <Modified>2023-04-09T21:51:21.147</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.476</Modified>
+      <Modified>2023-04-09T21:51:21.158</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.495</Modified>
+      <Modified>2023-04-09T21:51:21.174</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.424</Modified>
+      <Modified>2023-04-09T21:51:21.108</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.428</Modified>
+      <Modified>2023-04-09T21:51:21.112</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.433</Modified>
+      <Modified>2023-04-09T21:51:21.117</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.437</Modified>
+      <Modified>2023-04-09T21:51:21.121</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.447</Modified>
+      <Modified>2023-04-09T21:51:21.130</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.400</Modified>
+      <Modified>2023-04-09T21:51:21.088</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.404</Modified>
+      <Modified>2023-04-09T21:51:21.092</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.408</Modified>
+      <Modified>2023-04-09T21:51:21.095</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.412</Modified>
+      <Modified>2023-04-09T21:51:21.100</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.419</Modified>
+      <Modified>2023-04-09T21:51:21.105</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.502</Modified>
+      <Modified>2023-04-09T21:51:21.181</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.510</Modified>
+      <Modified>2023-04-09T21:51:21.188</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.520</Modified>
+      <Modified>2023-04-09T21:51:21.198</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.533</Modified>
+      <Modified>2023-04-09T21:51:21.213</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.568</Modified>
+      <Modified>2023-04-09T21:51:21.248</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\default_advert_image.scale-100.png">
+      <PackagePath>default_advert_image.scale-100.png</PackagePath>
+      <Modified>2023-04-09T21:17:11.923</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.250</Modified>
+      <Modified>2023-04-09T21:51:20.957</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.259</Modified>
+      <Modified>2023-04-09T21:51:20.969</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.273</Modified>
+      <Modified>2023-04-09T21:51:20.984</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.296</Modified>
+      <Modified>2023-04-09T21:51:21.008</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2023-02-27T00:26:33.354</Modified>
+      <Modified>2023-04-09T21:51:21.060</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\hide_eye.scale-100.png">
       <PackagePath>hide_eye.scale-100.png</PackagePath>
