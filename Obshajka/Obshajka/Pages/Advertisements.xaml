@@ -4,7 +4,7 @@
              x:Class="Obshajka.Pages.Advertisements"
              xmlns:local="clr-namespace:Obshajka.Models"
              xmlns:templates="clr-namespace:Obshajka.Templates"
-             Title="Спиcок объявлений">
+             Title="Стена объявлений">
 
     <ContentPage.Resources>
 

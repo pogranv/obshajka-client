@@ -17,18 +17,21 @@
 
     <TabBar Route="Bar">
         <ShellContent 
-            Title="Все объявления"
-            ContentTemplate="{DataTemplate pages:Advertisements}">
+            Title="Стена"
+            Icon="adverts_icon6.png"
+            ContentTemplate="{DataTemplate pages:Advertisements}"
+            >
         </ShellContent>
 
         <ShellContent
             Title="Мои объявления"
+            Icon="my_adverts_icon.png"
             ContentTemplate="{DataTemplate pages:MyAdvertisements}"/>
         
 
         <!--<ShellContent
             Title="Создать"
-            ContentTemplate="{DataTemplate pages:ProfilePage}"/>-->
+            ContentTemplate="{DataTemplate pages:ProfilePage}"/>    6     4+-    3 -->
     </TabBar>
 
     <!--<Shell.TitleView>

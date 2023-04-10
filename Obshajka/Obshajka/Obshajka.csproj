@@ -49,6 +49,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\adverts_icon1.png" />
+	  <None Remove="Resources\Images\adverts_icon2.png" />
+	  <None Remove="Resources\Images\adverts_icon3.png" />
+	  <None Remove="Resources\Images\adverts_icon4.png" />
+	  <None Remove="Resources\Images\adverts_icon5.png" />
+	  <None Remove="Resources\Images\adverts_icon6.png" />
+	  <None Remove="Resources\Images\adverts_icon7.png" />
+	  <None Remove="Resources\Images\adverts_icon8.png" />
 	  <None Remove="Resources\Images\default_advert_image.png" />
 	  <None Remove="Resources\Images\hide_eye.png" />
 	  <None Remove="Resources\Images\lamp.png" />

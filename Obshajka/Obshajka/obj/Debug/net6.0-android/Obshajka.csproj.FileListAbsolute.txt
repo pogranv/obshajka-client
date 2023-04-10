@@ -964,3 +964,12 @@ C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\andro
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\System.IO.Pipelines.dll
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\default_advert_image.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\my_adverts_icon.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon1.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon2.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon3.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon4.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon5.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon6.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon7.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon8.png
