@@ -53,6 +53,7 @@
 	  <None Remove="Resources\Images\hide_eye.png" />
 	  <None Remove="Resources\Images\lamp.png" />
 	  <None Remove="Resources\Images\lock.png" />
+	  <None Remove="Resources\Images\my_adverts_icon.png" />
 	  <None Remove="Resources\Images\plus_icon.png" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Resources\Images\view_eye.png" />

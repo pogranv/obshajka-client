@@ -10,7 +10,8 @@
             <RowDefinition/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <VerticalStackLayout Grid.Column="0" Grid.Row="0" Padding="30" Margin="10,50,10,10" Spacing="30">
+        <ScrollView Grid.Column="0" Grid.Row="0">
+        <VerticalStackLayout Padding="30" Margin="10,50,10,10" Spacing="30">
 
             <!--Padding="30,0" 
                 VerticalOptions="CenterAndExpand" Margin="10,50,10,10">-->
@@ -46,6 +47,7 @@
 
             <Button x:Name="LoginBtn" Text="Войти" WidthRequest="200" HeightRequest="45" CornerRadius="40" HorizontalOptions="Center" Margin="0,0,0,0" Clicked="LoginButton_Clicked"/>
         </VerticalStackLayout>
+        </ScrollView>
 
         <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,0,0,0"  Grid.Column="0" Grid.Row="1">
             <Label Text="Еще нет аккаунта?" TextColor="Gray" />

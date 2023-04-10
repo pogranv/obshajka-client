@@ -4,8 +4,9 @@
              x:Class="Obshajka.Pages.MyAdvertisements"
              xmlns:templates="clr-namespace:Obshajka.Templates"
              Title="Мои объявления"
-             BackgroundColor="#7300e9"
              >
+    <!--512BD4-->
+             
     <!--<Shell.TitleView>
         <StackLayout>
             <Button Text="ADD" HeightRequest="50" WidthRequest="100" HorizontalOptions="End"
@@ -29,7 +30,7 @@
     </ContentPage.Resources>
 
     <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
-    <Grid>
+    <Grid BackgroundColor="#e6e6e9">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="60"/>
@@ -38,7 +39,7 @@
                      Command="{Binding RefreshAdvertisementsCommand}" x:Name="refreshView">-->
         <RefreshView IsRefreshing="{Binding IsRefreshing}"  RefreshColor="Purple"  Grid.Column="0" Grid.Row="0"
                          Command="{Binding RefreshAdvertisementsCommand}">
-            <CollectionView ItemSizingStrategy="MeasureAllItems"  Grid.Column="0" Grid.Row="0" 
+            <CollectionView ItemSizingStrategy="MeasureAllItems"  Grid.Column="0" Grid.Row="0" Background="#e6e6e9"
                         Margin="10"
                         ItemsSource="{Binding AdvertisementsListViewElements}"
                         ItemTemplate="{StaticResource TemplateSelector}"
@@ -51,7 +52,9 @@
             </CollectionView>
         <!--</RefreshView>-->
         </RefreshView>
-        <Button Text="Создать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" BackgroundColor="#00ff8b" Clicked="addAdvertButton_Clicked" TextColor="Black"/>
+        <Button Text="Создать" WidthRequest="200" HeightRequest="48" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="50,5,50,5" 
+                BackgroundColor="#512BD4" Clicked="addAdvertButton_Clicked"/>
+        <!--#aed42b--> <!--00ff8b-->
     </Grid>
 
 </ContentPage>

@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.RegistrationPage"
              Title="Регистрация">
-    <VerticalStackLayout Grid.Column="0" Grid.Row="0" Padding="30" Margin="10,50,10,10" Spacing="30">
+    <ScrollView>
+    <VerticalStackLayout Grid.Column="0" Grid.Row="0" Padding="30" Margin="10,10,10,10" Spacing="30">
 
-        <Image Source="dotnet_bot.png" HeightRequest="80" WidthRequest="80" />
+        <Image Source="dotnet_bot.png" HeightRequest="80" WidthRequest="80"/>
 
         <VerticalStackLayout Spacing="15">
             <Label Text="Добро пожаловать в Общажку!" FontSize="25" TextColor="Gray" HorizontalTextAlignment="Center" />
@@ -45,4 +46,5 @@
 
         <Button x:Name="regBtn" Text="Отправить код" WidthRequest="200" HeightRequest="45" CornerRadius="40" HorizontalOptions="Center" Margin="0,0,0,0" Clicked="SendVerificationCode_Clicked"/>
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

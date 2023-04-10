@@ -17,7 +17,7 @@ namespace Obshajka.UserSettings
         public static long UserId { get; set; }
         public static long SelectedDormitoryIdFilter { get; set; } = 1;
         public static string UserName { get; set; }
-        public static bool UseMocks { get; set; } = false;
+        public static bool UseMocks { get; set; } = true;
     }
 
     public static class ConnectionSettings

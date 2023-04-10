@@ -15,10 +15,12 @@
                 Spacing="15"
                 Padding="25,0"
                 VerticalOptions="Center">
-                <Frame Margin="5">
-                    <Image x:Name="advertImage" Source="dotnet_bot"/>
-                </Frame>
-                <Button Text="Загрузить фотографию" Clicked="DownloadImageBtn_Clicked"/>
+                <!--<Frame Margin="5">-->
+                <Image x:Name="advertImage" Source="default_advert_image" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
+                <!--</Frame>-->
+                <Border></Border>
+                <Button Text="Загрузить фотографию" Clicked="DownloadImageBtn_Clicked"
+                        HeightRequest="40" WidthRequest="300"/>
                 <VerticalStackLayout Padding="10" Margin="0">
                     <Label Text="Заголовок:" x:Name="titleLabel"/>
                     <Entry x:Name="titleEntry" Placeholder="Введите заголовок" PlaceholderColor="LightGray" Margin="0" MaxLength="40" TextChanged="TitleEntry_TextChanged"/>
@@ -100,8 +102,8 @@
                     </Frame>
                     <Frame>
                         <Label Text="{Binding Title}" />
-                    </Frame>-->
+                    </Frame>    40d862    512BD4 -->
         </ScrollView>
-        <Button Text="Опубликовать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="130,0,130,0" BackgroundColor="#74ff90" Clicked="PublishBtn_Clicked"/>
+        <Button Text="Опубликовать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="130,0,130,0" BackgroundColor="#512BD4" Clicked="PublishBtn_Clicked"/>
     </Grid>
 </ContentPage>
