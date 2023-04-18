@@ -1,5 +1,13 @@
 OpenSans-Regular.ttf
 OpenSans-Semibold.ttf
+adverts_icon1.scale-100.png
+adverts_icon2.scale-100.png
+adverts_icon3.scale-100.png
+adverts_icon4.scale-100.png
+adverts_icon5.scale-100.png
+adverts_icon6.scale-100.png
+adverts_icon7.scale-100.png
+adverts_icon8.scale-100.png
 appicon.ico
 appiconLargeTile.scale-100.png
 appiconLargeTile.scale-125.png
@@ -56,6 +64,7 @@ hide_eye.scale-100.png
 lamp.scale-100.jpg
 lamp.scale-100.png
 lock.scale-100.png
+my_adverts_icon.scale-100.png
 plus_icon.scale-100.png
 user.scale-100.png
 view_eye.scale-100.png

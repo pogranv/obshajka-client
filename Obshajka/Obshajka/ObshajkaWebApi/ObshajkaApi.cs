@@ -51,7 +51,7 @@ namespace Obshajka.ObshajkaWebApi
             else
             {
                 var newUser = new NewUser { Email= email, Password = password, Name = name };
-                using var response = await httpClient.PostAsJsonAsync(ConnectionSettings.SendVerificationCode, newUser);
+                using var response = await httpClient.PostAsJsonAsync(/*"http://localhost:80/api/reg/verification"*/ConnectionSettings.SendVerificationCode, newUser);
                 switch (response.StatusCode)
                 {
                     case System.Net.HttpStatusCode.OK:
@@ -224,7 +224,7 @@ namespace Obshajka.ObshajkaWebApi
         {
             var client = new HttpClient
             {
-                BaseAddress = new("https://localhost:7060")
+                BaseAddress = new("http://localhost:80")
             };
 
 
@@ -239,7 +239,7 @@ namespace Obshajka.ObshajkaWebApi
             
              
             // TODO: baseaddres можно сделать только хостинг и потом просто дописывать сюда путь до api
-            using var request = new HttpRequestMessage(HttpMethod.Post, "api/GetAdvertisements/MakeAdvertisement"); // "api/GetAdvertisements/MakeAdvertisement
+            using var request = new HttpRequestMessage(HttpMethod.Post, "/api/adverts/add"); // "api/GetAdvertisements/MakeAdvertisement
 
             using var content = new MultipartFormDataContent
     {

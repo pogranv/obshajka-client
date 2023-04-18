@@ -17,17 +17,17 @@ namespace Obshajka.UserSettings
         public static long UserId { get; set; }
         public static long SelectedDormitoryIdFilter { get; set; } = 1;
         public static string UserName { get; set; }
-        public static bool UseMocks { get; set; } = true;
+        public static bool UseMocks { get; set; } = false;
     }
 
     public static class ConnectionSettings
     {
-        public static string SendVerificationCode { get; set; } = "https://localhost:7060/api/Registration/SendVerificationCode";
-        public static string ConfirmVerificationCode { get; set; } = "https://localhost:7060/api/Registration/ConfirmVerificationCode";
-        public static string Authorization { get; set; } = "https://localhost:7060/api/Authorization/Authorization";
-        public static string GetOutsideAdvertisements { get; set; } = "https://localhost:7060/api/GetAdvertisements/GetOutsideAdvertisements";
-        public static string GetUserAdvertisements { get; set; } = "https://localhost:7060/api/GetAdvertisements/GetUserAdvertisements";
-        public static string DeleteAdvertisement { get;} = "https://localhost:7060/api/GetAdvertisements/DeleteAdvertisement";
-        public static string PublishAdvertisement { get; } = "https://localhost:7060/api";
+        public static string SendVerificationCode { get; set; } = "http://localhost:80/api/reg/verification";
+        public static string ConfirmVerificationCode { get; set; } = "http://localhost:80/api/reg/confirmation";
+        public static string Authorization { get; set; } = "http://localhost:80/api/auth/authorize";
+        public static string GetOutsideAdvertisements { get; set; } = "http://localhost:80/api/adverts/outsides";
+        public static string GetUserAdvertisements { get; set; } = "http://localhost:80/api/adverts/my";
+        public static string DeleteAdvertisement { get;} = "http://localhost:80/api/adverts/remove";
+        public static string PublishAdvertisement { get; } = "http://localhost:80/api/adverts/add";
     }
 }
