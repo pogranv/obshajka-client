@@ -1,12 +1,13 @@
-﻿using System;
+﻿using ObshajkaWebApi.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Obshajka.Models
+namespace ObshajkaWebApi.Models
 {
-    public class PublishingAdvertisement
+    internal class PublishingAdvertisement : IPublishingAdvertisement
     {
         public long CreatorId { get; set; }
         public string Title { get; set; } = null!;

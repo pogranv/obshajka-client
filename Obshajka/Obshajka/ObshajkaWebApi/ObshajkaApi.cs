@@ -98,7 +98,6 @@ namespace Obshajka.ObshajkaWebApi
             }
             var connectionString = $"{ConnectionSettings.GetOutsideAdvertisements}/{dormitoryId}/{currentUserId}";
             using var response = await httpClient.GetAsync(connectionString);
-            // using var response = await httpClient.PostAsJsonAsync(ConnectionSettings.SendVerificationCode, newUser);
             switch (response.StatusCode)
             {
                 case System.Net.HttpStatusCode.OK:
@@ -118,7 +117,6 @@ namespace Obshajka.ObshajkaWebApi
             }
             var connectionString = $"{ConnectionSettings.GetUserAdvertisements}/{userId}";
             using var response = await httpClient.GetAsync(connectionString);
-            // using var response = await httpClient.PostAsJsonAsync(ConnectionSettings.SendVerificationCode, newUser);
             switch (response.StatusCode)
             {
                 case System.Net.HttpStatusCode.OK:
@@ -129,11 +127,6 @@ namespace Obshajka.ObshajkaWebApi
                     throw new Exception("Неизвестная ошибка. Попробуйте позже.");
             }
         }
-
-        //public static List<Advertisement> GetAdvertisementsFromCurrentUser(long userId)
-        //{
-        //    return MocksClass.GetAdvertisementsFromCurrentUser_Mock(userId);
-        //}
 
         public static async void RemoveAdvertisement(long advertisementId)
         {
@@ -154,71 +147,10 @@ namespace Obshajka.ObshajkaWebApi
                     throw new Exception("Не удалось удалить объявление :(");
             }
         }
-
         public static Advertisement PublishAndGetNewAdvert(Advertisement advertisement)
         {
             return MocksClass.BuplishAndGetNewAdvertisement(advertisement);
         }
-
-        //public static async void PubslishNewAdvert(AdvertisementWithImage advertisement, Stream imageStream)
-        //{
-        //    //var connectionString = ConnectionSettings.PublishAdvertisement;
-        //    //using var response = await httpClient.PostAsJsonAsync(connectionString, advertisement);
-        //    //// using var response = await httpClient.PostAsJsonAsync(ConnectionSettings.SendVerificationCode, newUser);
-        //    //Console.WriteLine(response.RequestMessage);
-        //    //switch (response.StatusCode)
-        //    //{
-        //    //    case System.Net.HttpStatusCode.OK:
-        //    //        return;
-        //    //    default:
-        //    //        throw new Exception("Не удалось удалить объявление :(");
-        //    //}
-
-        //    await using var stream = System.IO.File.OpenRead(@"D:\kek.jpg");
-
-        //    var Details = new
-        //    {
-        //        CreatorId = 1,
-        //        Title = "titile",
-        //        Description = "kek",
-        //        DormitoryId = 1,
-        //        Price = 100,
-        //    };
-
-
-
-
-        //    using var request = new HttpRequestMessage(HttpMethod.Post, "AdvertisementWithImage");
-        //    using var content = new MultipartFormDataContent
-        //    {
-        //        // file
-        //        {  new StreamContent(stream) , "FileToUpload1", "Test.jpg" },
-
-        //        // payload
-        //        { 
-        //            new StringContent(
-        //            JsonSerializer.Serialize(Details),
-        //            Encoding.UTF8,
-        //            "application/json"),
-        //            "Data" 
-        //        },
-        //    };
-
-
-        //    HttpClient client = new HttpClient
-        //    {
-        //        BaseAddress = new Uri(UserSettings.ConnectionSettings.PublishAdvertisement)
-        //    };
-        //    // client.BaseAddress = new Uri(UserSettings.ConnectionSettings.PublishAdvertisement);
-
-        //    request.Content = content;
-        //    var response = await client.SendAsync(request);
-        //    Console.WriteLine(response);
-        //    if (response.StatusCode == System.Net.HttpStatusCode.OK)
-        //    {
-        //        return;
-        //    }
-        //}
 
         public static async void PubslishNewAdvert(PublishingAdvertisement advertisement, string imagePath)
         {
@@ -235,28 +167,28 @@ namespace Obshajka.ObshajkaWebApi
             // await using var stream = imageStream;
 
             var payload = advertisement;
-
-            
              
             // TODO: baseaddres можно сделать только хостинг и потом просто дописывать сюда путь до api
             using var request = new HttpRequestMessage(HttpMethod.Post, "/api/adverts/add"); // "api/GetAdvertisements/MakeAdvertisement
 
             using var content = new MultipartFormDataContent
-    {
-                // file
-               // { new StreamContent(), "File", "kek" },
-         { new StreamContent(stream), "FileToUpload1", "Test.txt" },
+            {
+                { new StreamContent(stream), "FileToUpload1", "Test.txt" },
 
-        // payload
-        { new StringContent(
-            JsonSerializer.Serialize(payload),
-            Encoding.UTF8,
-            "application/json"),
-            "Data" },
-        };
+                // payload
+                
+                { 
+                    new StringContent(
+                        JsonSerializer.Serialize(payload),
+                        Encoding.UTF8,
+                        "application/json"),
+                    "Data" 
+                },
+
+        
+            };
 
             request.Content = content;
-
             var response = await client.SendAsync(request);
         }
     }

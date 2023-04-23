@@ -12,7 +12,6 @@ using System.Runtime.CompilerServices;
 
 namespace Obshajka.ViewModels
 {
-    // TODO: чекнуть изменение на странице при изменении списка и если что реализовать интерфейс INotifyPropertyChanged https://metanit.com/sharp/maui/6.7.php
     public class AdvertisementsViewModel : AdvertViewModelAbstract, INotifyPropertyChanged
     {
         public ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);

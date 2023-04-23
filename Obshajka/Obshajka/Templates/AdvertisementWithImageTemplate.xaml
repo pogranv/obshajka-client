@@ -2,9 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Templates.AdvertisementWithImageTemplate">
-    <!--CornerRadius="30"-->
     <StackLayout BackgroundColor="White" Spacing="0" Padding="2,2,2,2" Background="#e6e6e9">
-        <!--бордер не убирать, с frame не работает выбор!           e6e6e6         #f3f3f3-->
         <Border Margin="0" Stroke="Transparent">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="10,10,10,10" />
@@ -12,22 +10,13 @@
             <StackLayout Margin="0" Spacing="0" Padding="10">
                 <Border Stroke="Transparent">
                     <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="200" Aspect="Center"/>
-                    <!--<Image Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"> AspectFit был, Fill растягивается, AspectFill норм
-                        <Image.Source>
-                            <UriImageSource Uri="{Binding Image}"
-                                CacheValidity="1:00:00.0"
-                                CachingEnabled="True"/>
-                        </Image.Source>
-                    </Image>-->
-                    <!-- не Fill, AspectFit вмещает всю картинку-->
                 </Border>
                 <VerticalStackLayout VerticalOptions="CenterAndExpand" Margin="5,5,5,15">
-                    <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontSize="20" Margin="10,0,0,0" TextColor="Black" FontAttributes="Bold"/>
-                    <Label Text="{Binding Title}" FontSize = "16"  TextColor = "Gray" Margin="10,5,0,0" FontAttributes="Bold" LineBreakMode="TailTruncation"/>
-               
+                    <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontSize="20" Margin="10,0,0,0" TextColor="Black"
+                           FontAttributes="Bold"/>
+                    <Label Text="{Binding Title}" FontSize = "16"  TextColor = "Gray" Margin="10,5,0,0"
+                           FontAttributes="Bold" LineBreakMode="TailTruncation"/>
                 </VerticalStackLayout>
-                <!--<Label Text="{Binding DateOfAddition, StringFormat='Дата создания: {0}'}" FontSize="10"/>-->
-                <!--<Label Text="{Binding Description, StringFormat='Возраст: {0}'}" />-->
             </StackLayout>
         </Border>
     </StackLayout>

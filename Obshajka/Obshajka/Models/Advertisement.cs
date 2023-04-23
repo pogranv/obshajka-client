@@ -23,8 +23,6 @@ namespace Obshajka.Models
         public int? Price { get; set; }
 
         public string? Image { get; set; }
-
-        // нельзя сериализовать dateOnly, поэтому строка
         public string DateOfAddition { get; set; }
     }
 }
