@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-23T21:00:41.944</Modified>
+      <Modified>2023-04-23T21:47:40.079</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-04-23T21:00:41.454</Modified>
+      <Modified>2023-04-23T21:47:39.574</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Obshajka.runtimeconfig.json">
       <PackagePath>Obshajka.runtimeconfig.json</PackagePath>
-      <Modified>2023-04-05T16:27:47.325</Modified>
+      <Modified>2023-04-23T21:47:39.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Obshajka.dll">
       <PackagePath>Obshajka.dll</PackagePath>
-      <Modified>2023-04-23T21:00:38.963</Modified>
+      <Modified>2023-04-23T21:47:36.886</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Obshajka.exe</PackagePath>
-      <Modified>2023-04-23T21:00:38.998</Modified>
+      <Modified>2023-04-23T21:47:36.917</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.13\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1069,9 +1069,13 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2022-07-19T16:53:02.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\bin\Debug\net6.0\ObshajkaWebApi.dll">
+      <PackagePath>ObshajkaWebApi.dll</PackagePath>
+      <Modified>2023-04-23T21:47:29.093</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Obshajka.deps.json">
       <PackagePath>Obshajka.deps.json</PackagePath>
-      <Modified>2023-04-23T21:00:41.741</Modified>
+      <Modified>2023-04-23T21:47:39.867</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\microsoft.maui.controls.ref.win\6.0.548\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

@@ -1985,6 +1985,16 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-android31.0/android-arm": {
@@ -3970,6 +3980,16 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -5957,6 +5977,16 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-android31.0/android-x64": {
@@ -7942,6 +7972,16 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -9929,6 +9969,16 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-android31.0/iossimulator-x64": {
@@ -11914,6 +11964,16 @@
         },
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -13901,6 +13961,16 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-android31.0/win10-x64": {
@@ -15887,6 +15957,16 @@
         "build": {
           "buildTransitive/net6.0-android31.0/Xamarin.KotlinX.Coroutines.Core.Jvm.targets": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-ios16.1": {
@@ -16132,6 +16212,16 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -16379,6 +16469,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-ios16.1/android-arm64": {
@@ -16624,6 +16724,16 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -16871,6 +16981,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-ios16.1/android-x86": {
@@ -17116,6 +17236,16 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -17363,6 +17493,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-ios16.1/maccatalyst-x64": {
@@ -17608,6 +17748,16 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -17855,6 +18005,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-maccatalyst16.1": {
@@ -18100,6 +18260,16 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -18347,6 +18517,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-maccatalyst16.1/android-arm64": {
@@ -18592,6 +18772,16 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -18839,6 +19029,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-maccatalyst16.1/android-x86": {
@@ -19084,6 +19284,16 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -19331,6 +19541,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-maccatalyst16.1/maccatalyst-x64": {
@@ -19577,6 +19797,16 @@
             "related": ".xml"
           }
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-maccatalyst16.1/win10-x64": {
@@ -19822,6 +20052,16 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -20194,6 +20434,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-windows10.0.19041/android-arm": {
@@ -20536,6 +20786,16 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -20880,6 +21140,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-windows10.0.19041/android-x64": {
@@ -21222,6 +21492,16 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -21566,6 +21846,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-windows10.0.19041/iossimulator-x64": {
@@ -21909,6 +22199,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        }
       }
     },
     "net6.0-windows10.0.19041/maccatalyst-x64": {
@@ -22251,6 +22551,16 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     },
@@ -22600,6 +22910,16 @@
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
+        }
+      },
+      "ObshajkaWebApi/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ObshajkaWebApi.dll": {}
         }
       }
     }
@@ -25675,31 +25995,40 @@
         "xamarin.kotlinx.coroutines.core.jvm.1.6.0.1.nupkg.sha512",
         "xamarin.kotlinx.coroutines.core.jvm.nuspec"
       ]
+    },
+    "ObshajkaWebApi/1.0.0": {
+      "type": "project",
+      "path": "../ObshajkaWebApi/ObshajkaWebApi.csproj",
+      "msbuildProject": "../ObshajkaWebApi/ObshajkaWebApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-android31.0": [
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
       "Microsoft.Maui.Dependencies >= 6.0.548",
-      "Microsoft.Maui.Extensions >= 6.0.548"
+      "Microsoft.Maui.Extensions >= 6.0.548",
+      "ObshajkaWebApi >= 1.0.0"
     ],
     "net6.0-ios16.1": [
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
       "Microsoft.Maui.Dependencies >= 6.0.548",
       "Microsoft.Maui.Extensions >= 6.0.548",
+      "ObshajkaWebApi >= 1.0.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
     "net6.0-maccatalyst16.1": [
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
       "Microsoft.Maui.Dependencies >= 6.0.548",
       "Microsoft.Maui.Extensions >= 6.0.548",
+      "ObshajkaWebApi >= 1.0.0",
       "System.Runtime.InteropServices.NFloat.Internal >= 6.0.1"
     ],
     "net6.0-windows10.0.19041": [
       "Microsoft.AspNetCore.Http.Features >= 5.0.17",
       "Microsoft.Maui.Dependencies >= 6.0.548",
       "Microsoft.Maui.Extensions >= 6.0.548",
-      "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194"
+      "Microsoft.Windows.SDK.BuildTools >= 10.0.22000.194",
+      "ObshajkaWebApi >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -25738,19 +26067,35 @@
       "frameworks": {
         "net6.0-android31.0": {
           "targetAlias": "net6.0-android",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Andrei\\Desktop\\kursach\\Obshajka\\ObshajkaWebApi\\ObshajkaWebApi.csproj": {
+              "projectPath": "C:\\Users\\Andrei\\Desktop\\kursach\\Obshajka\\ObshajkaWebApi\\ObshajkaWebApi.csproj"
+            }
+          }
         },
         "net6.0-ios16.1": {
           "targetAlias": "net6.0-ios",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Andrei\\Desktop\\kursach\\Obshajka\\ObshajkaWebApi\\ObshajkaWebApi.csproj": {
+              "projectPath": "C:\\Users\\Andrei\\Desktop\\kursach\\Obshajka\\ObshajkaWebApi\\ObshajkaWebApi.csproj"
+            }
+          }
         },
         "net6.0-maccatalyst16.1": {
           "targetAlias": "net6.0-maccatalyst",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Andrei\\Desktop\\kursach\\Obshajka\\ObshajkaWebApi\\ObshajkaWebApi.csproj": {
+              "projectPath": "C:\\Users\\Andrei\\Desktop\\kursach\\Obshajka\\ObshajkaWebApi\\ObshajkaWebApi.csproj"
+            }
+          }
         },
         "net6.0-windows10.0.19041": {
           "targetAlias": "net6.0-windows10.0.19041.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Andrei\\Desktop\\kursach\\Obshajka\\ObshajkaWebApi\\ObshajkaWebApi.csproj": {
+              "projectPath": "C:\\Users\\Andrei\\Desktop\\kursach\\Obshajka\\ObshajkaWebApi\\ObshajkaWebApi.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

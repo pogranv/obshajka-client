@@ -13,6 +13,7 @@
           "Microsoft.Maui.Dependencies": "6.0.548",
           "Microsoft.Maui.Extensions": "6.0.548",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22000.194",
+          "ObshajkaWebApi": "1.0.0",
           "runtimepack.Microsoft.NETCore.App.Runtime.win-x64": "6.0.13",
           "runtimepack.Microsoft.Maui.Core.Runtime.win": "6.0.548",
           "runtimepack.Microsoft.Maui.Controls.Runtime.win": "6.0.548",
@@ -1128,7 +1129,12 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/6.0.0": {}
+      "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
+      "ObshajkaWebApi/1.0.0": {
+        "runtime": {
+          "ObshajkaWebApi.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -1294,6 +1300,11 @@
       "sha512": "sha512-/iUeP3tq1S0XdNNoMz5C9twLSrM/TH+qElHkXWaPvuNOt+99G75NrV0OS2EqHx5wMN7popYjpc8oTjC1y16DLg==",
       "path": "system.runtime.compilerservices.unsafe/6.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    },
+    "ObshajkaWebApi/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   },
   "runtimes": {

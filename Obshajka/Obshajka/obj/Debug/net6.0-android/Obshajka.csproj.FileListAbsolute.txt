@@ -973,3 +973,8 @@ C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resiz
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon6.png
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon7.png
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\resizetizer\r\drawable\adverts_icon8.png
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-android\ObshajkaWebApi.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-android\ObshajkaWebApi.pdb
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\Obshajka.csproj.CopyComplete
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\ObshajkaWebApi.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-android\android\assets\ObshajkaWebApi.pdb

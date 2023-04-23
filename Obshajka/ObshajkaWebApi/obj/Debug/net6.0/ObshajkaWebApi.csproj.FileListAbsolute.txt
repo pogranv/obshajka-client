@@ -1,0 +1,12 @@
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\bin\Debug\net6.0\ObshajkaWebApi.deps.json
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\bin\Debug\net6.0\ObshajkaWebApi.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\bin\Debug\net6.0\ObshajkaWebApi.pdb
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\ObshajkaWebApi.csproj.AssemblyReference.cache
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\ObshajkaWebApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\ObshajkaWebApi.AssemblyInfoInputs.cache
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\ObshajkaWebApi.AssemblyInfo.cs
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\ObshajkaWebApi.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\ObshajkaWebApi.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\refint\ObshajkaWebApi.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\ObshajkaWebApi.pdb
+C:\Users\Andrei\Desktop\kursach\Obshajka\ObshajkaWebApi\obj\Debug\net6.0\ref\ObshajkaWebApi.dll

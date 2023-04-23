@@ -12,17 +12,16 @@ namespace Obshajka.Helpers
 {
     public static class Helpers
     {
-        public static async void TryAutorizeUser(string email, string password)
-        {
-            try
-            {
-                UserSettings.UserSettings.UserId = await ObshajkaApi.AuthorizeUser(email, password);
-            } catch (Exception ex)
-            {
-                throw;
-            }
-            
-        }
+        //public static async void TryAutorizeUser(string email, string password)
+        //{
+        //    try
+        //    {
+        //        UserSettings.UserSettings.UserId = await ObshajkaApi.AuthorizeUser(email, password);
+        //    } catch (Exception ex)
+        //    {
+        //        throw;
+        //    }
+        //}
 
         public static void TryRegisterUser(string name, string email, string password)
         {

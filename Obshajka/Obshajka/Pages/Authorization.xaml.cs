@@ -1,8 +1,13 @@
+using ObshajkaWebApi;
+using ObshajkaWebApi.Exceptions;
+
 namespace Obshajka.Pages;
 
 public partial class Authorization : ContentPage
 {
     private readonly string _domainHse = "edu.hse.ru";
+    private readonly string _hide_eye_image = "hide_eye.png";
+    private readonly string _view_eye_image = "view_eye.png";
 
     public Authorization()
     {
@@ -17,12 +22,13 @@ public partial class Authorization : ContentPage
         var enteredEmail = EntryLogInEmail.Text.Trim();
         var enteredPassword = EntryLogInPassword.Text.Trim();
 
-        // TODO: обработать эксепшн, если не удалось авторизовться
+        var client = new ObshajkaClient();
         try
         {
-            Helpers.Helpers.TryAutorizeUser(enteredEmail, enteredPassword);
-        }
-        catch (Exception ex)
+            // TODO: сделать в файлике или как
+            // TODO: нужен ли helpers
+            UserSettings.UserSettings.UserId = await client.AuthorizeUser(enteredEmail, enteredPassword);
+        } catch (FailAuthorizeException ex)
         {
             await DisplayAlert("Не удалось войти", ex.Message, "Ок");
             return;
@@ -75,12 +81,12 @@ public partial class Authorization : ContentPage
         if (EntryLogInPassword.IsPassword)
         {
             EntryLogInPassword.IsPassword = false;
-            LogInPasswordEye.Source = "hide_eye.png";
+            LogInPasswordEye.Source = _hide_eye_image;
         }
         else
         {
             EntryLogInPassword.IsPassword = true;
-            LogInPasswordEye.Source = "view_eye.png";
+            LogInPasswordEye.Source = _view_eye_image;
         }
     }
 

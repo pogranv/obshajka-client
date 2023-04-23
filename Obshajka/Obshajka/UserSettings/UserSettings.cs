@@ -7,10 +7,7 @@ using static System.Net.WebRequestMethods;
 
 namespace Obshajka.UserSettings
 {
-    // хранение кэширование фото по сети https://metanit.com/sharp/maui/4.9.php
-    // чекнуть сколько номеров общаг и добавить в создание объявы
     // ограничение на воодимые данные при рестистрации и входе
-    // TODO чекнуть срок действия ссылки на скачивание, а то чет была проблема, что ссылка недействительна
     public static class UserSettings
     {
         public static long UserId { get; set; }

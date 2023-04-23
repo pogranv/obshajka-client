@@ -1,8 +1,13 @@
+using ObshajkaWebApi;
+using ObshajkaWebApi.Exceptions;
+
 namespace Obshajka.Pages;
 
 public partial class Registration : ContentPage
 {
     private readonly string _domainHse = "edu.hse.ru";
+    private readonly string _hide_eye_image = "hide_eye.png";
+    private readonly string _view_eye_image = "view_eye.png";
     public Registration()
     {
         InitializeComponent();
@@ -19,20 +24,19 @@ public partial class Registration : ContentPage
         var enteredEmail = regEmailEntry.Text.Trim();
         var enteredPassword = regPasswordEntry.Text.Trim();
 
-        // TODO: обработать эксепшн, если не удалось авторизовться
+        var client = new ObshajkaClient();
 
         try
         {
-            Helpers.Helpers.TryRegisterUser(enteredName, enteredEmail, enteredPassword);
-        }
-        catch (Exception ex)
+            client.RegisterUser(enteredName, enteredEmail, enteredPassword);
+        } 
+        catch (FailRegisterUserException ex)
         {
             await DisplayAlert("Ошибка регистрации", ex.Message, "Ок");
-            await Navigation.PopAsync();
             return;
         }
+
         await Navigation.PushAsync(new ConfirmVerificationCode(enteredEmail));
-        // await Shell.Current.GoToAsync("ConfirmVerificationCodePage");
     }
 
     private bool IsCorrectEntryData(string name, string email, string password)
@@ -85,12 +89,12 @@ public partial class Registration : ContentPage
         if (regPasswordEntry.IsPassword)
         {
             regPasswordEntry.IsPassword = false;
-            regPasswordEye.Source = "hide_eye.png";
+            regPasswordEye.Source = _hide_eye_image;
         }
         else
         {
             regPasswordEntry.IsPassword = true;
-            regPasswordEye.Source = "view_eye.png";
+            regPasswordEye.Source = _view_eye_image;
         }
     }
 }

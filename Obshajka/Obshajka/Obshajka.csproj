@@ -73,6 +73,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\ObshajkaWebApi\ObshajkaWebApi.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <Compile Update="Pages\MakeAdvertisement.xaml.cs">
 	    <DependentUpon>MakeAdvertisement.xaml</DependentUpon>
 	  </Compile>
