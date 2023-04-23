@@ -80,9 +80,6 @@
 	  <Compile Update="Pages\MakeAdvertisement.xaml.cs">
 	    <DependentUpon>MakeAdvertisement.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Pages\MyAdvertisements.xaml.cs">
-	    <DependentUpon>MyAdvertisements.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Templates\AdvertisementWithImageTemplate.xaml.cs">
 	    <DependentUpon>AdvertisementWithImageTemplate.xaml</DependentUpon>
 	  </Compile>
@@ -96,6 +93,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\MakeAdvertisement.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\MyAdvertsList.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\OutsideAdvertsList.xaml">

@@ -40,11 +40,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.MakeAdverti
 build_metadata.AdditionalFiles.TargetPath = Pages\MakeAdvertisement.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\MakeAdvertisement.xaml
 
-[C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/MyAdvertisements.xaml]
+[C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/MyAdvertsList.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.MyAdvertisements.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\MyAdvertisements.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\MyAdvertisements.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Obshajka.Pages.MyAdvertsList.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MyAdvertsList.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MyAdvertsList.xaml
 
 [C:/Users/Andrei/Desktop/kursach/Obshajka/Obshajka/Pages/OutsideAdvertsList.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

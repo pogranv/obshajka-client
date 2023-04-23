@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Obshajka.Pages.MyAdvertsList"
+             xmlns:templates="clr-namespace:Obshajka.Templates"
+             Title="Мои объявления">
+    
+    <ContentPage.Resources>
+        <DataTemplate x:Key="AdvertisementWithImage">
+            <templates:AdvertisementWithImageTemplate />
+        </DataTemplate>
+
+        <DataTemplate x:Key="AdvertisementWithoutImage">
+            <templates:AdvertisementWithoutImageTemplate />
+        </DataTemplate>
+
+        <templates:TemplateSelector
+            x:Key="TemplateSelector" 
+            AdvertisementWithImageTemplate="{StaticResource AdvertisementWithImage}"
+            AdvertisementWithoutImageTemplate="{StaticResource AdvertisementWithoutImage}" />
+    </ContentPage.Resources>
+
+    <Grid BackgroundColor="#e6e6e9">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <RefreshView IsRefreshing="{Binding IsRefreshing}"  RefreshColor="Purple"  Grid.Column="0" Grid.Row="0"
+                         Command="{Binding RefreshAdvertisementsCommand}">
+            <CollectionView ItemSizingStrategy="MeasureAllItems"  Grid.Column="0" Grid.Row="0" Background="#e6e6e9"
+                        Margin="10"
+                        ItemsSource="{Binding AdvertisementsListViewElements}"
+                        ItemTemplate="{StaticResource TemplateSelector}"
+                        SelectionMode="Single"
+                        SelectionChanged="CollectionView_SelectionChanged"
+                        x:Name="collectionView">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+            </CollectionView>
+        </RefreshView>
+        <Button Text="Создать" WidthRequest="200" HeightRequest="48" Grid.Column="0" Grid.Row="1"
+                CornerRadius="30" Margin="50,5,50,5" BackgroundColor="#512BD4" Clicked="AddAdvertButton_Clicked"/>
+    </Grid>
+</ContentPage>

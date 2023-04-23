@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Maui.Platform;
 using Obshajka.Models;
 using Obshajka.ViewModels;
+using ObshajkaWebApi;
+using ObshajkaWebApi.Exceptions;
 
 namespace Obshajka.Pages;
 
@@ -12,12 +14,12 @@ public partial class MakeAdvertisementPage : ContentPage
 		InitializeComponent();
 	}
 
-    private AdvertisementsViewModel adverts;
-    private string imagePath;
+    // private readonly AdvertisementsViewModel _adverts;
+    private string _imagePath;
 
     public MakeAdvertisementPage(AdvertisementsViewModel advertisements)
     {
-        adverts = advertisements;
+        // _adverts = advertisements;
         InitializeComponent();
     }
 
@@ -30,18 +32,12 @@ public partial class MakeAdvertisementPage : ContentPage
             FileTypes = FilePickerFileType.Images
         });
 
-        
-
         if (result == null)
             return;
 
-        imagePath = result.FullPath;
-
+        _imagePath = result.FullPath;
         _imageStream = await result.OpenReadAsync();
-        // _imageStream = stream;
-
         advertImage.Source = ImageSource.FromStream(() => _imageStream);
-        // IFormFile file = advertImage.Source as IFormFile;
     }
 
     private bool IsCorrectPrice(string? price)
@@ -102,7 +98,7 @@ public partial class MakeAdvertisementPage : ContentPage
             await DisplayAlert("Ќе все пол€ заполнены", "«аполните об€зательные пол€ и проверьте на корректность выставленную цену, чтобы опубликовать объ€вление.", "ќк");
             return;
         }
-        // var publishingAdvertisement = new PublishingAdvertisement();
+
         var publishingAdvertisement= new PublishingAdvertisement()
         {
             CreatorId = UserSettings.UserSettings.UserId,
@@ -110,14 +106,22 @@ public partial class MakeAdvertisementPage : ContentPage
             Description = titleEntry.Text,
             DormitoryId = dormitoryPicker.SelectedIndex + 1,
             Price = GetPriceOrNul(priceEntry.Text),
-            // ImagePath = imagePath,
         };
-        //newAdvertisement.Image = advertImage as IFormFile;
-        //var kek = new StreamContent(advertImage.Source);
-        Helpers.Helpers.PublishAdvert(publishingAdvertisement, imagePath);
-        // adverts.AdvertisementsListViewElements.Add(createdAdvertisement);
+
+        var client = new ObshajkaClient();
+
+        try
+        {
+            // ATTENTION! сюда пуста€ передаетс€, так не должно быть
+            client.PubslishNewAdvertisement(publishingAdvertisement, _imagePath);
+        }
+        catch(FailPublishAdvertisementException ex)
+        {
+            await DisplayAlert("ќшибка", ex.Message, "Oк");
+            return;
+        }
         await Navigation.PopAsync();
-        await DisplayAlert("—оздание объ€влени€", $"ќбъ€вление успешно создано! \n {imagePath}", "Oк");
+        await DisplayAlert("—оздание объ€влени€", "ќбъ€вление успешно создано!", "Oк");
     }
 
     private void TitleEntry_TextChanged(object sender, TextChangedEventArgs e)

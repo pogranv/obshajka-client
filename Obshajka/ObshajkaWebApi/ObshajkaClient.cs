@@ -184,7 +184,7 @@ namespace ObshajkaWebApi
             throw new ("Не удалось удалить объявление :(");
         }
 
-        public async void PubslishNewAdvert(IPublishingAdvertisement advertisement, string imagePath)
+        public async void PubslishNewAdvertisement(IPublishingAdvertisement advertisement, string imagePath)
         {
             // TODOOOOOOOOO тут траблики могут быть
             // using Stream stream = !string.IsNullOrEmpty(imagePath) ? System.IO.File.OpenRead(imagePath) : await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png");
@@ -211,7 +211,13 @@ namespace ObshajkaWebApi
             };
 
             request.Content = content;
-            var response = await _httpClient.SendAsync(request);
+            using var response = await _httpClient.SendAsync(request);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                return;
+            }
+            throw new FailPublishAdvertisementException("Неизвестная ошибка, повторите попытку.");
         }
 
         private static HttpClient _httpClient;

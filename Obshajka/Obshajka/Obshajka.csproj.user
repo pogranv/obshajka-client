@@ -20,6 +20,9 @@
     <MauiXaml Update="Pages\MakeAdvertisement.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Pages\MyAdvertsList.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Pages\OutsideAdvertsList.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

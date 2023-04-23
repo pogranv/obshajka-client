@@ -21,6 +21,6 @@
         <ShellContent
             Title="Мои объявления"
             Icon="my_adverts_icon.png"
-            ContentTemplate="{DataTemplate pages:MyAdvertisements}"/>
+            ContentTemplate="{DataTemplate pages:MyAdvertsList}"/>
     </TabBar>
 </Shell>

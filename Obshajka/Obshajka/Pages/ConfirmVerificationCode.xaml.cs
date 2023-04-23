@@ -1,16 +1,17 @@
+using Obshajka.Exceptions;
+using ObshajkaWebApi;
+
 namespace Obshajka.Pages;
 
 public partial class ConfirmVerificationCode : ContentPage
 {
-    private string _enteredEmail;
+    private readonly string _enteredEmail;
 
     public ConfirmVerificationCode(string enteredEmail)
     {
         InitializeComponent();
         _enteredEmail = enteredEmail;
     }
-
-
     public async void EnterApplication_Clicked(object sender, EventArgs e)
     {
         if (string.IsNullOrEmpty(regCodeEntry.Text) || regCodeEntry.Text.Length != 4 || !IsNumber(regCodeEntry.Text))
@@ -20,17 +21,20 @@ public partial class ConfirmVerificationCode : ContentPage
             incorrectCodeInfoLabel2.IsVisible = true;
             return;
         }
+
+        var client = new ObshajkaClient();
+
         try
         {
-            Helpers.Helpers.TryConfirmVerificationCode(_enteredEmail, regCodeEntry.Text);
-            await Shell.Current.GoToAsync("//Bar");
+            UserSettings.UserSettings.UserId = await client.ConfirmVerificationCode(_enteredEmail, regCodeEntry.Text);
         }
-        catch (Exception ex)
+        catch (FailConfirmVerificationCodeException ex)
         {
             await DisplayAlert("Ошибка регистрации", ex.Message, "Ок");
             return;
         }
 
+        await Shell.Current.GoToAsync("//Bar");
     }
 
     private bool IsNumber(string code)

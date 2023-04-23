@@ -13,13 +13,15 @@
                 Spacing="15"
                 Padding="25,0"
                 VerticalOptions="Center">
-                <Image x:Name="advertImage" Source="default_advert_image" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
+                <Image x:Name="advertImage" Source="default_advert_image" Aspect="Fill" VerticalOptions="StartAndExpand"
+                       HorizontalOptions="CenterAndExpand"/>
                 <Border></Border>
                 <Button Text="Загрузить фотографию" Clicked="DownloadImageBtn_Clicked"
                         HeightRequest="40" WidthRequest="300"/>
                 <VerticalStackLayout Padding="10" Margin="0">
                     <Label Text="Заголовок:" x:Name="titleLabel"/>
-                    <Entry x:Name="titleEntry" Placeholder="Введите заголовок" PlaceholderColor="LightGray" Margin="0" MaxLength="40"
+                    <Entry x:Name="titleEntry" Placeholder="Введите заголовок" PlaceholderColor="LightGray"
+                           Margin="0" MaxLength="40"
                            TextChanged="TitleEntry_TextChanged"/>
                     <Border StrokeThickness="0.7" Margin="0,-5,0,0" x:Name="titleBorder"/>
                 </VerticalStackLayout>
@@ -29,8 +31,9 @@
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="15,15,15,15" />
                         </Border.StrokeShape>
-                        <Picker Title="Выбрать" x:Name="dormitoryPicker" Margin="0,0,10,0" HorizontalTextAlignment="Center" Background="#E4E4E4"
-                                WidthRequest="100" HorizontalOptions="Start" SelectedIndexChanged="DormitoryPicker_SelectedIndexChanged">
+                        <Picker Title="Выбрать" x:Name="dormitoryPicker" Margin="0,0,10,0" HorizontalTextAlignment="Center"
+                                Background="#E4E4E4" WidthRequest="100" HorizontalOptions="Start"
+                                SelectedIndexChanged="DormitoryPicker_SelectedIndexChanged">
                             <Picker.Items>
                                 <x:String>1</x:String>
                                 <x:String>2</x:String>
@@ -54,8 +57,10 @@
                             <RoundRectangle CornerRadius="15,15,15,15" />
                         </Border.StrokeShape>
                         <ScrollView>
-                            <Editor x:Name="descriptionEditor" Placeholder="Введите описание (опционально). Расскажите, например, как с вами связаться."
-                                    PlaceholderColor="LightGray" Margin="0" MaxLength="250" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                            <Editor x:Name="descriptionEditor"
+                                    Placeholder="Введите описание (опционально). Расскажите, например, как с вами связаться."
+                                    PlaceholderColor="LightGray" Margin="0" MaxLength="250" HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
                                     AutoSize="TextChanges"/>
                         </ScrollView>
                     </Border>
@@ -72,6 +77,7 @@
                 </VerticalStackLayout>
             </VerticalStackLayout>
         </ScrollView>
-        <Button Text="Опубликовать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="130,0,130,0" BackgroundColor="#512BD4" Clicked="PublishBtn_Clicked"/>
+        <Button Text="Опубликовать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="130,0,130,0" BackgroundColor="#512BD4"
+                Clicked="PublishBtn_Clicked"/>
     </Grid>
 </ContentPage>

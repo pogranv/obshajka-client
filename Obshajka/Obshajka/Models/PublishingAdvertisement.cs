@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ObshajkaWebApi.Interfaces;
 
 namespace Obshajka.Models
 {
-    public class PublishingAdvertisement
+    public class PublishingAdvertisement : IPublishingAdvertisement
     {
         public long CreatorId { get; set; }
         public string Title { get; set; } = null!;
