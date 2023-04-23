@@ -8,31 +8,29 @@
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <!--<RefreshView IsRefreshing="{Binding IsRefreshing}" Grid.Column="0" Grid.Row="0" RefreshColor="Purple" 
-                     Command="{Binding RefreshAdvertisementsCommand}" x:Name="refreshView">-->
         <ScrollView Orientation="Vertical" Grid.Column="0" Grid.Row="0">
             <VerticalStackLayout
                 Spacing="15"
                 Padding="25,0"
                 VerticalOptions="Center">
-                <!--<Frame Margin="5">-->
                 <Image x:Name="advertImage" Source="default_advert_image" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
-                <!--</Frame>-->
                 <Border></Border>
                 <Button Text="Загрузить фотографию" Clicked="DownloadImageBtn_Clicked"
                         HeightRequest="40" WidthRequest="300"/>
                 <VerticalStackLayout Padding="10" Margin="0">
                     <Label Text="Заголовок:" x:Name="titleLabel"/>
-                    <Entry x:Name="titleEntry" Placeholder="Введите заголовок" PlaceholderColor="LightGray" Margin="0" MaxLength="40" TextChanged="TitleEntry_TextChanged"/>
+                    <Entry x:Name="titleEntry" Placeholder="Введите заголовок" PlaceholderColor="LightGray" Margin="0" MaxLength="40"
+                           TextChanged="TitleEntry_TextChanged"/>
                     <Border StrokeThickness="0.7" Margin="0,-5,0,0" x:Name="titleBorder"/>
                 </VerticalStackLayout>
                 <VerticalStackLayout Padding="10,0,0,0">
                     <Label Text="Разместить в общежитии №:"/>
-                    <Border x:Name="dormitoryBorder" WidthRequest="100" HorizontalOptions="Start" Background="#E4E4E4"><!--Background="#E4E4E4"-->
+                    <Border x:Name="dormitoryBorder" WidthRequest="100" HorizontalOptions="Start" Background="#E4E4E4">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="15,15,15,15" />
                         </Border.StrokeShape>
-                        <Picker Title="Выбрать" x:Name="dormitoryPicker" Margin="0,0,10,0" HorizontalTextAlignment="Center" Background="#E4E4E4" WidthRequest="100" HorizontalOptions="Start" SelectedIndexChanged="DormitoryPicker_SelectedIndexChanged">
+                        <Picker Title="Выбрать" x:Name="dormitoryPicker" Margin="0,0,10,0" HorizontalTextAlignment="Center" Background="#E4E4E4"
+                                WidthRequest="100" HorizontalOptions="Start" SelectedIndexChanged="DormitoryPicker_SelectedIndexChanged">
                             <Picker.Items>
                                 <x:String>1</x:String>
                                 <x:String>2</x:String>
@@ -44,12 +42,11 @@
                                 <x:String>8</x:String>
                                 <x:String>9</x:String>
                                 <x:String>10</x:String>
-                                <x:String>11</x:String>
+                                <x:String>Дубки</x:String>
                             </Picker.Items>
                         </Picker>
                     </Border>
                 </VerticalStackLayout>
-                <!--<Border StrokeThickness="1"/>-->
                 <VerticalStackLayout Padding="0" HeightRequest="100" Margin="5,5,5,5" Spacing="0">
                     <Label Text="Описание:"/>
                     <Border Padding="10" HeightRequest="200" >
@@ -57,52 +54,23 @@
                             <RoundRectangle CornerRadius="15,15,15,15" />
                         </Border.StrokeShape>
                         <ScrollView>
-                            <Editor x:Name="descriptionEditor" Placeholder="Введите описание (опционально). Расскажите, например, как с вами связаться." PlaceholderColor="LightGray" Margin="0" MaxLength="250" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" AutoSize="TextChanges"/>
+                            <Editor x:Name="descriptionEditor" Placeholder="Введите описание (опционально). Расскажите, например, как с вами связаться."
+                                    PlaceholderColor="LightGray" Margin="0" MaxLength="250" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                                    AutoSize="TextChanges"/>
                         </ScrollView>
                     </Border>
-                    <!--<Border StrokeThickness="0.7" Margin="0,-5,0,0"/>   -->
                 </VerticalStackLayout>
                 <VerticalStackLayout Padding="5" Margin="0,100,0,0" Spacing="0">
-                    <!--<Label Text="Описание:"/>-->
                     <Label Text="Цена в рублях:"/>
-                    
                     <Border x:Name="priceBorder" Margin="0">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="15,15,15,15" />
                         </Border.StrokeShape>
-                        <Entry x:Name="priceEntry" HeightRequest="50" Placeholder="Введите цену (опционально)" PlaceholderColor="LightGray" Margin="5,0,0,0" MaxLength="9" TextColor="Black" Keyboard="Numeric" TextChanged="PriceEntry_TextChanged"/>
+                        <Entry x:Name="priceEntry" HeightRequest="50" Placeholder="Введите цену (опционально)" PlaceholderColor="LightGray"
+                               Margin="5,0,0,0" MaxLength="9" TextColor="Black" Keyboard="Numeric" TextChanged="PriceEntry_TextChanged"/>
                     </Border>
                 </VerticalStackLayout>
             </VerticalStackLayout>
-            
-            
-            <!--</VerticalStackLayout>
-                <VerticalStackLayout>
-                    <Label Text="Разместить в общежитии №:"/>
-                    <Picker x:Name="languagePicker" Title = "Выберите номер общежития">
-                        <Picker.Items>
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                            <x:String>3</x:String>
-                            <x:String>4</x:String>
-                            <x:String>5</x:String>
-                            <x:String>6</x:String>
-                            <x:String>7</x:String>
-                            <x:String>8</x:String>
-                            <x:String>9</x:String>
-                            <x:String>10</x:String>
-                            <x:String>11</x:String>
-                            </Picker.Items>
-                    </Picker>
-                    </VerticalStackLayout>
-                    
-                    </VerticalStackLayout>-->
-                    <!--<Frame>
-                        <Label Text="{Binding Title}" />
-                    </Frame>
-                    <Frame>
-                        <Label Text="{Binding Title}" />
-                    </Frame>    40d862    512BD4 -->
         </ScrollView>
         <Button Text="Опубликовать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="130,0,130,0" BackgroundColor="#512BD4" Clicked="PublishBtn_Clicked"/>
     </Grid>

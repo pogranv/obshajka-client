@@ -13,8 +13,6 @@ namespace Obshajka.ViewModels
 {
     public class AdvertViewModelAbstract : INotifyPropertyChanged
     {
-        // public virtual ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
-
         // TODO: тут вместо AdvertisementsListViewElement заменить
         public ObservableCollection<Advertisement> AdvertisementsListViewElements { get; internal set; } =
             new ObservableCollection<Advertisement>();
@@ -23,36 +21,7 @@ namespace Obshajka.ViewModels
 
         public AdvertViewModelAbstract()
         {
-            // source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
-            //AdvertisementsListViewElements =
-            //   new ObservableCollection<Advertisement>(source);
-            // UpdateAdvertisementCollection();
         }
-
-        // TODO: удаление без уведомления https://stackoverflow.com/questions/5118513/removeall-for-observablecollections
-        //public void UpdateAdvertisementCollection()
-        //{
-        //    // AdvertisementsListViewElements.Clear();
-        //    // AdvertisementsListViewElements = new ObservableCollection<Advertisement>(source);
-        //    // AdvertisementsListViewElements
-        //    //source = Helpers.Helpers.GetAdvertisementsFromOthers().ToList();
-        //    //AdvertisementsListViewElements =
-        //    //   new ObservableCollection<Advertisement>(source);
-        //    // IsRefreshing = false;
-        //}
-
-        //bool isRefreshing = false;
-
-        //public bool IsRefreshing
-        //{
-        //    get => isRefreshing;
-        //    set
-        //    {
-        //        isRefreshing = value;
-
-        //        OnPropertyChanged();
-        //    }
-        //}
 
         #region INotifyPropertyChanged
 

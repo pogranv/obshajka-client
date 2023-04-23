@@ -1,18 +1,12 @@
-ï»¿namespace Obshajka;
-using Obshajka.Pages;
+namespace Obshajka.Pages;
 
-public partial class MainPage : ContentPage
+public partial class Authorization : ContentPage
 {
     private readonly string _domainHse = "edu.hse.ru";
 
-    public Command LoginCommand { get; }
-
-    public MainPage()
-	{
-		InitializeComponent();
-
-        //btnGoto.Clicked += async (s, e) => await Shell.Current.GoToAsync("//Bar");
-        //btnRegistration.Clicked += async (s, e) => await Shell.Current.GoToAsync("RegistrationPage");
+    public Authorization()
+    {
+        InitializeComponent();
     }
     private async void LoginButton_Clicked(object sender, EventArgs e)
     {
@@ -23,16 +17,17 @@ public partial class MainPage : ContentPage
         var enteredEmail = EntryLogInEmail.Text.Trim();
         var enteredPassword = EntryLogInPassword.Text.Trim();
 
-        // TODO: Ð¾Ð±Ñ€Ð°Ð±Ð¾Ñ‚Ð°Ñ‚ÑŒ ÑÐºÑÐµÐ¿ÑˆÐ½, ÐµÑÐ»Ð¸ Ð½Ðµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð°Ð²Ñ‚Ð¾Ñ€Ð¸Ð·Ð¾Ð²Ñ‚ÑŒÑÑ
+        // TODO: îáðàáîòàòü ýêñåïøí, åñëè íå óäàëîñü àâòîðèçîâòüñÿ
         try
         {
             Helpers.Helpers.TryAutorizeUser(enteredEmail, enteredPassword);
-        } catch (Exception ex)
+        }
+        catch (Exception ex)
         {
-            await DisplayAlert("ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð²Ð¾Ð¹Ñ‚Ð¸", ex.Message, "ÐžÐº");
+            await DisplayAlert("Íå óäàëîñü âîéòè", ex.Message, "Îê");
             return;
         }
-        
+
         await Shell.Current.GoToAsync("//Bar");
     }
 
@@ -60,7 +55,7 @@ public partial class MainPage : ContentPage
             return false;
         }
         var loginAndDomain = email.Split('@');
-        return loginAndDomain.Length == 2 && loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20 && loginAndDomain[1].Equals(_domainHse);
+        return loginAndDomain.Length == 2 && loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20 && loginAndDomain[1] == _domainHse;
     }
 
     private void EntryLogInEmail_TextChanged(object sender, TextChangedEventArgs e)
@@ -81,7 +76,8 @@ public partial class MainPage : ContentPage
         {
             EntryLogInPassword.IsPassword = false;
             LogInPasswordEye.Source = "hide_eye.png";
-        } else
+        }
+        else
         {
             EntryLogInPassword.IsPassword = true;
             LogInPasswordEye.Source = "view_eye.png";
@@ -90,6 +86,6 @@ public partial class MainPage : ContentPage
 
     private async void SignUpCLickedLabel_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("RegistrationPage");
+        await Shell.Current.GoToAsync("Registration");
     }
 }

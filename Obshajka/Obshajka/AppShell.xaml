@@ -3,42 +3,24 @@
     x:Class="Obshajka.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Obshajka"
     xmlns:pages="clr-namespace:Obshajka.Pages"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent Route="MainPage"
+    <ShellContent Route="Authorization"
                   Shell.FlyoutBehavior="Disabled"
-                  ContentTemplate="{DataTemplate local:MainPage}"/>
-
+                  ContentTemplate="{DataTemplate pages:Authorization}"/>
     <ShellContent Route="RegistrationPage"
                   Shell.FlyoutBehavior="Disabled"
-                  ContentTemplate="{DataTemplate pages:RegistrationPage}"/>
-
+                  ContentTemplate="{DataTemplate pages:Registration}"/>
     <TabBar Route="Bar">
         <ShellContent 
             Title="Стена"
             Icon="adverts_icon6.png"
-            ContentTemplate="{DataTemplate pages:Advertisements}"
-            >
+            ContentTemplate="{DataTemplate pages:OutsideAdvertsList}">
         </ShellContent>
-
         <ShellContent
             Title="Мои объявления"
             Icon="my_adverts_icon.png"
             ContentTemplate="{DataTemplate pages:MyAdvertisements}"/>
-        
-
-        <!--<ShellContent
-            Title="Создать"
-            ContentTemplate="{DataTemplate pages:ProfilePage}"/>    6     4+-    3 -->
     </TabBar>
-
-    <!--<Shell.TitleView>
-        <StackLayout>
-            <Button Text="ADD" HeightRequest="50" WidthRequest="100" HorizontalOptions="End"
-                    x:Name="addAdvertButton"/>
-        </StackLayout>
-    </Shell.TitleView>-->
-
 </Shell>

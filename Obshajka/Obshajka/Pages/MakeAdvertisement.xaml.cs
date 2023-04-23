@@ -26,7 +26,7 @@ public partial class MakeAdvertisementPage : ContentPage
     {
         var result = await FilePicker.PickAsync(new PickOptions
         {
-            PickerTitle = "Pick Image Please",
+            PickerTitle = "Выбор изображения объявления",
             FileTypes = FilePickerFileType.Images
         });
 

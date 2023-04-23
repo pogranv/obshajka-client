@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Obshajka.Pages.AdvertisementPage"
+             x:Class="Obshajka.Pages.OutsideAdvertView"
              Title="Просмотр объявления">
 
-    <!--grid потому что scroll view не работает внутри стека-->
-        <ScrollView Orientation="Vertical">
-            <VerticalStackLayout
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout
                 Spacing="10"
                 Padding="0,0"
                 VerticalOptions="StartAndExpand">
             <VerticalStackLayout VerticalOptions="StartAndExpand">
-                <!--<Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>-->
                 <Image Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
                     <Image.Source>
                         <UriImageSource Uri="{Binding Image}"
@@ -21,15 +19,11 @@
                 </Image>
                 <Border StrokeThickness="3" Background="Black" BackgroundColor="Black"/>
             </VerticalStackLayout>
-            <!--<Frame Margin="5">
-                    <Image Source="{Binding Image}"/>
-                </Frame>-->
             <VerticalStackLayout Margin="5">
                 <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="30" LineBreakMode="WordWrap"/>
                 <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontAttributes="Bold" FontSize="25"/>
                 <Label Text="{Binding DormitoryId, StringFormat='Размещено в общежитии №{0}'}" FontAttributes="Bold" FontSize="15" Margin="0,8,0,0"/>
             </VerticalStackLayout>
-            
             <Border/>
             <VerticalStackLayout Padding="0" Margin="5,5,5,5" Spacing="0">
                 <Label Text="Описание:"/>
@@ -39,14 +33,12 @@
                     </Border.StrokeShape>
                     <Editor Text="{Binding Description}" IsReadOnly="True"  AutoSize="TextChanges"/>
                 </Border>
-                <!--<Border StrokeThickness="0.7" Margin="0,-5,0,0"/>   -->
             </VerticalStackLayout>
             <VerticalStackLayout Padding="0" Margin="5,5,5,5" Spacing="5">
                 <Label Text="{Binding CreatorName, StringFormat='Меня зовут: {0}'}"/>
                 <Label Text="{Binding DateOfAddition, StringFormat='Дата создания объявления: {0}'}"/>
             </VerticalStackLayout>
-
-
         </VerticalStackLayout>
-        </ScrollView>
+    </ScrollView>
+
 </ContentPage>

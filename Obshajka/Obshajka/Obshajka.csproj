@@ -73,14 +73,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Pages\AdvertisementPage.xaml.cs">
-	    <DependentUpon>AdvertisementPage.xaml</DependentUpon>
+	  <Compile Update="Pages\MakeAdvertisement.xaml.cs">
+	    <DependentUpon>MakeAdvertisement.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Pages\MyAdvertisements.xaml.cs">
 	    <DependentUpon>MyAdvertisements.xaml</DependentUpon>
-	  </Compile>
-	  <Compile Update="Pages\RegistrationPage.xaml.cs">
-	    <DependentUpon>RegistrationPage.xaml</DependentUpon>
 	  </Compile>
 	  <Compile Update="Templates\AdvertisementWithImageTemplate.xaml.cs">
 	    <DependentUpon>AdvertisementWithImageTemplate.xaml</DependentUpon>
@@ -88,22 +85,25 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\AdvertisementPage.xaml">
+	  <MauiXaml Update="Pages\Authorization.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ConfirmVerificationCodePage.xaml">
+	  <MauiXaml Update="Pages\ConfirmVerificationCode.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\MakeAdvertisementPage.xaml">
+	  <MauiXaml Update="Pages\MakeAdvertisement.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\OutsideAdvertsList.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\OutsideAdvertView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\OwnAdvertView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\ProfilePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Pages\RegistrationPage.xaml">
+	  <MauiXaml Update="Pages\Registration.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Templates\AdvertisementWithoutImageTemplate.xaml">

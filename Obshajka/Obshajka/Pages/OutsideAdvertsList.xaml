@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Obshajka.Pages.Advertisements"
-             xmlns:local="clr-namespace:Obshajka.Models"
              xmlns:templates="clr-namespace:Obshajka.Templates"
+             x:Class="Obshajka.Pages.OutsideAdvertsList"
              Title="Стена объявлений">
 
     <ContentPage.Resources>
-
         <DataTemplate x:Key="AdvertisementWithImage">
             <templates:AdvertisementWithImageTemplate />
         </DataTemplate>
@@ -18,19 +16,15 @@
 
         <templates:TemplateSelector x:Key="TemplateSelector" 
                               AdvertisementWithImageTemplate="{StaticResource AdvertisementWithImage}"
-                              AdvertisementWithoutImageTemplate="{StaticResource AdvertisementWithoutImage}"
-                              />
+                              AdvertisementWithoutImageTemplate="{StaticResource AdvertisementWithoutImage}"/>
     </ContentPage.Resources>
 
-    <!--ItemsSource="{Binding AdvertisementsListViewElements}"-->
     <Grid BackgroundColor="#e6e6e9">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition />
         </Grid.RowDefinitions>
-        <!--<Label Text="Объявления общежития №" VerticalOptions="Start" FontSize="20"/>
-        <Border/>-->
-        <Border WidthRequest="220" HorizontalOptions="Center" Background="#E4E4E4" Grid.Column="0" Grid.Row="0" Stroke="Gray"><!--Background="#E4E4E4" Grid.Column="0" Grid.Row="0" Stroke="Gray"-->
+        <Border WidthRequest="220" HorizontalOptions="Center" Background="#E4E4E4" Grid.Column="0" Grid.Row="0" Stroke="Gray">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="15,15,15,15" />
             </Border.StrokeShape>
@@ -47,7 +41,7 @@
                     <x:String>Общежитие №8</x:String>
                     <x:String>Общежитие №9</x:String>
                     <x:String>Общежитие №10</x:String>
-                    <x:String>Общежитие №11</x:String>
+                    <x:String>Дубки</x:String>
                 </Picker.Items>
             </Picker>
         </Border>
@@ -68,18 +62,4 @@
         </RefreshView>
     </Grid>
 
-    <!--<CollectionView ItemSizingStrategy="MeasureAllItems" Margin="0" ItemTemplate="{StaticResource TemplateSelector}">
-        <CollectionView.ItemsLayout>
-            <GridItemsLayout Orientation="Vertical" Span="2" />
-        </CollectionView.ItemsLayout>
-        <CollectionView.ItemsSource>
-            <x:Array Type="{x:Type local:AdvertisementsListViewElement}">
-                <local:AdvertisementsListViewElement Name="Tom" Description="Description" Image="dotnet_bot.png"/>
-                <local:AdvertisementsListViewElement Name="Sam" Description="Description" Image="dotnet_bot.png"/>
-                <local:AdvertisementsListViewElement Name="Bob" Description="Description"/>
-                <local:AdvertisementsListViewElement Name="Alice" Description="Description" Image="dotnet_bot.png"/>
-                <local:AdvertisementsListViewElement Name="Kate" Description="Description" Image="dotnet_bot.png"/>
-            </x:Array>
-        </CollectionView.ItemsSource>
-    </CollectionView>-->
 </ContentPage>

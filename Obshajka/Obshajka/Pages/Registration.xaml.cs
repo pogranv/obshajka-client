@@ -1,15 +1,12 @@
 namespace Obshajka.Pages;
 
-using Obshajka.Exceptions;
-
-public partial class RegistrationPage : ContentPage
+public partial class Registration : ContentPage
 {
-
     private readonly string _domainHse = "edu.hse.ru";
-    public RegistrationPage()
-	{
-		InitializeComponent();
-        Routing.RegisterRoute("ConfirmVerificationCodePage", typeof(ConfirmVerificationCodePage));
+    public Registration()
+    {
+        InitializeComponent();
+        Routing.RegisterRoute("ConfirmVerificationCode", typeof(ConfirmVerificationCode));
     }
 
     private async void SendVerificationCode_Clicked(object sender, EventArgs e)
@@ -34,7 +31,7 @@ public partial class RegistrationPage : ContentPage
             await Navigation.PopAsync();
             return;
         }
-        await Navigation.PushAsync(new ConfirmVerificationCodePage(enteredEmail));
+        await Navigation.PushAsync(new ConfirmVerificationCode(enteredEmail));
         // await Shell.Current.GoToAsync("ConfirmVerificationCodePage");
     }
 
