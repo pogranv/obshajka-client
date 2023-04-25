@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Pages.OwnAdvertView"
              Title="Мое объявление">
-    <!--grid потому что scroll view не работает внутри стека-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -11,14 +10,10 @@
         </Grid.RowDefinitions>
 
         <ScrollView Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-            <!--padding не менять сука-->
             <VerticalStackLayout
                 Spacing="10"
                 Padding="0,0"
                 VerticalOptions="StartAndExpand">
-                <!--<Border Margin="5" >-->
-                <!--Source="{Binding Image}"-->
-                <!--<Border>-->
                 <VerticalStackLayout VerticalOptions="StartAndExpand">
                     <Image Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
                         <Image.Source>
@@ -27,17 +22,13 @@
                                 CachingEnabled="True"/>
                         </Image.Source>
                     </Image>
-                    <!--<Image Source="{Binding Image}" Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>-->
-
-                    <!--<Image.Source></Image.>-->
                     <Border StrokeThickness="3" Background="Black" BackgroundColor="Black"/>
                 </VerticalStackLayout>
-                <!--</Border>-->
-                <!--</Border>-->
                 <VerticalStackLayout Margin="5">
                     <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="30" LineBreakMode="WordWrap"/>
                     <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontAttributes="Bold" FontSize="25"/>
-                    <Label Text="{Binding DormitoryId, StringFormat='Размещено в общежитии №{0}'}" FontAttributes="Bold" FontSize="15" Margin="0,8,0,0"/>
+                    <Label Text="{Binding DormitoryId, StringFormat='Размещено в общежитии №{0}'}" FontAttributes="Bold"
+                           FontSize="15" Margin="0,8,0,0"/>
                 </VerticalStackLayout>
 
                 <Border/>
@@ -49,7 +40,6 @@
                         </Border.StrokeShape>
                         <Editor Text="{Binding Description}" IsReadOnly="True"  AutoSize="TextChanges"/>
                     </Border>
-                    <!--<Border StrokeThickness="0.7" Margin="0,-5,0,0"/>   -->
                 </VerticalStackLayout>
                 <VerticalStackLayout Padding="0" Margin="5,5,5,5" Spacing="5">
                     <Label Text="{Binding CreatorName, StringFormat='Меня зовут: {0}'}"/>
@@ -58,44 +48,9 @@
 
 
             </VerticalStackLayout>
-            <!--<VerticalStackLayout
-                Spacing="25"
-                Padding="30,0"
-                VerticalOptions="Center">
-                <Frame Margin="5">
-                    <Image Source="{Binding Image}"/>
-                </Frame>
-                <Label Text="Дата создания: 12.12.2003"/>
-                <Frame>
-                    <Label Text="{Binding Title}" />
-                </Frame>
-                <Frame>
-                    <Label Text="{Binding Title}" />
-                </Frame>
-                <Frame>
-                    <Label Text="{Binding Title}" />
-                </Frame>
-                <Frame>
-                    <Label Text="{Binding Title}" />
-                </Frame>
-                <Frame>
-                    <Label Text="{Binding Title}" />
-                </Frame>
-                <Frame>
-                    <Label Text="{Binding Title}" />
-                </Frame>
-                <Label Text="{Binding Description}"/>
-                <Label Text="{Binding Price}"/>
-                <Label Text="{Binding CreatorName}"/>
-                <Label Text="{Binding DormitoryId}"/>
-
-                
-
-            </VerticalStackLayout>-->
         </ScrollView>
         <Button Grid.Column="0" Grid.Row="1" Text="Удалить" CornerRadius=" 30" Margin="50,5,50,5" 
-                BackgroundColor="OrangeRed" Clicked="deleteButton_Clicked"
+                BackgroundColor="OrangeRed" Clicked="DeleteButton_Clicked"
                 HeightRequest="50" WidthRequest="200" />
-        <!--d4512b     OrangeRed-->
     </Grid>
 </ContentPage>

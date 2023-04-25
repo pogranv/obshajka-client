@@ -40,7 +40,7 @@ public partial class Authorization : ContentPage
     private bool IsCorrectEmailAndPassword(string email, string password)
     {
         bool isCorrectFlag = true;
-        if (string.IsNullOrEmpty(password) || password.Length <= 4)
+        if (string.IsNullOrEmpty(password) || password.Trim().Length < 4)
         {
             isCorrectFlag = false;
             IncorrectPasswordLabel.IsVisible = true;
@@ -60,7 +60,7 @@ public partial class Authorization : ContentPage
         {
             return false;
         }
-        var loginAndDomain = email.Split('@');
+        var loginAndDomain = email.Trim().Split('@');
         return loginAndDomain.Length == 2 && loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20 && loginAndDomain[1] == _domainHse;
     }
 

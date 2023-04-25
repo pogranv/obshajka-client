@@ -29,7 +29,7 @@ public partial class OutsideAdvertsList : ContentPage
         collectionView.SelectedItem = null;
     }
 
-    private void dormitoryPicker_SelectedIndexChanged(object sender, EventArgs e)
+    private void DormitoryPicker_SelectedIndexChanged(object sender, EventArgs e)
     {
         (BindingContext as OutsideAdvertsViewModel).DormitoryId = dormitoryPicker.SelectedIndex + 1;
     }

@@ -1,5 +1,5 @@
-using Obshajka.Exceptions;
 using ObshajkaWebApi;
+using ObshajkaWebApi.Exceptions;
 
 namespace Obshajka.Pages;
 
@@ -23,7 +23,6 @@ public partial class ConfirmVerificationCode : ContentPage
         }
 
         var client = new ObshajkaClient();
-
         try
         {
             UserSettings.UserSettings.UserId = await client.ConfirmVerificationCode(_enteredEmail, regCodeEntry.Text);

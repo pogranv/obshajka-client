@@ -5,10 +5,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Obshajka.Helpers;
+// using Obshajka.Helpers;
 using Obshajka.Models;
 using System.Windows.Input;
 using System.Runtime.CompilerServices;
+using ObshajkaWebApi;
+using ObshajkaWebApi.Exceptions;
+using ObshajkaWebApi.Interfaces;
 
 namespace Obshajka.ViewModels
 {
@@ -25,18 +28,20 @@ namespace Obshajka.ViewModels
         public async void UpdateAdvertisementCollection()
         {
             AdvertisementsListViewElements.Clear();
+
+            var client = new ObshajkaClient();
             try
             {
-                List<Advertisement> actualAdverts = (await Helpers.Helpers.TryGetUserAdvertisements()).ToList();
-                foreach (var advert in actualAdverts)
+                // List<Advertisement> actualAdverts = (await Helpers.Helpers.TryGetUserAdvertisements()).ToList();
+                //var kek = await client.GetUserAdvertisements(UserSettings.UserSettings.UserId);
+                //var lol = (List<Advertisement>)kek;
+                var actualAdverts = await client.GetUserAdvertisements(UserSettings.UserSettings.UserId);
+                foreach (IAdvertisement advert in actualAdverts)
                 {
-                    AdvertisementsListViewElements.Add(advert);
+                    AdvertisementsListViewElements.Add(Advertisement.Build(advert));
                 }
             }
-            catch (Exception ex)
-            {
-
-            }
+            catch (FailGetAdvertisementsException) { }
             finally
             {
                 IsRefreshing = false;

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Obshajka.Templates;
 using Obshajka.Models;
+using ObshajkaWebApi.Exceptions;
+using ObshajkaWebApi.Interfaces;
 
 namespace Obshajka.Templates
 {
@@ -15,7 +17,7 @@ namespace Obshajka.Templates
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            if (item is Advertisement chat)
+            if (item is IAdvertisement chat)
             {
                 if (chat.Image == null)
                 {

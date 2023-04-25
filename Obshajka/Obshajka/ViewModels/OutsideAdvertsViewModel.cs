@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Obshajka.Models;
+using ObshajkaWebApi;
+using ObshajkaWebApi.Exceptions;
+using ObshajkaWebApi.Interfaces;
 
 namespace Obshajka.ViewModels
 {
@@ -38,12 +41,23 @@ namespace Obshajka.ViewModels
                 return;
             }
             AdvertisementsListViewElements.Clear();
-            List<Advertisement> actualAdverts = (await Helpers.Helpers.TryGetOutsideAdvertisements((int)DormitoryId)).ToList();
-            foreach (var advert in actualAdverts)
+
+            var client = new ObshajkaClient();
+
+            try
             {
-                AdvertisementsListViewElements.Add(advert);
+                // List<Advertisement> actualAdverts = (await Helpers.Helpers.TryGetOutsideAdvertisements((int)DormitoryId)).ToList();
+                var actualAdverts = (await client.GetAdvertisementsFromOtherUsers((int)DormitoryId, UserSettings.UserSettings.UserId));
+                foreach (IAdvertisement advert in actualAdverts)
+                {
+                    AdvertisementsListViewElements.Add(Advertisement.Build(advert));
+                }
+            } 
+            catch (FailGetAdvertisementsException) { }
+            finally
+            {
+                IsRefreshing = false;
             }
-            IsRefreshing = false;
         }
 
         bool isRefreshing = false;

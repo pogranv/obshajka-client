@@ -9,13 +9,14 @@ using ObshajkaWebApi.Exceptions;
 using ObshajkaWebApi.Models;
 using ObshajkaWebApi.Mocks;
 using ObshajkaWebApi.Interfaces;
+using ObshajkaWebApi.Utils;
 
 namespace ObshajkaWebApi
 {
     public class ObshajkaClient
     {
         // todo: удалить
-        private bool useMocks = true;
+        private bool useMocks = false;
 
         // TODO: исправить типы экспешинов
         static ObshajkaClient()
@@ -33,7 +34,10 @@ namespace ObshajkaWebApi
             {
                 return 1;
             }
-            var emailWithPassword = new EmailWithPassword(email, password);
+            //var emailWithPassword = new EmailWithPassword("email", "password");
+            //using var response = await _httpClient.PostAsJsonAsync("https://localhost:7082/api/v1/auth/authorize", emailWithPassword);
+            var hashedPassword = Utils.HashUtils.GetHashString(password);
+            var emailWithPassword = new EmailWithPassword(email, hashedPassword);
             using var response = await _httpClient.PostAsJsonAsync(ConnectionStrings.Authorization, emailWithPassword);
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
@@ -60,8 +64,11 @@ namespace ObshajkaWebApi
             }
             else
             {
-                var newUser = new User { Email = email, Password = password, Name = name };
-                using var response = await _httpClient.PostAsJsonAsync(ConnectionStrings.SendVerificationCode, newUser);
+                var hashedPassword = HashUtils.GetHashString(password);
+                var user = new User(email, hashedPassword, name);
+
+                using var response = await _httpClient.PostAsJsonAsync(ConnectionStrings.SendVerificationCode, user);
+
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     return;
@@ -184,11 +191,17 @@ namespace ObshajkaWebApi
             throw new ("Не удалось удалить объявление :(");
         }
 
-        public async void PubslishNewAdvertisement(IPublishingAdvertisement advertisement, string imagePath)
+        public async void PubslishNewAdvertisement(IPublishingAdvertisement advertisement, Stream imageStream/*string imagePath, Stream mystream*/)
         {
+            //var kek = mystream;
             // TODOOOOOOOOO тут траблики могут быть
             // using Stream stream = !string.IsNullOrEmpty(imagePath) ? System.IO.File.OpenRead(imagePath) : await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png");
-            using Stream stream = System.IO.File.OpenRead(imagePath);
+            
+            
+            
+            
+            
+            //using Stream stream = System.IO.File.OpenRead(imagePath);
             var payload = advertisement;
 
             // using var request = new HttpRequestMessage(HttpMethod.Post, "/api/adverts/add"); // "api/GetAdvertisements/MakeAdvertisement PublishAdvertisement
@@ -197,7 +210,8 @@ namespace ObshajkaWebApi
             using var content = new MultipartFormDataContent
             {
                 // TODO: тут чекнуть
-                { new StreamContent(stream), "FileToUpload1", "Test.txt" },
+                { new StreamContent(/*stream*/ imageStream), "FileToUpload1", "Test.txt" },
+                // new { null,  },
 
                 // payload
                 {
@@ -226,14 +240,14 @@ namespace ObshajkaWebApi
 
         private static class ConnectionStrings
         {
-            public static string BaseAddress { get; } = "http://localhost:80";
-            public static string SendVerificationCode { get; } = "/api/reg/verification";
-            public static string ConfirmVerificationCode { get; } = "/api/reg/confirmation";
-            public static string Authorization { get; } = "/api/auth/authorize";
-            public static string GetOutsideAdvertisements { get; } = "/api/adverts/outsides";
-            public static string GetUserAdvertisements { get; } = "/api/adverts/my";
-            public static string DeleteAdvertisement { get; } = "/api/adverts/remove";
-            public static string PublishAdvertisement { get; } = "/api/adverts/add";
+            public static string BaseAddress { get; } = "https://localhost:7082";// "http://localhost:80";
+            public static string SendVerificationCode { get; } = "/api/v1/reg/verification";
+            public static string ConfirmVerificationCode { get; } = "/api/v1/reg/confirmation";
+            public static string Authorization { get; } = "/api/v1/auth/authorize";
+            public static string GetOutsideAdvertisements { get; } = "/api/v1/adverts/outsides";
+            public static string GetUserAdvertisements { get; } = "/api/v1/adverts/my";
+            public static string DeleteAdvertisement { get; } = "/api/v1/adverts/remove";
+            public static string PublishAdvertisement { get; } = "/api/v1/adverts/add";
         }
     }
 }

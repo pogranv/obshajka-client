@@ -6,10 +6,5 @@ using System.Threading.Tasks;
 
 namespace ObshajkaWebApi.Models
 {
-    internal class User
-    {
-        public string Email { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
-    }
+    internal sealed record User(string Email, string Password, string Name);
 }

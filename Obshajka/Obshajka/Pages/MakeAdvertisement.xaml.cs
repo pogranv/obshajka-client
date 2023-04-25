@@ -47,7 +47,7 @@ public partial class MakeAdvertisementPage : ContentPage
             return true;
         }
         int intPrice;
-        if (int.TryParse(price, out intPrice) && intPrice >= 0)
+        if (price.Length <= 9 && int.TryParse(price, out intPrice) && intPrice >= 0)
         {
             return true;
         }
@@ -113,7 +113,8 @@ public partial class MakeAdvertisementPage : ContentPage
         try
         {
             // ATTENTION! сюда пустая передается, так не должно быть
-            client.PubslishNewAdvertisement(publishingAdvertisement, _imagePath);
+            using Stream stream = !string.IsNullOrEmpty(_imagePath) ? System.IO.File.OpenRead(_imagePath) : await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png");
+            client.PubslishNewAdvertisement(publishingAdvertisement, /*_imagePath, _imageStream*/ stream);
         }
         catch(FailPublishAdvertisementException ex)
         {

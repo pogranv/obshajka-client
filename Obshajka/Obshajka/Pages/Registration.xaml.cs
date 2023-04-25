@@ -39,10 +39,12 @@ public partial class Registration : ContentPage
         await Navigation.PushAsync(new ConfirmVerificationCode(enteredEmail));
     }
 
+    // TODO: вынести в utils
+
     private bool IsCorrectEntryData(string name, string email, string password)
     {
         bool isCorrectFlag = true;
-        if (string.IsNullOrEmpty(password) || password.Length <= 4)
+        if (string.IsNullOrEmpty(password) || password.Trim().Length < 4)
         {
             isCorrectFlag = false;
             incorrectPasswordLabel.IsVisible = true;
@@ -54,7 +56,7 @@ public partial class Registration : ContentPage
             incorrectEmailLabel.IsVisible = true;
             regEmailFrame.BorderColor = Colors.LightPink;
         }
-        if (string.IsNullOrEmpty(name) || name.Length <= 1)
+        if (string.IsNullOrEmpty(name) || name.Trim().Length <= 1)
         {
             isCorrectFlag = false;
             incorrectNameLabel.IsVisible = true;
@@ -68,7 +70,7 @@ public partial class Registration : ContentPage
         {
             return false;
         }
-        var loginAndDomain = email.Split('@');
+        var loginAndDomain = email.Trim().Split('@');
         return loginAndDomain.Length == 2 && loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20 && loginAndDomain[1].Equals(_domainHse);
     }
 

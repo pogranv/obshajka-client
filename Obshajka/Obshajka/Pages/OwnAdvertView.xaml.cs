@@ -2,6 +2,8 @@ using Obshajka.Models;
 using Obshajka.ViewModels;
 using System.Collections.ObjectModel;
 using System.Linq;
+using ObshajkaWebApi;
+using ObshajkaWebApi.Exceptions;
 
 namespace Obshajka.Pages;
 
@@ -9,59 +11,45 @@ public partial class OwnAdvertView : ContentPage
 {
 
     Advertisement Advertisement { get; set; }
-    private AdvertisementsViewModel adverts;
+    private AdvertisementsViewModel _adverts;
     public OwnAdvertView(AdvertisementsViewModel advertisements, Advertisement selectedAdvertisement)
     {
         InitializeComponent();
         Advertisement = selectedAdvertisement;
         BindingContext = Advertisement;
-        adverts = advertisements;
-        // image.Source = Advertisement.Image;
+        _adverts = advertisements;
     }
 
-    //public OwnAdvertView(AdvertisementsViewModel advertisements)
-    //{
-    //    InitializeComponent();
-    //    BindingContext = advertisements;
-    //}
-
-    private async void deleteButton_Clicked(object sender, EventArgs e)
+    private async void DeleteButton_Clicked(object sender, EventArgs e)
     {
         bool result = await DisplayAlert("Удаление объявления", "Вы действительно хотите удалить это объявление?", "Да", "Нет");
         if (!result)
         {
             return;
         }
-        long id = (BindingContext as Models.Advertisement).Id;
-        // TODO: я хз как передать данные на предыдущую страницу, поэтому только обновлением пока
-        // TODO: обработать исключение если не удалось удалить
-        Helpers.Helpers.TryRemoveOwnAdvert(id);
+        long id = (BindingContext as Advertisement).Id;
 
-        for (int i = 0; i < adverts.AdvertisementsListViewElements.Count; i++)
+        // TODO: обработать исключение если не удалось удалить
+
+        var client = new ObshajkaClient();
+        try
         {
-            if (adverts.AdvertisementsListViewElements[i].Id == id)
+            client.RemoveAdvertisement(id);
+        } 
+        catch (FailRemoveAdvertisementException ex)
+        {
+            await DisplayAlert("Ошибка", ex.Message, "Ок");
+            return;
+        }
+
+        for (int i = 0; i < _adverts.AdvertisementsListViewElements.Count; i++)
+        {
+            if (_adverts.AdvertisementsListViewElements[i].Id == id)
             {
-                adverts.AdvertisementsListViewElements.RemoveAt(i);
+                _adverts.AdvertisementsListViewElements.RemoveAt(i);
                 break;
             }
         }
-
-
         await Navigation.PopAsync();
-        // await DisplayAlert("Уведомление", "Ваше объявление успешно удалено! Потяните список вниз, чтобы обновить актуальные объявления.", "ОK");
-
-        //if (Shell.Current?.MyAdvertisements is NavigationPage navPage)
-        //{
-        // стек навигации
-        //    IReadOnlyList<Page> navStack = Navigation.NavigationStack;
-        //// количество страниц в стеке
-        //int pageCount = navStack.Count;
-        //    // находим в стеке предыдущую страницу - то есть MainPage
-        //    if (navStack[pageCount - 1] is MyAdvertisements mainPage)
-        //    {
-        //        // вызываем у главной страницы метод AddPerson для добавления
-        //        mainPage.RemoveAdvertisementFromListView(Advertisement);
-        //    }
-        //}
     }
 }
