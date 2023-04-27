@@ -28,7 +28,7 @@ public partial class Registration : ContentPage
 
         try
         {
-            client.RegisterUser(enteredName, enteredEmail, enteredPassword);
+            await client.RegisterUser(enteredName, enteredEmail, enteredPassword);
         } 
         catch (FailRegisterUserException ex)
         {

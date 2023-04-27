@@ -16,7 +16,7 @@ namespace Obshajka.ViewModels
 {
     class OutsideAdvertsViewModel : AdvertViewModelAbstract, INotifyPropertyChanged
     {
-        public ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
+        // public ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
 
         private int? dormitoryId;
         public int? DormitoryId {
@@ -30,10 +30,10 @@ namespace Obshajka.ViewModels
 
         public OutsideAdvertsViewModel() : base()
         {
-            AdvertisementsListViewElements =
-               new ObservableCollection<Advertisement>();
+            //AdvertisementsListViewElements =
+            //   new ObservableCollection<Advertisement>();
         }
-        public async void UpdateAdvertisementCollection()
+        /*public*/protected override async void UpdateAdvertisementCollection()
         {
             if (DormitoryId == null) 
             {
@@ -68,19 +68,19 @@ namespace Obshajka.ViewModels
             set
             {
                 isRefreshing = value;
-                OnPropertyChanged();
+                base.OnPropertyChanged();
             }
         }
 
-        #region INotifyPropertyChanged
+        //#region INotifyPropertyChanged
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        //public event PropertyChangedEventHandler PropertyChanged;
 
-        void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        //void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        //{
+        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        //}
 
-        #endregion
+        //#endregion
     }
 }

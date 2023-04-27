@@ -10,6 +10,7 @@ using ObshajkaWebApi.Models;
 using ObshajkaWebApi.Mocks;
 using ObshajkaWebApi.Interfaces;
 using ObshajkaWebApi.Utils;
+using System.Xml;
 
 namespace ObshajkaWebApi
 {
@@ -56,7 +57,7 @@ namespace ObshajkaWebApi
             }
             throw new FailAuthorizeException(message);
         }
-        public async void RegisterUser(string name, string email, string password)
+        public async Task RegisterUser(string name, string email, string password)
         {
             if (useMocks)
             {
@@ -78,10 +79,13 @@ namespace ObshajkaWebApi
                 switch (response.StatusCode)
                 {
                     case System.Net.HttpStatusCode.Conflict:
-                        message = "Пользователь с такой почтой уже зарегистрирован!";
+                        message = await response.Content.ReadAsStringAsync();
                         break;
                     case System.Net.HttpStatusCode.BadRequest:
                         message = "Не удалось отправить код верификации: проверьте корректность введенных данных.";
+                        break;
+                    case System.Net.HttpStatusCode.NotFound:
+                        message = await response.Content.ReadAsStringAsync();
                         break;
                     default:
                         message = "Не удалось отправить код верификации. Попробуйте позже.";
@@ -193,25 +197,14 @@ namespace ObshajkaWebApi
 
         public async void PubslishNewAdvertisement(IPublishingAdvertisement advertisement, Stream imageStream/*string imagePath, Stream mystream*/)
         {
-            //var kek = mystream;
-            // TODOOOOOOOOO тут траблики могут быть
-            // using Stream stream = !string.IsNullOrEmpty(imagePath) ? System.IO.File.OpenRead(imagePath) : await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png");
-            
-            
-            
-            
-            
-            //using Stream stream = System.IO.File.OpenRead(imagePath);
             var payload = advertisement;
 
-            // using var request = new HttpRequestMessage(HttpMethod.Post, "/api/adverts/add"); // "api/GetAdvertisements/MakeAdvertisement PublishAdvertisement
             using var request = new HttpRequestMessage(HttpMethod.Post, ConnectionStrings.PublishAdvertisement);
 
             using var content = new MultipartFormDataContent
             {
-                // TODO: тут чекнуть
-                { new StreamContent(/*stream*/ imageStream), "FileToUpload1", "Test.txt" },
-                // new { null,  },
+                // image
+                { new StreamContent(imageStream), "Image", "image.jpg" },
 
                 // payload
                 {
@@ -219,7 +212,7 @@ namespace ObshajkaWebApi
                         JsonSerializer.Serialize(payload),
                         Encoding.UTF8,
                         "application/json"),
-                    "Data"
+                    "Details"
                 },
 
             };
