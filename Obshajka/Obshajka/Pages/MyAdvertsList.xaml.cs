@@ -13,7 +13,7 @@ public partial class MyAdvertsList : ContentPage
         InitializeComponent();
         Routing.RegisterRoute("OwnAdvertView", typeof(OwnAdvertView));
         Routing.RegisterRoute("MakeAdvertisementPage", typeof(MakeAdvertisementPage));
-        BindingContext = new AdvertisementsViewModel();
+        BindingContext = new MyAdvertsViewModel();
     }
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
@@ -22,17 +22,17 @@ public partial class MyAdvertsList : ContentPage
             return;
         }
         var selectedAdvert = e.CurrentSelection.FirstOrDefault() as Advertisement;
-        await Navigation.PushAsync(new OwnAdvertView((BindingContext as AdvertisementsViewModel), selectedAdvert));
+        await Navigation.PushAsync(new OwnAdvertView((BindingContext as MyAdvertsViewModel), selectedAdvert));
         collectionView.SelectedItem = null;
     }
 
     private async void AddAdvertButton_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new MakeAdvertisementPage((BindingContext as AdvertisementsViewModel)));
+        await Navigation.PushAsync(new MakeAdvertisementPage((BindingContext as MyAdvertsViewModel)));
     }
 
     public void RemoveAdvertisementFromListView(Advertisement advertisement)
     {
-        (BindingContext as AdvertisementsViewModel).AdvertisementsListViewElements.Remove(advertisement);
+        (BindingContext as MyAdvertsViewModel).AdvertisementsListViewElements.Remove(advertisement);
     }
 }

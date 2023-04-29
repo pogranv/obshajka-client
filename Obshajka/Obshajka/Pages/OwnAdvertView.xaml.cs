@@ -11,8 +11,8 @@ public partial class OwnAdvertView : ContentPage
 {
 
     Advertisement Advertisement { get; set; }
-    private AdvertisementsViewModel _adverts;
-    public OwnAdvertView(AdvertisementsViewModel advertisements, Advertisement selectedAdvertisement)
+    private MyAdvertsViewModel _adverts;
+    public OwnAdvertView(MyAdvertsViewModel advertisements, Advertisement selectedAdvertisement)
     {
         InitializeComponent();
         Advertisement = selectedAdvertisement;
@@ -28,8 +28,6 @@ public partial class OwnAdvertView : ContentPage
             return;
         }
         long id = (BindingContext as Advertisement).Id;
-
-        // TODO: обработать исключение если не удалось удалить
 
         var client = new ObshajkaClient();
         try

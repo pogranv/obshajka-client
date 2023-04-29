@@ -39,8 +39,6 @@ public partial class Registration : ContentPage
         await Navigation.PushAsync(new ConfirmVerificationCode(enteredEmail));
     }
 
-    // TODO: вынести в utils
-
     private bool IsCorrectEntryData(string name, string email, string password)
     {
         bool isCorrectFlag = true;

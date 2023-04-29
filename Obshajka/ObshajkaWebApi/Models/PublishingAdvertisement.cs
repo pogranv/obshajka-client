@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ObshajkaWebApi.Models
 {
-    internal class PublishingAdvertisement : IPublishingAdvertisement
+    internal sealed class PublishingAdvertisement : IPublishingAdvertisement
     {
         public long CreatorId { get; set; }
         public string Title { get; set; } = null!;

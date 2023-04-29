@@ -379,3 +379,8 @@ C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.1
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\r\my_adverts_icon.scale-100.png
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\ObshajkaWebApi.dll
 C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\ObshajkaWebApi.pdb
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Http.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.ObjectPool.dll
+C:\Users\Andrei\Desktop\kursach\Obshajka\Obshajka\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Microsoft.Net.Http.Headers.dll

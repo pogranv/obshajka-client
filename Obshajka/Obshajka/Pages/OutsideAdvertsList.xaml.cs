@@ -14,7 +14,7 @@ public partial class OutsideAdvertsList : ContentPage
         BindingContext = new OutsideAdvertsViewModel();
     }
 
-    // TODO: сделать чуствительность к длинным title об€ъвлений
+    
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (collectionView.SelectedItem == null)
@@ -29,8 +29,13 @@ public partial class OutsideAdvertsList : ContentPage
         collectionView.SelectedItem = null;
     }
 
-    private void DormitoryPicker_SelectedIndexChanged(object sender, EventArgs e)
+    private async void DormitoryPicker_SelectedIndexChanged(object sender, EventArgs e)
     {
-        (BindingContext as OutsideAdvertsViewModel).DormitoryId = dormitoryPicker.SelectedIndex + 1;
+        var advertList = (BindingContext as OutsideAdvertsViewModel);
+        advertList.DormitoryId = dormitoryPicker.SelectedIndex + 1;
+        if (advertList.AdvertisementsListViewElements== null || advertList.AdvertisementsListViewElements.Count == 0)
+        {
+            await DisplayAlert("ѕуста€ стена объ€влений", "¬ данном общежитии не нашлось объ€влений :(", "ќк");
+        }
     }
 }

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using ObshajkaWebApi.Exceptions;
 using ObshajkaWebApi.Models;
 using ObshajkaWebApi.Mocks;
 using ObshajkaWebApi.Interfaces;
 using ObshajkaWebApi.Utils;
-using System.Xml;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Internal;
+using System.IO;
 
 namespace ObshajkaWebApi
 {
@@ -18,8 +16,6 @@ namespace ObshajkaWebApi
     {
         // todo: удалить
         private bool useMocks = false;
-
-        // TODO: исправить типы экспешинов
         static ObshajkaClient()
         {
             _httpClient = new HttpClient
@@ -27,17 +23,13 @@ namespace ObshajkaWebApi
                 BaseAddress = new(ConnectionStrings.BaseAddress)
             };
         }
-
-        // TODO: чекнуть моки
         public async Task<long> AuthorizeUser(string email, string password)
         {
             if (useMocks)
             {
                 return 1;
             }
-            //var emailWithPassword = new EmailWithPassword("email", "password");
-            //using var response = await _httpClient.PostAsJsonAsync("https://localhost:7082/api/v1/auth/authorize", emailWithPassword);
-            var hashedPassword = Utils.HashUtils.GetHashString(password);
+            var hashedPassword = HashUtils.GetHashString(password);
             var emailWithPassword = new EmailWithPassword(email, hashedPassword);
             using var response = await _httpClient.PostAsJsonAsync(ConnectionStrings.Authorization, emailWithPassword);
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -112,8 +104,8 @@ namespace ObshajkaWebApi
             string message;
             switch (response.StatusCode)
             {
-                case System.Net.HttpStatusCode.BadRequest:
-                    message = "Введенный код не совпадает с тем, который был отправлен на почту.";
+                case System.Net.HttpStatusCode.NotFound:
+                    message = "Введенный код не совпадает с тем, который был отправлен на почту или с момента отправки кода прошло больше 5 минут.";
                     break;
                 default:
                     message = "Неизвестная ошибка. Попробуйте позже.";
@@ -130,6 +122,7 @@ namespace ObshajkaWebApi
             }
             var connectionString = $"{ConnectionStrings.GetOutsideAdvertisements}/{dormitoryId}/{currentUserId}";
             using var response = await _httpClient.GetAsync(connectionString);
+
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 return await response.Content.ReadFromJsonAsync<List<Advertisement>>();
@@ -138,6 +131,9 @@ namespace ObshajkaWebApi
             string message;
             switch (response.StatusCode)
             {
+                case System.Net.HttpStatusCode.BadRequest:
+                    message = "Неверный запрос.";
+                    break;
                 case System.Net.HttpStatusCode.NotFound:
                     message = "Объявлений по запросу не найдено :(";
                     break;
@@ -166,6 +162,9 @@ namespace ObshajkaWebApi
             string message;
             switch (response.StatusCode)
             {
+                case System.Net.HttpStatusCode.BadRequest:
+                    message = "Неверный запрос.";
+                    break;
                 case System.Net.HttpStatusCode.NotFound:
                     message = "Объявлений не найдено :(";
                     break;
@@ -192,13 +191,22 @@ namespace ObshajkaWebApi
             {
                 return;
             }
-            throw new ("Не удалось удалить объявление :(");
+            string message;
+            switch (response.StatusCode)
+            {
+                case System.Net.HttpStatusCode.NotFound:
+                    message = "Не удалось удалить объявление: объявления не существует";
+                    break;
+                default:
+                    message = "Не удалось удалить объявление: неизвестная ошибка";
+                    break;
+            }
+
+            throw new FailRemoveAdvertisementException(message);
         }
 
         public async void PubslishNewAdvertisement(IPublishingAdvertisement advertisement, Stream imageStream/*string imagePath, Stream mystream*/)
         {
-            var payload = advertisement;
-
             using var request = new HttpRequestMessage(HttpMethod.Post, ConnectionStrings.PublishAdvertisement);
 
             using var content = new MultipartFormDataContent
@@ -207,17 +215,15 @@ namespace ObshajkaWebApi
                 { new StreamContent(imageStream), "Image", "image.jpg" },
 
                 // payload
-                {
-                    new StringContent(
-                        JsonSerializer.Serialize(payload),
-                        Encoding.UTF8,
-                        "application/json"),
-                    "Details"
-                },
-
+                { new StringContent(advertisement.CreatorId.ToString()), "Details.CreatorId" },
+                { new StringContent(advertisement.Title), "Details.Title" },
+                { new StringContent(advertisement.Description), "Details.Description" },
+                { new StringContent(advertisement.DormitoryId.ToString()), "Details.DormitoryId" },
+                { new StringContent(advertisement.Price.ToString()), "Details.Price" },
             };
 
             request.Content = content;
+
             using var response = await _httpClient.SendAsync(request);
 
             if (response.StatusCode == System.Net.HttpStatusCode.OK)

@@ -14,10 +14,8 @@ using ObshajkaWebApi.Interfaces;
 
 namespace Obshajka.ViewModels
 {
-    class OutsideAdvertsViewModel : AdvertViewModelAbstract, INotifyPropertyChanged
+    class OutsideAdvertsViewModel : AdvertsViewModel, INotifyPropertyChanged
     {
-        // public ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
-
         private int? dormitoryId;
         public int? DormitoryId {
             get => dormitoryId;
@@ -28,12 +26,8 @@ namespace Obshajka.ViewModels
             }
         }
 
-        public OutsideAdvertsViewModel() : base()
-        {
-            //AdvertisementsListViewElements =
-            //   new ObservableCollection<Advertisement>();
-        }
-        /*public*/protected override async void UpdateAdvertisementCollection()
+        public OutsideAdvertsViewModel() : base() { }
+        protected override async void UpdateAdvertisementCollection()
         {
             if (DormitoryId == null) 
             {
@@ -46,8 +40,12 @@ namespace Obshajka.ViewModels
 
             try
             {
-                // List<Advertisement> actualAdverts = (await Helpers.Helpers.TryGetOutsideAdvertisements((int)DormitoryId)).ToList();
                 var actualAdverts = (await client.GetAdvertisementsFromOtherUsers((int)DormitoryId, UserSettings.UserSettings.UserId));
+                if (actualAdverts == null)
+                {
+                    return;
+                }
+
                 foreach (IAdvertisement advert in actualAdverts)
                 {
                     AdvertisementsListViewElements.Add(Advertisement.Build(advert));
@@ -71,16 +69,5 @@ namespace Obshajka.ViewModels
                 base.OnPropertyChanged();
             }
         }
-
-        //#region INotifyPropertyChanged
-
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
-
-        //#endregion
     }
 }

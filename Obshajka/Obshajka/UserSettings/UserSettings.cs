@@ -7,7 +7,7 @@ using static System.Net.WebRequestMethods;
 
 namespace Obshajka.UserSettings
 {
-    // ограничение на воодимые данные при рестистрации и входе
+    
     public static class UserSettings
     {
         public static long UserId { get; set; }

@@ -14,12 +14,9 @@ public partial class MakeAdvertisementPage : ContentPage
 		InitializeComponent();
 	}
 
-    // private readonly AdvertisementsViewModel _adverts;
     private string _imagePath;
-
-    public MakeAdvertisementPage(AdvertisementsViewModel advertisements)
+    public MakeAdvertisementPage(MyAdvertsViewModel advertisements)
     {
-        // _adverts = advertisements;
         InitializeComponent();
     }
 
@@ -112,9 +109,8 @@ public partial class MakeAdvertisementPage : ContentPage
 
         try
         {
-            // ATTENTION! сюда пуста€ передаетс€, так не должно быть
             using Stream stream = !string.IsNullOrEmpty(_imagePath) ? System.IO.File.OpenRead(_imagePath) : await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png");
-            client.PubslishNewAdvertisement(publishingAdvertisement, /*_imagePath, _imageStream*/ stream);
+            client.PubslishNewAdvertisement(publishingAdvertisement, stream);
         }
         catch(FailPublishAdvertisementException ex)
         {
@@ -122,7 +118,7 @@ public partial class MakeAdvertisementPage : ContentPage
             return;
         }
         await Navigation.PopAsync();
-        await DisplayAlert("—оздание объ€влени€", "ќбъ€вление успешно создано!", "Oк");
+        await DisplayAlert("—оздание объ€влени€", "ќбъ€вление успешно создано! ќбновите страницу, чтобы его увидеть :)", "Oк");
     }
 
     private void TitleEntry_TextChanged(object sender, TextChangedEventArgs e)

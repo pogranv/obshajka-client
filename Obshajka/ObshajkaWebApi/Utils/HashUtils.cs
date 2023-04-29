@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace ObshajkaWebApi.Utils
 {
-    static class HashUtils
+    internal static class HashUtils
     {
         public static string GetHashString(string str)
         {

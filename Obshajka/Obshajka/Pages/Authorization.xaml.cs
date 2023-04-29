@@ -25,10 +25,9 @@ public partial class Authorization : ContentPage
         var client = new ObshajkaClient();
         try
         {
-            // TODO: сделать в файлике или как
-            // TODO: нужен ли helpers
             UserSettings.UserSettings.UserId = await client.AuthorizeUser(enteredEmail, enteredPassword);
-        } catch (FailAuthorizeException ex)
+        }
+        catch (FailAuthorizeException ex)
         {
             await DisplayAlert("Не удалось войти", ex.Message, "Ок");
             return;

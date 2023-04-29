@@ -23,7 +23,7 @@ namespace Obshajka.Templates
                 {
                     return AdvertisementWithImageTemplate;
                 }
-                return AdvertisementWithImageTemplate;
+                return AdvertisementWithoutImageTemplate;
             }
             throw new NotImplementedException();
         }
