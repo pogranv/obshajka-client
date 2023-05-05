@@ -1,11 +1,7 @@
 using Obshajka.ViewModels;
 using Obshajka.Models;
-using Microsoft.Maui.Controls;
-using System.Linq;
-using System.Windows.Input;
 
 namespace Obshajka.Pages;
-
 public partial class MyAdvertsList : ContentPage
 {
     public MyAdvertsList()

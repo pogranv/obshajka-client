@@ -14,7 +14,8 @@ public partial class ConfirmVerificationCode : ContentPage
     }
     public async void EnterApplication_Clicked(object sender, EventArgs e)
     {
-        if (string.IsNullOrEmpty(regCodeEntry.Text) || regCodeEntry.Text.Length != 4 || !IsNumber(regCodeEntry.Text))
+        if (string.IsNullOrEmpty(regCodeEntry.Text) || regCodeEntry.Text.Length != 4
+            || !IsNumber(regCodeEntry.Text))
         {
             incorrectCodeLabel.IsVisible = true;
             incorrectCodeInfoLabel.IsVisible = true;
@@ -30,6 +31,11 @@ public partial class ConfirmVerificationCode : ContentPage
         catch (FailConfirmVerificationCodeException ex)
         {
             await DisplayAlert("Ошибка регистрации", ex.Message, "Ок");
+            return;
+        }
+        catch (NetworkUnavailableException ex)
+        {
+            await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
         }
 

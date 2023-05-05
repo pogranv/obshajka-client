@@ -1,26 +1,24 @@
-using Microsoft.AspNetCore.Http;
-using Microsoft.Maui.Platform;
 using Obshajka.Models;
 using Obshajka.ViewModels;
 using ObshajkaWebApi;
 using ObshajkaWebApi.Exceptions;
+using System.Reflection;
 
 namespace Obshajka.Pages;
 
 public partial class MakeAdvertisementPage : ContentPage
 {
-	public MakeAdvertisementPage()
+    private string _imagePath;
+    public MakeAdvertisementPage()
 	{
 		InitializeComponent();
 	}
 
-    private string _imagePath;
+    
     public MakeAdvertisementPage(MyAdvertsViewModel advertisements)
     {
         InitializeComponent();
     }
-
-    private Stream _imageStream = null;
     private async void DownloadImageBtn_Clicked(object sender, EventArgs e)
     {
         var result = await FilePicker.PickAsync(new PickOptions
@@ -33,8 +31,8 @@ public partial class MakeAdvertisementPage : ContentPage
             return;
 
         _imagePath = result.FullPath;
-        _imageStream = await result.OpenReadAsync();
-        advertImage.Source = ImageSource.FromStream(() => _imageStream);
+        var imageStream = await result.OpenReadAsync();
+        advertImage.Source = ImageSource.FromStream(() => imageStream);
     }
 
     private bool IsCorrectPrice(string? price)
@@ -109,12 +107,36 @@ public partial class MakeAdvertisementPage : ContentPage
 
         try
         {
-            using Stream stream = !string.IsNullOrEmpty(_imagePath) ? System.IO.File.OpenRead(_imagePath) : await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png");
-            client.PubslishNewAdvertisement(publishingAdvertisement, stream);
+            /*using StreamContent stream = new StreamContent(!string.IsNullOrEmpty(_imagePath) ? File.OpenRead(_imagePath)
+                : await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png"));*/
+            //var imagePath = 
+            //var cacheFile = Path.Combine(FileSystem.CacheDirectory, "default_advert_image.png");
+            var imagePath = _imagePath;
+
+            //if (imagePath == null)
+            //{
+            //    var assembly = typeof(App).GetTypeInfo().Assembly.GetManifestResourceNames();
+
+            //    var kek = FileSystem.AppDataDirectory.GetType().Assembly.GetManifestResourceNames();
+
+
+               
+            //    imagePath = System.IO.Path.Combine(FileSystem.AppDataDirectory, "Resources", "Raw", "default_advert_image.png");
+            //}
+           
+
+
+
+            client.PubslishNewAdvertisement(publishingAdvertisement, /*stream,*/ imagePath);
         }
         catch(FailPublishAdvertisementException ex)
         {
             await DisplayAlert("Ошибка", ex.Message, "Oк");
+            return;
+        }
+        catch (NetworkUnavailableException ex)
+        {
+            await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
         }
         await Navigation.PopAsync();

@@ -28,8 +28,9 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="15,15,15,15" />
             </Border.StrokeShape>
-            <Picker Title="Выбрать номер общежития" x:Name="dormitoryPicker" Margin="8,0,10,0" HorizontalTextAlignment="Center" Background="#E4E4E4" TitleColor="Black"
-                    WidthRequest="220" HorizontalOptions="Center" SelectedIndexChanged="DormitoryPicker_SelectedIndexChanged">
+            <Picker Title="Выбрать номер общежития" x:Name="dormitoryPicker" Margin="8,0,10,0" HorizontalTextAlignment="Center"
+                    Background="#E4E4E4" TitleColor="Black" WidthRequest="220" HorizontalOptions="Center"
+                    SelectedIndexChanged="DormitoryPicker_SelectedIndexChanged">
                 <Picker.Items>
                     <x:String>Общежитие №1</x:String>
                     <x:String>Общежитие №2</x:String>

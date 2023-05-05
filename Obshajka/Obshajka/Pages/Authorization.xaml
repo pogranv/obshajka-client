@@ -36,8 +36,9 @@
                                Margin="5">
                                 <Image Source="lock.png" Aspect="AspectFill" Margin="5"/>
                             </Frame>
-                            <Entry x:Name="EntryLogInPassword" Text="password" Placeholder="Пароль" MaxLength="30" TextColor="Black" FontAttributes="Bold" IsPassword="True"
-                               VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,5,0" TextChanged="EntryLogInPassword_TextChanged"/>
+                            <Entry x:Name="EntryLogInPassword" Text="password" Placeholder="Пароль" MaxLength="30" TextColor="Black"
+                                   FontAttributes="Bold" IsPassword="True" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                                   Margin="3,0,5,0" TextChanged="EntryLogInPassword_TextChanged"/>
                             <ImageButton x:Name="LogInPasswordEye" Source="view_eye.png" HeightRequest="25" WidthRequest="25" Aspect="Fill" Margin="5,0,8,0"
                                      Clicked="LogInPasswordEye_Clicked"/>
                         </StackLayout>

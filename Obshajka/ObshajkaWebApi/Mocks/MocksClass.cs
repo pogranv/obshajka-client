@@ -10,8 +10,8 @@ namespace ObshajkaWebApi.Mocks
     internal static class MocksClass
     {
         static List<Advertisement> advertisements;
-        static string defaultImage = "https://downloader.disk.yandex.ru/disk/59753dbbfef3ff04fa54521c8916545fe954f25a9f3d40f247c33aa75901026e/6429b14b/fKqInKw3d7bLFOeFnMGnhKhVC793ABLwApza1RP2nNULVpaWHfhW1-U545AcNhJ6eNAt55vquPhFMWfLxz2k0m-ffARy2-i_lgfiktif1kWr8npumZHI4midPdWhecNq?uid=1130000059567809&filename=aa6da913-dbd5-4394-9d05-3ed775699af7.jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1130000059567809&fsize=265022&hid=a478cabaaa67459986fb15b4e43a887a&media_type=image&tknv=v2&etag=dee86f7f28865f8f9cf636812f3d0a49";
-
+        static string defaultImage = "https://downloader.disk.yandex.ru/disk/8f0eb2f44b0d3d19177854d69c3f02d707c569bc926731ed038685546491bd5f/64503c58/fKqInKw3d7bLFOeFnMGnhMAEDDC3m8pKIC-PkDc8GWJJ9TsYpDzFNFbjqhrv2yFDm4Zd2ToZqtMsw1f__ZzOTi2gTlgtf5sNtH272ZsPXCar8npumZHI4midPdWhecNq?uid=1130000059567809&filename=776b1677-cacc-49a2-b07d-df65df5fe69a..jpg&disposition=attachment&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1130000059567809&fsize=186836&hid=29aea2491c48f161b2b2ca263ccf30a1&media_type=image&tknv=v2&etag=7796abcd95a83c24b311c91ce72814b7";
+        static string defaultImage2 = "https://avatars.mds.yandex.net/get-eda/3439028/79b8aa7956544dc76792670eb9d1b88a/400x400";
 
         static MocksClass()
         {
@@ -22,7 +22,7 @@ namespace ObshajkaWebApi.Mocks
                     Id = 1,
                     CreatorId = 1,
                     CreatorName = "Name1",
-                    Title = "Title1",
+                    Title = "Title1adfjsdafjsjdfjdsfffffffffffffffffffffffffffffffffffffffffff",
                     Description = "Description1",
                     DormitoryId = 1,
                     Price = 1000,
@@ -32,12 +32,12 @@ namespace ObshajkaWebApi.Mocks
                 {
                     Id = 2,
                     CreatorId = 2,
-                    CreatorName = "Name2",
-                    Title = "Title2",
-                    Description = "Description2",
+                    CreatorName = "Хочу продать пирожки",
+                    Title = "Хочу продать пирожки",
+                    Description = "Продаю в подержанном состоянии",
                     DormitoryId = 1,
                     Price = 100,
-                    Image = defaultImage,
+                    Image = defaultImage2,
                 },
                 new Advertisement
                 {
@@ -45,7 +45,7 @@ namespace ObshajkaWebApi.Mocks
                     CreatorId = 3,
                     CreatorName = "Name3",
                     Title = "Title3",
-                    Description = "Description3",
+                    Description = "",
                     DormitoryId = 1,
                     Price = 10,
                 },
@@ -66,7 +66,7 @@ namespace ObshajkaWebApi.Mocks
                     Description = "Description5",
                     DormitoryId = 2,
                     Price = 100,
-                    Image = defaultImage,
+                    Image = defaultImage2,
                 },
                 new Advertisement
                 {
@@ -88,7 +88,7 @@ namespace ObshajkaWebApi.Mocks
                     Description = "Description7",
                     DormitoryId = 2,
                     Price = 100,
-                    Image = defaultImage,
+                    Image = defaultImage2,
                 },
                 new Advertisement
                 {
@@ -99,7 +99,7 @@ namespace ObshajkaWebApi.Mocks
                     Description = "Description8",
                     DormitoryId = 2,
                     Price = 100,
-                    Image = defaultImage,
+                    Image = defaultImage2,
                 },
                 new Advertisement
                 {
@@ -121,7 +121,7 @@ namespace ObshajkaWebApi.Mocks
                     Description = "Description10",
                     DormitoryId = 2,
                     Price = 100,
-                    Image = defaultImage,
+                    Image = defaultImage2,
                 }
             };
             for (int i = 0; i < advertisements.Count; ++i)

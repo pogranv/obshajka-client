@@ -9,7 +9,7 @@
             </Border.StrokeShape>
             <StackLayout Margin="0" Spacing="0" Padding="10">
                 <Border Stroke="Transparent">
-                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="200" Aspect="Center"/>
+                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="200" Aspect="AspectFill"/>
                 </Border>
                 <VerticalStackLayout VerticalOptions="CenterAndExpand" Margin="5,5,5,15">
                     <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontSize="20" Margin="10,0,0,0" TextColor="Black"

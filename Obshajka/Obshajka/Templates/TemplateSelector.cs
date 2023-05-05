@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Obshajka.Templates;
-using Obshajka.Models;
-using ObshajkaWebApi.Exceptions;
 using ObshajkaWebApi.Interfaces;
 
 namespace Obshajka.Templates
@@ -19,7 +17,7 @@ namespace Obshajka.Templates
         {
             if (item is IAdvertisement chat)
             {
-                if (chat.Image == null)
+                if (chat.Image != null)
                 {
                     return AdvertisementWithImageTemplate;
                 }

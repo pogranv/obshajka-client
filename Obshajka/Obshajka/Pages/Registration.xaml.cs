@@ -8,6 +8,7 @@ public partial class Registration : ContentPage
     private readonly string _domainHse = "edu.hse.ru";
     private readonly string _hide_eye_image = "hide_eye.png";
     private readonly string _view_eye_image = "view_eye.png";
+
     public Registration()
     {
         InitializeComponent();
@@ -33,6 +34,11 @@ public partial class Registration : ContentPage
         catch (FailRegisterUserException ex)
         {
             await DisplayAlert("Ошибка регистрации", ex.Message, "Ок");
+            return;
+        }
+        catch (NetworkUnavailableException ex)
+        {
+            await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
         }
 

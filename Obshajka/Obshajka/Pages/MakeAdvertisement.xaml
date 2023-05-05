@@ -13,7 +13,7 @@
                 Spacing="15"
                 Padding="25,0"
                 VerticalOptions="Center">
-                <Image x:Name="advertImage" Source="default_advert_image" Aspect="Fill" VerticalOptions="StartAndExpand"
+                <Image x:Name="advertImage" Source="default_advert_image" Aspect="AspectFill"  VerticalOptions="StartAndExpand"
                        HorizontalOptions="CenterAndExpand"/>
                 <Border></Border>
                 <Button Text="Загрузить фотографию" Clicked="DownloadImageBtn_Clicked"

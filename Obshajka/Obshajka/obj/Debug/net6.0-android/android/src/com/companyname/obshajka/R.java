@@ -45187,5 +45187,6 @@ public final class R {
     public static final int standalone_badge_gravity_bottom_start=0x7f120004;
     public static final int standalone_badge_gravity_top_start=0x7f120005;
     public static final int standalone_badge_offset=0x7f120006;
+    public static final int xamarin_essentials_fileprovider_file_paths=0x7f120007;
   }
 }

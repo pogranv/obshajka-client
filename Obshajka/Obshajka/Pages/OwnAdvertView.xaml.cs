@@ -16,6 +16,10 @@ public partial class OwnAdvertView : ContentPage
     {
         InitializeComponent();
         Advertisement = selectedAdvertisement;
+        //if (Advertisement.Image == null)
+        //{
+        //    Advertisement.Image = "default_advert_image.png";
+        //}
         BindingContext = Advertisement;
         _adverts = advertisements;
     }
@@ -37,6 +41,11 @@ public partial class OwnAdvertView : ContentPage
         catch (FailRemoveAdvertisementException ex)
         {
             await DisplayAlert("Ошибка", ex.Message, "Ок");
+            return;
+        }
+        catch (NetworkUnavailableException ex)
+        {
+            await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
         }
 

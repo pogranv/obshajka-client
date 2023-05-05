@@ -2,15 +2,22 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Obshajka.Templates.AdvertisementWithoutImageTemplate">
-    <StackLayout VerticalOptions="End">
-        <Frame Margin="0" CornerRadius="30" >
-            <StackLayout Margin="0">
-                <Frame>
-                    <Image Source="{Binding Image}" HeightRequest="150" WidthRequest="150"/>
-                </Frame>
-                <Label Text="{Binding Title}" FontSize = "15"  TextColor = "#006064" Margin="5" />
-                <Label Text="{Binding Description}" />
+    <StackLayout BackgroundColor="White" Spacing="0" Padding="2,2,2,2" Background="#e6e6e9">
+        <Border Margin="0" Stroke="Transparent">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10,10,10,10" />
+            </Border.StrokeShape>
+            <StackLayout Margin="0" Spacing="0" Padding="10">
+                <Border Stroke="Transparent">
+                    <Image Source="default_advert_image.png" HeightRequest="150" WidthRequest="200" Aspect="AspectFit"/>
+                </Border>
+                <VerticalStackLayout VerticalOptions="CenterAndExpand" Margin="5,5,5,15">
+                    <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontSize="20" Margin="10,0,0,0" TextColor="Black"
+                           FontAttributes="Bold"/>
+                    <Label Text="{Binding Title}" FontSize = "16"  TextColor = "Gray" Margin="10,5,0,0"
+                           FontAttributes="Bold" LineBreakMode="TailTruncation"/>
+                </VerticalStackLayout>
             </StackLayout>
-        </Frame>
+        </Border>
     </StackLayout>
 </ContentView>

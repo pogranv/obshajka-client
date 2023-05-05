@@ -49,20 +49,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Images\adverts_icon1.png" />
-	  <None Remove="Resources\Images\adverts_icon2.png" />
 	  <None Remove="Resources\Images\adverts_icon3.png" />
-	  <None Remove="Resources\Images\adverts_icon4.png" />
-	  <None Remove="Resources\Images\adverts_icon5.png" />
 	  <None Remove="Resources\Images\adverts_icon6.png" />
-	  <None Remove="Resources\Images\adverts_icon7.png" />
-	  <None Remove="Resources\Images\adverts_icon8.png" />
 	  <None Remove="Resources\Images\default_advert_image.png" />
 	  <None Remove="Resources\Images\hide_eye.png" />
-	  <None Remove="Resources\Images\lamp.png" />
 	  <None Remove="Resources\Images\lock.png" />
 	  <None Remove="Resources\Images\my_adverts_icon.png" />
-	  <None Remove="Resources\Images\plus_icon.png" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Resources\Images\view_eye.png" />
 	  <None Remove="Resources\Raw\default_advert_image.png" />
@@ -70,6 +62,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

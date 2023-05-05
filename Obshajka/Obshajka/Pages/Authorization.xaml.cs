@@ -5,9 +5,9 @@ namespace Obshajka.Pages;
 
 public partial class Authorization : ContentPage
 {
-    private readonly string _domainHse = "edu.hse.ru";
-    private readonly string _hide_eye_image = "hide_eye.png";
-    private readonly string _view_eye_image = "view_eye.png";
+    private const string _domainHse = "edu.hse.ru";
+    private const string _hide_eye_image = "hide_eye.png";
+    private const string _view_eye_image = "view_eye.png";
 
     public Authorization()
     {
@@ -30,6 +30,11 @@ public partial class Authorization : ContentPage
         catch (FailAuthorizeException ex)
         {
             await DisplayAlert("Не удалось войти", ex.Message, "Ок");
+            return;
+        }
+        catch (NetworkUnavailableException ex)
+        {
+            await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
         }
 
@@ -88,7 +93,6 @@ public partial class Authorization : ContentPage
             LogInPasswordEye.Source = _view_eye_image;
         }
     }
-
     private async void SignUpCLickedLabel_Clicked(object sender, EventArgs e)
     {
         await Shell.Current.GoToAsync("Registration");

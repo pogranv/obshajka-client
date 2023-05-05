@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ObshajkaWebApi.Interfaces;
+﻿using ObshajkaWebApi.Interfaces;
 
 namespace Obshajka.Models
 {
@@ -24,10 +19,12 @@ namespace Obshajka.Models
         public int? Price { get; set; }
 
         public string? Image { get; set; }
+
         public string DateOfAddition { get; set; }
 
         public static Advertisement Build(IAdvertisement advert)
         {
+            var price = advert.Price == null ? 0 : advert.Price;
             return new Advertisement
             {
                 Id = advert.Id,
@@ -36,7 +33,7 @@ namespace Obshajka.Models
                 Title = advert.Title,
                 Description = advert.Description,
                 DormitoryId = advert.DormitoryId,
-                Price = advert.Price,
+                Price = price,
                 Image = advert.Image,
                 DateOfAddition = advert.DateOfAddition,
             };

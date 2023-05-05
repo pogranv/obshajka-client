@@ -1,5 +1,3 @@
-using Microsoft.Maui.Controls;
-using Obshajka.ViewModels;
 using Obshajka.ViewModels;
 using Obshajka.Models;
 
@@ -13,8 +11,6 @@ public partial class OutsideAdvertsList : ContentPage
         Routing.RegisterRoute("OutsideAdvertView", typeof(OutsideAdvertView));
         BindingContext = new OutsideAdvertsViewModel();
     }
-
-    
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (collectionView.SelectedItem == null)

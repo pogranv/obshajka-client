@@ -14,20 +14,33 @@ namespace Obshajka.ViewModels
     public abstract class AdvertsViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<Advertisement> AdvertisementsListViewElements { get; private set; }
+
+        private bool isRefreshing = false;
+        public ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public bool IsRefreshing
+        {
+            get => isRefreshing;
+            set
+            {
+                isRefreshing = value;
+                OnPropertyChanged();
+            }
+        }
+
         public AdvertsViewModel()
         {
             AdvertisementsListViewElements =
               new ObservableCollection<Advertisement>();
         }
 
-        public ICommand RefreshAdvertisementsCommand => new Command(UpdateAdvertisementCollection);
-        protected abstract void UpdateAdvertisementCollection();
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        protected abstract void UpdateAdvertisementCollection();
     }
 }

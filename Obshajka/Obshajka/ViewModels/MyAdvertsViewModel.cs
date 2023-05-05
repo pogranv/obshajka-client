@@ -36,21 +36,10 @@ namespace Obshajka.ViewModels
                 }
             }
             catch (FailGetAdvertisementsException) { }
+            catch (NetworkUnavailableException) { }
             finally
             {
                 IsRefreshing = false;
-            }
-        }
-
-        bool isRefreshing = false;
-
-        public bool IsRefreshing
-        {
-            get => isRefreshing;
-            set
-            {
-                isRefreshing = value;
-                OnPropertyChanged();
             }
         }
     }
