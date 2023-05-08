@@ -11,6 +11,7 @@ public partial class OutsideAdvertsList : ContentPage
         Routing.RegisterRoute("OutsideAdvertView", typeof(OutsideAdvertView));
         BindingContext = new OutsideAdvertsViewModel();
     }
+
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (collectionView.SelectedItem == null)
@@ -29,9 +30,5 @@ public partial class OutsideAdvertsList : ContentPage
     {
         var advertList = (BindingContext as OutsideAdvertsViewModel);
         advertList.DormitoryId = dormitoryPicker.SelectedIndex + 1;
-        if (advertList.AdvertisementsListViewElements== null || advertList.AdvertisementsListViewElements.Count == 0)
-        {
-            await DisplayAlert("ѕуста€ стена объ€влений", "¬ данном общежитии не нашлось объ€влений :(", "ќк");
-        }
     }
 }

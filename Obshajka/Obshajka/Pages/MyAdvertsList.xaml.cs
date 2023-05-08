@@ -10,7 +10,9 @@ public partial class MyAdvertsList : ContentPage
         Routing.RegisterRoute("OwnAdvertView", typeof(OwnAdvertView));
         Routing.RegisterRoute("MakeAdvertisementPage", typeof(MakeAdvertisementPage));
         BindingContext = new MyAdvertsViewModel();
+        (BindingContext as MyAdvertsViewModel).IsRefreshing = true;
     }
+
     private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
         if (collectionView.SelectedItem == null)
@@ -25,10 +27,5 @@ public partial class MyAdvertsList : ContentPage
     private async void AddAdvertButton_Clicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new MakeAdvertisementPage((BindingContext as MyAdvertsViewModel)));
-    }
-
-    public void RemoveAdvertisementFromListView(Advertisement advertisement)
-    {
-        (BindingContext as MyAdvertsViewModel).AdvertisementsListViewElements.Remove(advertisement);
     }
 }

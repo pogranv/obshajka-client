@@ -1,38 +1,17 @@
 ﻿using System.Net.Http.Json;
+using System.Net.Http.Headers;
+
 using ObshajkaWebApi.Exceptions;
 using ObshajkaWebApi.Models;
-using ObshajkaWebApi.Mocks;
 using ObshajkaWebApi.Interfaces;
-using ObshajkaWebApi.Utils;
-using System.Net;
-using System.IO;
-using System;
-using System.Reflection.Metadata;
-using System.Net.Http;
-using Microsoft.AspNetCore.Http;
-using System.Net.Http.Headers;
 using ObshajkaWebApi.Utils;
 
 namespace ObshajkaWebApi
 {
     public class ObshajkaClient
     {
-        // todo: удалить
-        private bool useMocks = false;
-
-        private static class ConnectionStrings
-        {
-            public static string BaseAddress { get; } = "http://84.252.138.220";//"https://localhost:7082"; //"http://localhost:80";// "https://localhost:7082";// "http://localhost:80";
-            public static string SendVerificationCode { get; } = "/api/v1/reg/verification";
-            public static string ConfirmVerificationCode { get; } = "/api/v1/reg/confirmation";
-            public static string Authorization { get; } = "/api/v1/auth/authorize";
-            public static string GetOutsideAdvertisements { get; } = "/api/v1/adverts/outsides";
-            public static string GetUserAdvertisements { get; } = "/api/v1/adverts/my";
-            public static string DeleteAdvertisement { get; } = "/api/v1/adverts/remove";
-            public static string PublishAdvertisement { get; } = "/api/v1/adverts/add";
-        }
-
         private static HttpClient _httpClient;
+
         static ObshajkaClient()
         {
             _httpClient = new HttpClient
@@ -41,12 +20,16 @@ namespace ObshajkaWebApi
             };
             _httpClient.DefaultRequestHeaders.ConnectionClose = true;
         }
+
+        /// <summary>
+        /// По заданной почте и паролю возвращает идентификатор пользователя.
+        /// </summary>
+        /// <param name="email">Почта</param>
+        /// <param name="password">Пароль</param>
+        /// <returns></returns>
+        /// <exception cref="FailAuthorizeException"></exception>
         public async Task<long> AuthorizeUser(string email, string password)
         {
-            if (useMocks)
-            {
-                return 1;
-            }
             var hashedPassword = HashUtils.GetHashString(password);
             var emailWithPassword = new EmailWithPassword(email, hashedPassword);
 
@@ -70,53 +53,58 @@ namespace ObshajkaWebApi
             }
             throw new FailAuthorizeException(message);
         }
+
+        /// <summary>
+        /// По заданному имени, почте и паролю осуществляет отправку кода подтверждения на указанную почту.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        /// <exception cref="FailRegisterUserException"></exception>
         public async Task RegisterUser(string name, string email, string password)
         {
-            if (useMocks)
+            var hashedPassword = HashUtils.GetHashString(password);
+            var user = new User(email, hashedPassword, name);
+
+            CheckNetworkUtils.CheckNetworkAccess();
+
+            using var response = await _httpClient.PostAsJsonAsync(ConnectionStrings.SendVerificationCode, user);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 return;
             }
-            else
+
+            string message;
+            switch (response.StatusCode)
             {
-                var hashedPassword = HashUtils.GetHashString(password);
-                var user = new User(email, hashedPassword, name);
-
-                CheckNetworkUtils.CheckNetworkAccess();
-
-                using var response = await _httpClient.PostAsJsonAsync(ConnectionStrings.SendVerificationCode, user);
-
-                if (response.StatusCode == System.Net.HttpStatusCode.OK)
-                {
-                    return;
-                }
-
-                string message;
-                switch (response.StatusCode)
-                {
-                    case System.Net.HttpStatusCode.Conflict:
-                        message = await response.Content.ReadAsStringAsync();
-                        break;
-                    case System.Net.HttpStatusCode.BadRequest:
-                        message = "Не удалось отправить код верификации: проверьте корректность введенных данных.";
-                        break;
-                    case System.Net.HttpStatusCode.NotFound:
-                        message = await response.Content.ReadAsStringAsync();
-                        break;
-                    default:
-                        message = "Не удалось отправить код верификации. Попробуйте позже.";
-                        break;
-                }
-                throw new FailRegisterUserException(message);
+                case System.Net.HttpStatusCode.Conflict:
+                    message = await response.Content.ReadAsStringAsync();
+                    break;
+                case System.Net.HttpStatusCode.BadRequest:
+                    message = "Не удалось отправить код верификации: проверьте корректность введенных данных.";
+                    break;
+                case System.Net.HttpStatusCode.NotFound:
+                    message = await response.Content.ReadAsStringAsync();
+                    break;
+                default:
+                    message = "Не удалось отправить код верификации. Попробуйте позже.";
+                    break;
             }
+            throw new FailRegisterUserException(message);
         }
 
+        /// <summary>
+        /// По заданной почте и коду подтверждения возвращает идентификатор пользователя в случае,
+        /// если код совпал с тем, что был отправлен на указанную почту.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="code"></param>
+        /// <returns></returns>
+        /// <exception cref="FailConfirmVerificationCodeException"></exception>
         public async Task<long> ConfirmVerificationCode(string email, string code)
         {
-            // Mock - userID
-            if (useMocks)
-            {
-                return 1;
-            }
             var verificationCodeWithEmail = new VerificationCodeWithEmail(email, code);
 
             CheckNetworkUtils.CheckNetworkAccess();
@@ -140,12 +128,16 @@ namespace ObshajkaWebApi
             throw new FailConfirmVerificationCodeException(message);
         }
 
+        /// <summary>
+        /// Осуществляет получение объявлений в рамках заданного общежития, владельцем которых
+        /// не является заданный пользователь.
+        /// </summary>
+        /// <param name="dormitoryId"></param>
+        /// <param name="currentUserId"></param>
+        /// <returns></returns>
+        /// <exception cref="FailGetAdvertisementsException"></exception>
         public async Task<IEnumerable<IAdvertisement>> GetAdvertisementsFromOtherUsers(long dormitoryId, long currentUserId)
         {
-            if (useMocks)
-            {
-                return MocksClass.GetAdvertisementsFromOtherUsers_Mock(dormitoryId, currentUserId);
-            }
             var connectionString = $"{ConnectionStrings.GetOutsideAdvertisements}/{dormitoryId}/{currentUserId}";
 
             CheckNetworkUtils.CheckNetworkAccess();
@@ -174,12 +166,15 @@ namespace ObshajkaWebApi
             throw new FailGetAdvertisementsException(message);
         }
 
+        /// <summary>
+        /// Осуществляет получение объявлений владельцем которых
+        /// является заданный пользователь.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        /// <exception cref="FailGetAdvertisementsException"></exception>
         public async Task<IEnumerable<IAdvertisement>> GetUserAdvertisements(long userId)
         {
-            if (useMocks)
-            {
-                return MocksClass.GetAdvertisementsFromCurrentUser_Mock(userId);
-            }
             var connectionString = $"{ConnectionStrings.GetUserAdvertisements}/{userId}";
 
             CheckNetworkUtils.CheckNetworkAccess();
@@ -208,14 +203,14 @@ namespace ObshajkaWebApi
             throw new FailGetAdvertisementsException(message);
         }
 
-        public async void RemoveAdvertisement(long advertisementId)
+        /// <summary>
+        /// Осущеслвяет удаление объявления с сервера по его идентификатору.
+        /// </summary>
+        /// <param name="advertisementId"></param>
+        /// <returns></returns>
+        /// <exception cref="FailRemoveAdvertisementException"></exception>
+        public async Task RemoveAdvertisement(long advertisementId)
         {
-            if (useMocks)
-            {
-                MocksClass.RemoveAdvert(advertisementId);
-                return;
-            }
-
             var connectionString = $"{ConnectionStrings.DeleteAdvertisement}/{advertisementId}";
 
             CheckNetworkUtils.CheckNetworkAccess();
@@ -240,62 +235,33 @@ namespace ObshajkaWebApi
             throw new FailRemoveAdvertisementException(message);
         }
 
-
-
-
-        void CreateDto(HttpResponseMessage? resp)
-        {
-            var kek = 1;
-        }
-
-        public class AdvertDetails
-        {
-            public long CreatorId { get; set; }
-
-            public string Title { get; set; } = null!;
-
-            public string? Description { get; set; }
-
-            public int DormitoryId { get; set; }
-
-            public int? Price { get; set; }
-        }
-
-        public class AdvertisementFromFront
-        {
-            public IFormFile? Image { get; set; }
-
-            //[ModelBinder(BinderType = typeof(FormDataJsonBinder))]
-            public AdvertDetails Details { get; set; }
-        }
-
-        public async void PubslishNewAdvertisement(IPublishingAdvertisement advertisement, /*Stream imageStream,*/ string imagePath)
+        /// <summary>
+        /// Осущесвляет добавление объявления на сервер.
+        /// </summary>
+        /// <param name="advertisement"></param>
+        /// <param name="imagePath"></param>
+        /// <returns></returns>
+        /// <exception cref="FailPublishAdvertisementException"></exception>
+        public async Task PubslishNewAdvertisement(IPublishingAdvertisement advertisement, string imagePath)
         {
 
             using var multipartFormContent = new MultipartFormDataContent();
             
             if (!string.IsNullOrEmpty(imagePath))
             {
-                var fileStreamContent = new StreamContent(File.OpenRead(imagePath)); // File.OpenRead(imagePath)
-                multipartFormContent.Add(fileStreamContent, name: "Image", fileName: "logo.jpg");
+                var fileStreamContent = new StreamContent(File.OpenRead(imagePath));
+                multipartFormContent.Add(fileStreamContent, name: "Image", fileName: "image.jpg");
                 fileStreamContent.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
             }
-            // var fileStreamContent = new StreamContent(imageStream); // File.OpenRead(imagePath)
-
-            
-
-            // добавляем обычные данные
+            var description = advertisement.Description == null ? string.Empty : advertisement.Description;
             multipartFormContent.Add(new StringContent(advertisement.CreatorId.ToString()), name: "Details.CreatorId");
             multipartFormContent.Add(new StringContent(advertisement.Title), name: "Details.Title");
-            multipartFormContent.Add(new StringContent(advertisement.Description), name: "Details.Description");
+            multipartFormContent.Add(new StringContent(description), name: "Details.Description");
             multipartFormContent.Add(new StringContent(advertisement.DormitoryId.ToString()), name: "Details.DormitoryId");
             multipartFormContent.Add(new StringContent(advertisement.Price.ToString()), name: "Details.Price");
 
-            // добавляем файл
-
             CheckNetworkUtils.CheckNetworkAccess();
 
-            // Отправляем данные
             using var response = await _httpClient.PostAsync(ConnectionStrings.PublishAdvertisement, multipartFormContent);
             if (response.StatusCode == System.Net.HttpStatusCode.OK)
             {
@@ -303,95 +269,5 @@ namespace ObshajkaWebApi
             }
             throw new FailPublishAdvertisementException("Неизвестная ошибка, повторите попытку.");
         }
-
-        // рабочая
-
-        //public async void PubslishNewAdvertisement(IPublishingAdvertisement advertisement, Stream imageStream, string imagePath)
-        //{
-
-        //    using var multipartFormContent = new MultipartFormDataContent();
-        //    // var imagePath = await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png");
-        //    var fileStreamContent = new StreamContent(File.OpenRead(imagePath)); // попробовать через путь
-
-        //    multipartFormContent.Add(fileStreamContent, name: "Image", fileName: "logo.jpg");
-
-        //    // добавляем обычные данные
-        //    multipartFormContent.Add(new StringContent(advertisement.CreatorId.ToString()), name: "Details.CreatorId");
-        //    multipartFormContent.Add(new StringContent(advertisement.Title), name: "Details.Title");
-        //    multipartFormContent.Add(new StringContent(advertisement.Description), name: "Details.Description");
-        //    multipartFormContent.Add(new StringContent(advertisement.DormitoryId.ToString()), name: "Details.DormitoryId");
-        //    multipartFormContent.Add(new StringContent(advertisement.Price.ToString()), name: "Details.Price");
-
-        //    // добавляем файл
-        //    fileStreamContent.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
-
-
-        //    // Отправляем данные
-        //    using var response = await _httpClient.PostAsync(ConnectionStrings.PublishAdvertisement, multipartFormContent);
-        //    var lolkek = 1;
-        //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        //public async void PubslishNewAdvertisement(IPublishingAdvertisement advertisement, Stream imageStream/*string imagePath, Stream mystream*/)
-        //{
-        //    //using var request = new HttpRequestMessage(HttpMethod.Post, ConnectionStrings.PublishAdvertisement)
-        //    //{
-        //    //    Version = HttpVersion.Version10,
-        //    //};
-
-        //    using var content = new MultipartFormDataContent
-        //    {
-        //        // image
-        //        //{ new StreamContent(imageStream), "Image", "image.jpg" },
-
-        //        // details
-        //        { new StringContent(advertisement.CreatorId.ToString()), "Details.CreatorId" },
-        //        { new StringContent(advertisement.Title), "Details.Title" },
-        //        { new StringContent(advertisement.Description), "Details.Description" },
-        //        { new StringContent(advertisement.DormitoryId.ToString()), "Details.DormitoryId" },
-        //        { new StringContent(advertisement.Price.ToString()), "Details.Price" },
-        //    };
-
-        //    //request.Content = content;
-
-        //    using var request = new HttpRequestMessage(HttpMethod.Post, ConnectionStrings.PublishAdvertisement)
-        //    {
-        //        Version = HttpVersion.Version10,
-        //        Content = content,
-        //    };
-
-        //    try 
-        //    {
-        //        using var response = await _httpClient.SendAsync(request);
-        //    } catch (Exception e)
-        //    {
-        //        using var response = await _httpClient.SendAsync(request);
-        //    }
-
-
-        //    //if (response.StatusCode == System.Net.HttpStatusCode.OK)
-        //    //{
-        //    //    return;
-        //    //}
-        //    //throw new FailPublishAdvertisementException("Неизвестная ошибка, повторите попытку.");
-        //}
-
-
     }
 }

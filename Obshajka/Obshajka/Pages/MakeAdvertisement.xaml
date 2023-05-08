@@ -77,7 +77,7 @@
                 </VerticalStackLayout>
             </VerticalStackLayout>
         </ScrollView>
-        <Button Text="Опубликовать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="130,0,130,0" BackgroundColor="#512BD4"
+        <Button x:Name="publishBtn" Text="Опубликовать" Grid.Column="0" Grid.Row="1" CornerRadius="30" Margin="130,0,130,0" BackgroundColor="#512BD4"
                 Clicked="PublishBtn_Clicked"/>
     </Grid>
 </ContentPage>

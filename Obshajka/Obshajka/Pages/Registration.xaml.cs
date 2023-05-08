@@ -5,7 +5,9 @@ namespace Obshajka.Pages;
 
 public partial class Registration : ContentPage
 {
-    private readonly string _domainHse = "edu.hse.ru";
+    private const string _domainHse = "hse.ru";
+    private const string _domainEduHse = "edu.hse.ru";
+    private const bool _domainHseEnabled = true;
     private readonly string _hide_eye_image = "hide_eye.png";
     private readonly string _view_eye_image = "view_eye.png";
 
@@ -26,7 +28,7 @@ public partial class Registration : ContentPage
         var enteredPassword = regPasswordEntry.Text.Trim();
 
         var client = new ObshajkaClient();
-
+        regBtn.IsEnabled = false;
         try
         {
             await client.RegisterUser(enteredName, enteredEmail, enteredPassword);
@@ -40,6 +42,10 @@ public partial class Registration : ContentPage
         {
             await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
+        }
+        finally
+        {
+            regBtn.IsEnabled = true;
         }
 
         await Navigation.PushAsync(new ConfirmVerificationCode(enteredEmail));
@@ -75,7 +81,26 @@ public partial class Registration : ContentPage
             return false;
         }
         var loginAndDomain = email.Trim().Split('@');
-        return loginAndDomain.Length == 2 && loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20 && loginAndDomain[1].Equals(_domainHse);
+        if (loginAndDomain.Length != 2)
+        {
+            return false;
+        }
+        if (!(loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20))
+        {
+            return false;
+        }
+
+        if (_domainHseEnabled)
+        {
+            return loginAndDomain[1] == _domainHse || loginAndDomain[1] == _domainEduHse;
+        }
+        return loginAndDomain[1] == _domainEduHse;
+    }
+
+    private void RegNameEntry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        incorrectNameLabel.IsVisible = false;
+        regNameFrame.BorderColor = Colors.LightGreen;
     }
 
     private void RegEmailEntry_TextChanged(object sender, TextChangedEventArgs e)

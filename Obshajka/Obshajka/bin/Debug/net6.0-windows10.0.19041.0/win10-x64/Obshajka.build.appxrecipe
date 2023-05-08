@@ -826,6 +826,9 @@
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\system.text.json\7.0.0\lib\net6.0\System.Text.Json.dll">
       <PackagePath>System.Text.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\xamarin.essentials\1.7.5\lib\netstandard2.0\Xamarin.Essentials.dll">
+      <PackagePath>Xamarin.Essentials.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Andrei\.nuget\packages\microsoft.graphics.win2d\1.0.3.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>

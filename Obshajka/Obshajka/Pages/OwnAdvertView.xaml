@@ -13,7 +13,8 @@
             <VerticalStackLayout
                 Spacing="10"
                 Padding="0,0"
-                VerticalOptions="StartAndExpand">
+                VerticalOptions="StartAndExpand"
+                Margin="0">
                 <VerticalStackLayout VerticalOptions="StartAndExpand">
                     <Image Aspect="Fill" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
                         <Image.Source>
@@ -24,24 +25,20 @@
                     </Image>
                     <Border StrokeThickness="3" Background="Black" BackgroundColor="Black"/>
                 </VerticalStackLayout>
-                <VerticalStackLayout Margin="5">
+                <VerticalStackLayout Margin="25,0,0,0">
                     <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="30" LineBreakMode="WordWrap"/>
                     <Label Text="{Binding Price, StringFormat='{0} ₽'}" FontAttributes="Bold" FontSize="25"/>
                     <Label Text="{Binding DormitoryId, StringFormat='Размещено в общежитии №{0}'}" FontAttributes="Bold"
                            FontSize="15" Margin="0,8,0,0"/>
                 </VerticalStackLayout>
 
-                <Border/>
-                <VerticalStackLayout Padding="10" Margin="5,5,5,5" Spacing="0">
+                <Border Margin="20,0,20,0"/>
+                <VerticalStackLayout Padding="0" Margin="25,0,5,5" Spacing="0">
                     <Label Text="Описание:"/>
-                    <Border Padding="10">
-                        <Border.StrokeShape>
-                            <RoundRectangle CornerRadius="15,15,15,15" />
-                        </Border.StrokeShape>
-                        <Editor Text="{Binding Description}" IsReadOnly="True"  AutoSize="TextChanges"/>
-                    </Border>
+                    <Editor Text="{Binding Description}" IsReadOnly="True"  AutoSize="TextChanges"/>
                 </VerticalStackLayout>
-                <VerticalStackLayout Padding="0" Margin="5,5,5,5" Spacing="5">
+                <Border Margin="20,0,20,0"/>
+                <VerticalStackLayout Padding="0" Margin="25,5,5,5" Spacing="5">
                     <Label Text="{Binding CreatorName, StringFormat='Меня зовут: {0}'}"/>
                     <Label Text="{Binding DateOfAddition, StringFormat='Дата создания объявления: {0}'}"/>
                 </VerticalStackLayout>

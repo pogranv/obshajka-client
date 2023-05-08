@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Obshajka.Templates;
-using ObshajkaWebApi.Interfaces;
+﻿using ObshajkaWebApi.Interfaces;
 
 namespace Obshajka.Templates
 {

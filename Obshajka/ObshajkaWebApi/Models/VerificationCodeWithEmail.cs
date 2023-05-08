@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ObshajkaWebApi.Models
+﻿namespace ObshajkaWebApi.Models
 {
-    internal record VerificationCodeWithEmail(string Email, string VerificationCode);
+    internal sealed record VerificationCodeWithEmail(string Email, string VerificationCode);
 }

@@ -5,7 +5,9 @@ namespace Obshajka.Pages;
 
 public partial class Authorization : ContentPage
 {
-    private const string _domainHse = "edu.hse.ru";
+    private const string _domainHse = "hse.ru";
+    private const string _domainEduHse = "edu.hse.ru";
+    private const bool _domainHseEnabled = true;
     private const string _hide_eye_image = "hide_eye.png";
     private const string _view_eye_image = "view_eye.png";
 
@@ -13,6 +15,7 @@ public partial class Authorization : ContentPage
     {
         InitializeComponent();
     }
+
     private async void LoginButton_Clicked(object sender, EventArgs e)
     {
         if (!IsCorrectEmailAndPassword(EntryLogInEmail.Text, EntryLogInPassword.Text))
@@ -23,6 +26,7 @@ public partial class Authorization : ContentPage
         var enteredPassword = EntryLogInPassword.Text.Trim();
 
         var client = new ObshajkaClient();
+        loginBtn.IsEnabled = false;
         try
         {
             UserSettings.UserSettings.UserId = await client.AuthorizeUser(enteredEmail, enteredPassword);
@@ -36,6 +40,10 @@ public partial class Authorization : ContentPage
         {
             await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
+        }
+        finally
+        {
+            loginBtn.IsEnabled = true;
         }
 
         await Shell.Current.GoToAsync("//Bar");
@@ -65,7 +73,20 @@ public partial class Authorization : ContentPage
             return false;
         }
         var loginAndDomain = email.Trim().Split('@');
-        return loginAndDomain.Length == 2 && loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20 && loginAndDomain[1] == _domainHse;
+        if (loginAndDomain.Length != 2)
+        {
+            return false;
+        }
+        if (!(loginAndDomain[0].Length >= 4 && loginAndDomain[0].Length <= 20))
+        {
+            return false;
+        }
+
+        if (_domainHseEnabled)
+        {
+            return loginAndDomain[1] == _domainHse || loginAndDomain[1] == _domainEduHse;
+        }
+        return loginAndDomain[1] == _domainEduHse;
     }
 
     private void EntryLogInEmail_TextChanged(object sender, TextChangedEventArgs e)

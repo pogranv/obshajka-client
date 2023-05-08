@@ -1,25 +1,19 @@
-using Obshajka.Models;
-using Obshajka.ViewModels;
-using System.Collections.ObjectModel;
-using System.Linq;
 using ObshajkaWebApi;
 using ObshajkaWebApi.Exceptions;
+
+using Obshajka.Models;
+using Obshajka.ViewModels;
 
 namespace Obshajka.Pages;
 
 public partial class OwnAdvertView : ContentPage
 {
-
-    Advertisement Advertisement { get; set; }
     private MyAdvertsViewModel _adverts;
+    public Advertisement Advertisement { get; set; }
     public OwnAdvertView(MyAdvertsViewModel advertisements, Advertisement selectedAdvertisement)
     {
         InitializeComponent();
         Advertisement = selectedAdvertisement;
-        //if (Advertisement.Image == null)
-        //{
-        //    Advertisement.Image = "default_advert_image.png";
-        //}
         BindingContext = Advertisement;
         _adverts = advertisements;
     }
@@ -36,7 +30,7 @@ public partial class OwnAdvertView : ContentPage
         var client = new ObshajkaClient();
         try
         {
-            client.RemoveAdvertisement(id);
+            await client.RemoveAdvertisement(id);
         } 
         catch (FailRemoveAdvertisementException ex)
         {

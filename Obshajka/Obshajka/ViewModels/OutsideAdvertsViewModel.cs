@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Obshajka.Models;
+﻿using System.ComponentModel;
+
 using ObshajkaWebApi;
 using ObshajkaWebApi.Exceptions;
 using ObshajkaWebApi.Interfaces;
+
+using Obshajka.Models;
 
 namespace Obshajka.ViewModels
 {
     class OutsideAdvertsViewModel : AdvertsViewModel, INotifyPropertyChanged
     {
-        private int? dormitoryId;
+        private int? _dormitoryId;
         public int? DormitoryId {
-            get => dormitoryId;
+            get => _dormitoryId;
             set
             {
-                dormitoryId = value;
+                _dormitoryId = value;
                 IsRefreshing = true;
             }
         }

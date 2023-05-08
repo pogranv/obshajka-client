@@ -1,4 +1,4 @@
 ﻿namespace ObshajkaWebApi.Models
 {
-    internal record EmailWithPassword(string Email, string Password);
+    internal sealed record EmailWithPassword(string Email, string Password);
 }

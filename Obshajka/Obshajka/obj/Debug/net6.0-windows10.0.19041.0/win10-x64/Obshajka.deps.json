@@ -1244,6 +1244,7 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {},
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {},
       "System.Text.Encodings.Web/7.0.0": {
         "dependencies": {
@@ -1268,11 +1269,23 @@
           }
         }
       },
+      "Xamarin.Essentials/1.7.5": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "ObshajkaWebApi/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http": "2.2.2",
           "Microsoft.AspNetCore.Http.Features": "5.0.17",
-          "Microsoft.Extensions.Configuration": "7.0.0"
+          "Microsoft.Extensions.Configuration": "7.0.0",
+          "Xamarin.Essentials": "1.7.5"
         },
         "runtime": {
           "ObshajkaWebApi.dll": {}
@@ -1514,6 +1527,13 @@
       "path": "system.io.pipelines/5.0.2",
       "hashPath": "system.io.pipelines.5.0.2.nupkg.sha512"
     },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
     "System.Runtime.CompilerServices.Unsafe/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -1534,6 +1554,13 @@
       "sha512": "sha512-DaGSsVqKsn/ia6RG8frjwmJonfos0srquhw09TlT8KRw5I43E+4gs+/bZj4K0vShJ5H9imCuXupb4RmS+dBy3w==",
       "path": "system.text.json/7.0.0",
       "hashPath": "system.text.json.7.0.0.nupkg.sha512"
+    },
+    "Xamarin.Essentials/1.7.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+dDLUCXOehBxFOw5D5AXeFtcLQ0HBCMeVHSSbonVuZWJ2/8mb7+pGFQA8n053Lvpie7CAd8C+05chIKK6YCBiw==",
+      "path": "xamarin.essentials/1.7.5",
+      "hashPath": "xamarin.essentials.1.7.5.nupkg.sha512"
     },
     "ObshajkaWebApi/1.0.0": {
       "type": "project",

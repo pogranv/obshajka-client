@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Obshajka.Pages.Authorization"
-             BackgroundColor="White">
+             x:Class="Obshajka.Pages.Authorization"> 
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -23,7 +22,7 @@
                                Padding="0" Margin="5">
                                 <Image Source="user.png" Aspect="Fill" Margin="5"/>
                             </Frame>
-                            <Entry x:Name="EntryLogInEmail" Text="aisharipov@edu.hse.ru" MaxLength="30" Placeholder="Почта @edu.hse.ru" TextColor="Black"
+                            <Entry x:Name="EntryLogInEmail" MaxLength="30" Placeholder="Почта @edu.hse.ru" TextColor="Black"
                                FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="3,0,20,0"
                                TextChanged="EntryLogInEmail_TextChanged"/>
                         </StackLayout>
@@ -36,7 +35,7 @@
                                Margin="5">
                                 <Image Source="lock.png" Aspect="AspectFill" Margin="5"/>
                             </Frame>
-                            <Entry x:Name="EntryLogInPassword" Text="password" Placeholder="Пароль" MaxLength="30" TextColor="Black"
+                            <Entry x:Name="EntryLogInPassword" Placeholder="Пароль" MaxLength="30" TextColor="Black"
                                    FontAttributes="Bold" IsPassword="True" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
                                    Margin="3,0,5,0" TextChanged="EntryLogInPassword_TextChanged"/>
                             <ImageButton x:Name="LogInPasswordEye" Source="view_eye.png" HeightRequest="25" WidthRequest="25" Aspect="Fill" Margin="5,0,8,0"
@@ -46,8 +45,8 @@
                     <Label x:Name="IncorrectPasswordLabel"  Text="Минимальная длина пароля - 4 символа" TextColor="LightPink" Margin="5,-10,0,0" FontSize="12"
                        IsVisible="False"/>
                 </StackLayout>
-                <Button x:Name="LoginBtn" Text="Войти" WidthRequest="200" HeightRequest="45" CornerRadius="40" HorizontalOptions="Center" Margin="0,0,0,0"
-                        Clicked="LoginButton_Clicked"/>
+                <Button x:Name="loginBtn" Text="Войти" WidthRequest="200" HeightRequest="45" CornerRadius="40" HorizontalOptions="Center" Margin="0,0,0,0"
+                        Clicked="LoginButton_Clicked" IsEnabled="True"/>
             </VerticalStackLayout>
         </ScrollView>
         <StackLayout Orientation="Horizontal" Spacing="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,0,0,0"

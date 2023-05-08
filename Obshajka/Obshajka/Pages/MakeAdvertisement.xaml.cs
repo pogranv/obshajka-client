@@ -1,20 +1,20 @@
 using Obshajka.Models;
 using Obshajka.ViewModels;
+
 using ObshajkaWebApi;
 using ObshajkaWebApi.Exceptions;
-using System.Reflection;
 
 namespace Obshajka.Pages;
 
 public partial class MakeAdvertisementPage : ContentPage
 {
     private string _imagePath;
+
     public MakeAdvertisementPage()
 	{
 		InitializeComponent();
 	}
 
-    
     public MakeAdvertisementPage(MyAdvertsViewModel advertisements)
     {
         InitializeComponent();
@@ -28,7 +28,9 @@ public partial class MakeAdvertisementPage : ContentPage
         });
 
         if (result == null)
+        {
             return;
+        }
 
         _imagePath = result.FullPath;
         var imageStream = await result.OpenReadAsync();
@@ -62,6 +64,7 @@ public partial class MakeAdvertisementPage : ContentPage
         }
         return 0;
     }
+
     private bool CheckCorrectAllFields()
     {
         bool isCorrectFlag = true;
@@ -94,40 +97,20 @@ public partial class MakeAdvertisementPage : ContentPage
             return;
         }
 
-        var publishingAdvertisement= new PublishingAdvertisement()
+        var publishingAdvertisement = new PublishingAdvertisement()
         {
             CreatorId = UserSettings.UserSettings.UserId,
             Title = titleEntry.Text,
-            Description = titleEntry.Text,
+            Description = descriptionEditor.Text,
             DormitoryId = dormitoryPicker.SelectedIndex + 1,
             Price = GetPriceOrNul(priceEntry.Text),
         };
 
         var client = new ObshajkaClient();
-
+        publishBtn.IsEnabled = false;
         try
         {
-            /*using StreamContent stream = new StreamContent(!string.IsNullOrEmpty(_imagePath) ? File.OpenRead(_imagePath)
-                : await FileSystem.Current.OpenAppPackageFileAsync("default_advert_image.png"));*/
-            //var imagePath = 
-            //var cacheFile = Path.Combine(FileSystem.CacheDirectory, "default_advert_image.png");
-            var imagePath = _imagePath;
-
-            //if (imagePath == null)
-            //{
-            //    var assembly = typeof(App).GetTypeInfo().Assembly.GetManifestResourceNames();
-
-            //    var kek = FileSystem.AppDataDirectory.GetType().Assembly.GetManifestResourceNames();
-
-
-               
-            //    imagePath = System.IO.Path.Combine(FileSystem.AppDataDirectory, "Resources", "Raw", "default_advert_image.png");
-            //}
-           
-
-
-
-            client.PubslishNewAdvertisement(publishingAdvertisement, /*stream,*/ imagePath);
+            await client.PubslishNewAdvertisement(publishingAdvertisement, _imagePath);
         }
         catch(FailPublishAdvertisementException ex)
         {
@@ -138,6 +121,10 @@ public partial class MakeAdvertisementPage : ContentPage
         {
             await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
+        }
+        finally
+        {
+            publishBtn.IsEnabled = true;
         }
         await Navigation.PopAsync();
         await DisplayAlert("Создание объявления", "Объявление успешно создано! Обновите страницу, чтобы его увидеть :)", "Oк");

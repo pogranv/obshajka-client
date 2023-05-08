@@ -12,7 +12,7 @@ public partial class ConfirmVerificationCode : ContentPage
         InitializeComponent();
         _enteredEmail = enteredEmail;
     }
-    public async void EnterApplication_Clicked(object sender, EventArgs e)
+    private async void EnterApplication_Clicked(object sender, EventArgs e)
     {
         if (string.IsNullOrEmpty(regCodeEntry.Text) || regCodeEntry.Text.Length != 4
             || !IsNumber(regCodeEntry.Text))
@@ -20,10 +20,12 @@ public partial class ConfirmVerificationCode : ContentPage
             incorrectCodeLabel.IsVisible = true;
             incorrectCodeInfoLabel.IsVisible = true;
             incorrectCodeInfoLabel2.IsVisible = true;
+            regCodeFrame.BorderColor = Colors.LightPink;
             return;
         }
 
         var client = new ObshajkaClient();
+        regBtn.IsEnabled = false;
         try
         {
             UserSettings.UserSettings.UserId = await client.ConfirmVerificationCode(_enteredEmail, regCodeEntry.Text);
@@ -37,6 +39,10 @@ public partial class ConfirmVerificationCode : ContentPage
         {
             await DisplayAlert("Сеть недоступна", ex.Message, "Ок");
             return;
+        }
+        finally
+        {
+            regBtn.IsEnabled = true;
         }
 
         await Shell.Current.GoToAsync("//Bar");
@@ -59,5 +65,6 @@ public partial class ConfirmVerificationCode : ContentPage
         incorrectCodeLabel.IsVisible = false;
         incorrectCodeInfoLabel.IsVisible = false;
         incorrectCodeInfoLabel2.IsVisible = false;
+        regCodeFrame.BorderColor = Colors.LightGreen;
     }
 }
